@@ -7,8 +7,8 @@
   ],
   "Conclusion" : [
     {
-      "t":"p",
-      "n":""
+      "t": "p",
+      "n": ""
     }
   ],
   "Your Company": [
@@ -169,183 +169,169 @@
     },
     {
       "t": "g",
-      "n":"Have you led or are you planning actions to optimize your infrastructure? Especially :"
-    },
-    {
-      "t": "sh",
-      "n": "The purchase of non-IT equipment from IT rooms (air conditioning, air treatment, inverters, etc.) according to energy efficiency criteria",
-      "a": [
-        "Yes",
-        "No",
-        "I don't know"
-      ]
-    },
-    {
-      "t": "sh",
-      "n": "Implementing the good practices of the \"European Code of Conduct for DataCenter\"?",
-      "a": [
-        "Yes",
-        "No",
-        "I don't know"
-      ]
-    },
-    {
-      "t": "sh",
-      "n": "Data center PUE tracking",
-      "a": [
-        "Yes",
-        "No",
-        "I don't know"
-      ]
-    },
-    {
-      "t": "sh",
-      "n": "Regular monitoring of environmental indicators of computer rooms",
-      "a": [
-        "Yes",
-        "No",
-        "I don't know"
-      ]
-    },
-    {
-      "t": "sh",
-      "n": "Environmental impact analysis of the datacenter in life cycle approach",
-      "a": [
-        "Yes",
-        "No",
-        "I don't know"
-      ]
-    },
-    {
-      "t": "sh",
-      "n": "Optimizing the architecture and layout of rooms",
-      "a": [
-        "Yes",
-        "No",
-        "I don't know"
-      ]
-    },
-    {
-      "t": "sh",
-      "n": "The urbanization of halls in hot / cold aisles",
-      "a": [
-        "Yes",
-        "No",
-        "I don't know"
-      ]
-    },
-    {
-      "t": "sh",
-      "n": "Containment of air flows (corridors)",
-      "a": [
-        "Yes",
-        "No",
-        "I don't know"
-      ]
-    },
-    {
-      "t": "sh",
-      "n": "The use of natural cooling sources (freecooling)",
-      "a": [
-        "Yes",
-        "No",
-        "I don't know"
-      ]
-    },
-    {
-      "t": "sh",
-      "n": "Implementation of a heat recovery system for computer rooms (heating)",
-      "a": [
-        "Yes",
-        "No",
-        "I don't know"
-      ]
-    },
-    {
-      "t": "sh",
-      "n": "The set temperature in the cold corridor remains higher than 24°",
-      "a": [
-        "Yes",
-        "No",
-        "I don't know"
-      ]
-    },
-    {
-      "t": "sh",
-      "n": "The choice of a modular datacenter architecture",
-      "a": [
-        "Yes",
-        "No",
-        "I don't know"
+      "n":"Have you led or are you planning actions to optimize your infrastructure? Especially :",
+      "q" : [
+        {
+          "n": "The purchase of non-IT equipment from IT rooms (air conditioning, air treatment, inverters, etc.) according to energy efficiency criteria",
+          "a": [
+            "Yes",
+            "No",
+            "I don't know"
+          ]
+        },
+        {
+          "n": "Implementing the good practices of the \"European Code of Conduct for DataCenter\"?",
+          "a": [
+            "Yes",
+            "No",
+            "I don't know"
+          ]
+        },
+        {
+          "n": "Data center PUE tracking",
+          "a": [
+            "Yes",
+            "No",
+            "I don't know"
+          ]
+        },
+        {
+          "n": "Regular monitoring of environmental indicators of computer rooms",
+          "a": [
+            "Yes",
+            "No",
+            "I don't know"
+          ]
+        },
+        {
+          "n": "Environmental impact analysis of the Data Center in life cycle approach",
+          "a": [
+            "Yes",
+            "No",
+            "I don't know"
+          ]
+        },
+        {
+          "n": "Optimizing the architecture and layout of rooms",
+          "a": [
+            "Yes",
+            "No",
+            "I don't know"
+          ]
+        },
+        {
+          "n": "The urbanization of halls in hot / cold aisles",
+          "a": [
+            "Yes",
+            "No",
+            "I don't know"
+          ]
+        },
+        {
+          "n": "Containment of air flows (corridors)",
+          "a": [
+            "Yes",
+            "No",
+            "I don't know"
+          ]
+        },
+        {
+          "n": "The use of natural cooling sources (freecooling)",
+          "a": [
+            "Yes",
+            "No",
+            "I don't know"
+          ]
+        },
+        {
+          "n": "Implementation of a heat recovery system for computer rooms (heating)",
+          "a": [
+            "Yes",
+            "No",
+            "I don't know"
+          ]
+        },
+        {
+          "n": "The set temperature in the cold corridor remains higher than 24°",
+          "a": [
+            "Yes",
+            "No",
+            "I don't know"
+          ]
+        },
+        {
+          "n": "The choice of a modular Data Center architecture",
+          "a": [
+            "Yes",
+            "No",
+            "I don't know"
+          ]
+        }
       ]
     }
+
   ],
   "Infrastructures|Server / A cupboard or a dedicated room": [
     {
       "t": "g",
-      "n" : "Have you led or are you planning actions to optimize your infrastructure? Especially :"
-    },
-    {
-      "t": "sh",
-      "n" : "Suspending network equipment",
-      "a": [
-        "No",
-        "I don't know",
-        "Yes"
-      ]
-    },
-    {
-      "t": "sh",
-      "n" : "Pooling physical equipment",
-      "a": [
-        "No",
-        "I don't know",
-        "Yes"
-      ]
-    },
-    {
-      "t": "sh",
-      "n" : "Uninstalling unnecessary infrastructure",
-      "a": [
-        "No",
-        "I don't know",
-        "Yes"
-      ]
-    },
-    {
-      "t": "sh",
-      "n" : "Traceability of material elements (CMDB)",
-      "a": [
-        "No",
-        "I don't know",
-        "Yes"
-      ]
-    },
-    {
-      "t": "sh",
-      "n" : "The correct sizing of the servers in relation to their use",
-      "a": [
-        "No",
-        "I don't know",
-        "Yes"
-      ]
-    },
-    {
-      "t": "sh",
-      "n" : "Give priority to ASHRAE 2 compatible equipment",
-      "a": [
-        "No",
-        "I don't know",
-        "Yes"
-      ]
-    },
-    {
-      "t": "sh",
-      "n" : "A procedure for provisioning and de-provisioning data-processing equipment in datacenters",
-      "a": [
-        "No",
-        "I don't know",
-        "Yes"
+      "n" : "Have you led or are you planning actions to optimize your infrastructure? Especially :",
+      "q" : [
+        {
+          "n" : "Suspending network equipment",
+          "a": [
+            "No",
+            "I don't know",
+            "Yes"
+          ]
+        },
+        {
+          "n" : "Pooling physical equipment",
+          "a": [
+            "No",
+            "I don't know",
+            "Yes"
+          ]
+        },
+        {
+          "n" : "Uninstalling unnecessary infrastructure",
+          "a": [
+            "No",
+            "I don't know",
+            "Yes"
+          ]
+        },
+        {
+          "n" : "Traceability of material elements (CMDB)",
+          "a": [
+            "No",
+            "I don't know",
+            "Yes"
+          ]
+        },
+        {
+          "n" : "The correct sizing of the servers in relation to their use",
+          "a": [
+            "No",
+            "I don't know",
+            "Yes"
+          ]
+        },
+        {
+          "n" : "Give priority to ASHRAE 2 compatible equipment",
+          "a": [
+            "No",
+            "I don't know",
+            "Yes"
+          ]
+        },
+        {
+          "n" : "A procedure for provisioning and de-provisioning data-processing equipment in Data Centers",
+          "a": [
+            "No",
+            "I don't know",
+            "Yes"
+          ]
+        }
       ]
     },
     {
@@ -375,17 +361,17 @@
     {
       "n" : "What will be the evolution of your number of physical servers for 2019? (in% or quantity)",
       "a": [
-        "In %_",
-        "In quanity_",
+        "In % _",
+        "In quantity _",
         "I do not want to answer",
         "I don't know"
       ]
     },
     {
-      "n" : "What will be the evolution of your number of virtual servers for 2019? (in% or quantity)",
+      "n" : "What will be the evolution of your number of virtual servers for 2019? (in % or quantity)",
       "a": [
-        "In %_",
-        "In quanity_",
+        "In % _",
+        "In quantity _",
         "I do not want to answer",
         "I don't know"
       ]
@@ -393,7 +379,6 @@
   ],
   "Management": [
     {
-
       "n": "Has your company appointed a Green IT Manager / Digital Manager?",
       "a": [
         "Yes",
@@ -447,109 +432,99 @@
     {
       "t": "g",
       "n": "Do you have those equipments in your compagny:",
-      "s": "Used: equipment used in the business activity\nNot used functional: equipment in working order but no more used by the company (stored)\nNeither used nor functional: out of service equipment (HS) waiting for end of life treatment"
-    },
-    {
-      "t": "sh",
-      "n": "Fixed stations, workstations",
-      "a": [
-        "Used",
-        "Not used functional",
-        "Neither used nor functional"
+      "s": "Used: equipment used in the business activity\nNot used functional: equipment in working order but no more used by the company (stored)\nNeither used nor functional: out of service equipment (HS) waiting for end of life treatment",
+      "q": [
+        {
+          "n": "Fixed stations, workstations",
+          "a": [
+            "Used",
+            "Not used functional",
+            "Neither used nor functional"
+          ]
+        },
+        {
+          "n": "Laptops, digital tablets",
+          "a": [
+            "Used",
+            "Not used functional",
+            "Neither used nor functional"
+          ]
+        },
+        {
+          "n": "Small printers (<15kg, potentially used by a household)",
+          "a": [
+            "Used",
+            "Not used functional",
+            "Neither used nor functional"
+          ]
+        },
+        {
+          "n": "Flat screen monitors",
+          "a": [
+            "Used",
+            "Not used functional",
+            "Neither used nor functional"
+          ]
+        },
+        {
+          "n": "Other flat screens (TV, projection screen, digital board ...)",
+          "a": [
+            "Used",
+            "Not used functional",
+            "Neither used nor functional"
+          ]
+        },
+        {
+          "n": "CRT monitors (monitors or other)",
+          "a": [
+            "Used",
+            "Not used functional",
+            "Neither used nor functional"
+          ]
+        },
+        {
+          "n": "Video projectors",
+          "a": [
+            "Used",
+            "Not used functional",
+            "Neither used nor functional"
+          ]
+        },
+        {
+          "n": "Mobile phones",
+          "a": [
+            "Used",
+            "Not used functional",
+            "Neither used nor functional"
+          ]
+        },
+        {
+          "n": "Fixed telephones (standalone not connected to such a standard)",
+          "a": [
+            "Used",
+            "Not used functional",
+            "Neither used nor functional"
+          ]
+        },
+        {
+          "n": "Digital cameras",
+          "a": [
+            "Used",
+            "Not used functional",
+            "Neither used nor functional"
+          ]
+        },
+        {
+          "n": "Hard Disk Devices, Storage, Backup",
+          "a": [
+            "Used",
+            "Not used functional",
+            "Neither used nor functional"
+          ]
+        }
       ]
     },
     {
-      "t": "sh",
-      "n": "Laptops, digital tablets",
-      "a": [
-        "Used",
-        "Not used functional",
-        "Neither used nor functional"
-      ]
-    },
-    {
-      "t": "sh",
-      "n": "Small printers (<15kg, potentially used by a household)",
-      "a": [
-        "Used",
-        "Not used functional",
-        "Neither used nor functional"
-      ]
-    },
-    {
-      "t": "sh",
-      "n": "Flat screen monitors",
-      "a": [
-        "Used",
-        "Not used functional",
-        "Neither used nor functional"
-      ]
-    },
-    {
-      "t": "sh",
-      "n": "Other flat screens (TV, projection screen, digital board ...)",
-      "a": [
-        "Used",
-        "Not used functional",
-        "Neither used nor functional"
-      ]
-    },
-    {
-      "t": "sh",
-      "n": "CRT monitors (monitors or other)",
-      "a": [
-        "Used",
-        "Not used functional",
-        "Neither used nor functional"
-      ]
-    },
-    {
-      "t": "sh",
-      "n": "Video projectors",
-      "a": [
-        "Used",
-        "Not used functional",
-        "Neither used nor functional"
-      ]
-    },
-    {
-      "t": "sh",
-      "n": "Mobile phones",
-      "a": [
-        "Used",
-        "Not used functional",
-        "Neither used nor functional"
-      ]
-    },
-    {
-      "t": "sh",
-      "n": "Fixed telephones (standalone not connected to such a standard)",
-      "a": [
-        "Used",
-        "Not used functional",
-        "Neither used nor functional"
-      ]
-    },
-    {
-      "t": "sh",
-      "n": "Digital cameras",
-      "a": [
-        "Used",
-        "Not used functional",
-        "Neither used nor functional"
-      ]
-    },
-    {
-      "t": "sh",
-      "n": "Hard Disk Devices, Storage, Backup",
-      "a": [
-        "Used",
-        "Not used functional",
-        "Neither used nor functional"
-      ]
-    },
-    {
-      "t":"s",
       "n": "Do you have other devices in your company?",
       "s":"Keyboards, mouse, graphic tablets, scanners, microphones, speakers, office equipment ...",
       "a": [
@@ -561,62 +536,59 @@
     {
       "t": "g",
       "n": "Regarding other devices, do you have in your company:",
-      "s": "Used: equipment used in the business activity\nNot used functional: equipment in working order but no more used by the company (stored)\nNeither used nor functional: out of service equipment (HS) waiting for end of life treatment"
-    },
-    {
-      "t": "sh",
-      "n": "Keyboards",
-      "a": [
-        "Used",
-        "Not used functional",
-        "Neither used nor functional"
-      ]
-    },
-    {
-      "t": "sh",
-      "n": "Mouse",
-      "a": [
-        "Used",
-        "Not used functional",
-        "Neither used nor functional"
-      ]
-    },
-    {
-      "t": "sh",
-      "n": "Graphic tablets",
-      "a": [
-        "Used",
-        "Not used functional",
-        "Neither used nor functional"
-      ]
-    },
-    {
-      "t": "sh",
-      "n": "Scanners",
-      "a": [
-        "Used",
-        "Not used functional",
-        "Neither used nor functional"
-      ]
-    },
-    {
-      "t": "sh",
-      "n": "Speakers",
-      "a": [
-        "Used",
-        "Not used functional",
-        "Neither used nor functional"
-      ]
-    },
-    {
-      "t": "sh",
-      "n": "Office automation",
-      "a": [
-        "Used",
-        "Not used functional",
-        "Neither used nor functional"
+      "s": "Used: equipment used in the business activity\nNot used functional: equipment in working order but no more used by the company (stored)\nNeither used nor functional: out of service equipment (HS) waiting for end of life treatment",
+      "q": [
+        {
+          "n": "Keyboards",
+          "a": [
+            "Used",
+            "Not used functional",
+            "Neither used nor functional"
+          ]
+        },
+        {
+          "n": "Mouse",
+          "a": [
+            "Used",
+            "Not used functional",
+            "Neither used nor functional"
+          ]
+        },
+        {
+          "n": "Graphic tablets",
+          "a": [
+            "Used",
+            "Not used functional",
+            "Neither used nor functional"
+          ]
+        },
+        {
+          "n": "Scanners",
+          "a": [
+            "Used",
+            "Not used functional",
+            "Neither used nor functional"
+          ]
+        },
+        {
+          "n": "Speakers",
+          "a": [
+            "Used",
+            "Not used functional",
+            "Neither used nor functional"
+          ]
+        },
+        {
+          "n": "Office automation",
+          "a": [
+            "Used",
+            "Not used functional",
+            "Neither used nor functional"
+          ]
+        }
       ]
     }
+
   ],
   "Energy consumption": [
     {
@@ -686,42 +658,40 @@
     },
     {
       "t": "g",
-      "n": "Are your printers set by default in eco mode? Especially :"
-    },
-    {
-      "t": "sh",
-      "n": "Energy saving (Automatic standby)",
-      "a": [
-        "Yes",
-        "No",
-        "I don't know"
-      ]
-    },
-    {
-      "t": "sh",
-      "n": "Black and white by default",
-      "a": [
-        "Yes",
-        "No",
-        "I don't know"
-      ]
-    },
-    {
-      "t": "sh",
-      "n": "Default duplex",
-      "a": [
-        "Yes",
-        "No",
-        "I don't know"
-      ]
-    },
-    {
-      "t": "sh",
-      "n": "Default draft mode",
-      "a": [
-        "Yes",
-        "No",
-        "I don't know"
+      "n": "Are your printers set by default in eco mode? Especially :",
+      "q": [
+        {
+          "n": "Energy saving (Automatic standby)",
+          "a": [
+            "Yes",
+            "No",
+            "I don't know"
+          ]
+        },
+        {
+          "n": "Black and white by default",
+          "a": [
+            "Yes",
+            "No",
+            "I don't know"
+          ]
+        },
+        {
+          "n": "Default duplex",
+          "a": [
+            "Yes",
+            "No",
+            "I don't know"
+          ]
+        },
+        {
+          "n": "Default draft mode",
+          "a": [
+            "Yes",
+            "No",
+            "I don't know"
+          ]
+        }
       ]
     }
   ],
@@ -787,4 +757,3 @@
     }
   ]
 }
-
