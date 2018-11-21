@@ -20,7 +20,7 @@ function loadQuestion() {
     to.innerHTML = topic.substr(0, pipe);
     sub_to.innerHTML = (pipe !== -1 ? topic.substr(pipe + 1) : "");
     
-    if (!type("p")) {
+    if (!type(q_data, "p")) {
         qu.innerHTML = q_data.n;
         sub_qu.innerHTML = (q_data.s != null ? q_data.s : "");
         
