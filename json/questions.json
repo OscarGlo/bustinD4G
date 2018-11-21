@@ -1,0 +1,20 @@
+{
+  "your compagny": [
+    {
+      "subtopic" : null,
+      "type": "mult",
+      "name" : "In which sector of activity is your company active ?",
+      "answers" : [
+        "Industry",
+        "Business",
+        "Information And Communication",
+        "Other services activity",
+        "All other activities",
+        "Construction ",
+        "Public sector ",
+        "Specialized, Scientific and Technical or Administrative and Support Services Activities",
+        "Real estate"
+      ]
+    }
+  ]
+}
