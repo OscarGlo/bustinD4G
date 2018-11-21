@@ -9,7 +9,7 @@ function htmlQuestion(id, data) {
         for (let i = 0, len = data.answers.length; i < len; ++i) {
             let r_id = `r${id}_${i}`,
                 name = data.answers[i],
-                type = (data.type === "s" ? "radio" : "checkbox");
+                type = (data.type.includes("s") ? "radio" : "checkbox");
             str += `<input type="${type}" name="r${id}" id="${r_id}" value="${name}"><label for="${r_id}">${name}</label><br>`;
         }
     else if (data.type === "t")
