@@ -16,8 +16,7 @@ function loadQuestion() {
         q_data = data[topic][id_qu],
         pipe = topic.indexOf("|");
     
-    
-    to.innerHTML = topic.substr(0, pipe);
+    to.innerHTML = (pipe !== -1 ? topic.substr(0, pipe) : topic);
     sub_to.innerHTML = (pipe !== -1 ? topic.substr(pipe + 1) : "");
     
     if (!type(q_data, "p")) {
