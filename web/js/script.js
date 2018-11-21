@@ -1,6 +1,6 @@
 function htmlQuestion(id, data) {
     let str = "<div";
-    if (data.type.contains("h"))
+    if (data.type.includes("h"))
         str += "class='offset'";
     str += ` id="q${id}"><h2>${data.name}</h2>`;
     if (data.sub)
