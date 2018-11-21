@@ -3,7 +3,8 @@ const fs = require('fs');
 
 server(function(req, res) {
     res.writeHead(200, {'Content-Type': 'text/html'});
-    if (req.url === "/" || fs.existsSync(`web${req.url}`))
+    if (req.url === "/") req.url = "/index.html";
+    if (fs.existsSync(`web${req.url}`))
         fs.createReadStream(`web${req.url}`).pipe(res);
     else
         fs.createReadStream(`web/index.html`).pipe(res);

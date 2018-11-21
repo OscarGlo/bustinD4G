@@ -1,6 +1,6 @@
 function htmlQuestion(id, data) {
     let str = `<div id="q${id}"><h2>${data.name}</h2>`;
-    if (Array.isArray(data.answers))
+    if (data.type === "")
         for (let i = 0, len = data.answers.length; i < len; ++i) {
             let r_id = `r${id}_${i}`, name = data.answers[i];
             str += `<input type="radio" name="r${id}" id="${r_id}" value="${name}"><label for="${r_id}">${name}</label><br>`;
