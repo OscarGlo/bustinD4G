@@ -1,5 +1,5 @@
-const server = require('http.createServer');
-const readStream = require('fs.createReadStream');
+const server = require('http').createServer;
+const readStream = require('fs').createReadStream;
 
 server(function(req, res) {
     res.writeHead(200, {'Content-Type': 'text/html'});
