@@ -1,11 +1,12 @@
 function htmlQuestion(id, data) {
-    let str = `<div id="q${id}"><h2>${data.name}</h2>`;
+    let str = "<div";
+    if (data.type.contains("h"))
+        str += "class='offset'";
+    str += ` id="q${id}"><h2>${data.name}</h2>`;
     if (data.sub)
         str += `<h3>${data.sub}</h3>`;
-    if (data.type.match("(s|m)"))
+    if (data.type.includes("m") || data.type.includes("s"))
         for (let i = 0, len = data.answers.length; i < len; ++i) {
-            if (data.type.includes("h"))
-                str += "&emsp;";
             let r_id = `r${id}_${i}`,
                 name = data.answers[i],
                 type = (data.type === "s" ? "radio" : "checkbox");
