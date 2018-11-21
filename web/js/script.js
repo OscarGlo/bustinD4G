@@ -5,7 +5,7 @@ let nl2br = (str) => str.replace("\n", "<br>");
 let elem = (tag) => document.querySelector(tag);
 
 function type(q_data, t) {
-    if (q_data.t == null && t === "s") return true;
+    if (q_data.t == null) return (t === "s");
     return q_data.t.includes(t);
 }
 
