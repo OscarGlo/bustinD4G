@@ -1,10 +1,14 @@
+function nl2br(str) {
+    return str.replace("\n", "<br>");
+}
+
 function htmlQuestion(id, data) {
     let str = "<div";
     if (data.type.includes("h"))
         str += " class='offset'";
     str += ` id="q${id}"><h2>${data.name}</h2>`;
     if (data.sub)
-        str += `<h3>${data.sub}</h3>`;
+        str += `<h3>${nl2br(data.sub)}</h3>`;
     if (data.type.includes("m") || data.type.includes("s"))
         for (let i = 0, len = data.answers.length; i < len; ++i) {
             let r_id = `r${id}_${i}`,
