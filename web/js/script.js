@@ -11,7 +11,7 @@ function htmlQuestion(id, data) {
 }
 
 window.addEventListener("load", async () => {
-    let q_data = await fetch("../json/questions.json").then(res => res.json()),
+    let q_data = await fetch("json/questions.json").then(res => res.json()),
         topics = Object.keys(q_data),
         q_id = 0;
     
