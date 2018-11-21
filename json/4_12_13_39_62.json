@@ -1,0 +1,61 @@
+{
+
+  "your compagny": [
+    {
+      "type": "s",
+      "name" : "Do you develop digital services for internal or external use (sales to customers)?",
+      "answers" : [
+        "Yes",
+        "No",
+        {"name": "No", "topic":"Infrastructures|Information system", "index": 12}
+      ]
+    }
+  ],
+  "Infrastructures|Information system": [
+    {
+      "type": "s",
+      "name": "Do you have a server or do you only work with one or more workstations?",
+      "answers" : [
+        "We work with workstation(s), without centralized physical server",
+        "We have (at least) a centralized physical server",
+        {"name": "We work with workstation(s), without centralized physical server", "topic":"Infrastructures|Workstation", "index": 50}
+      ]
+    },
+    {
+      "type": "s",
+      "name": "Do you have a dedicated room, simple room or cupboard with bay dedicated to your IT infrastructure?",
+      "answers" : [
+        "A closet or a room without any specific system",
+        "A dedicated room",
+        {"name": "A closet or a room without any specific system", "topic":"Infrastructures|Server / A cupboard or a dedicated room", "index": 31}
+      ]
+    }
+  ],
+  "Infrastructures|Server / A cupboard or a dedicated room": [
+    {
+      "type": "s",
+      "name": "Do you know the number of physical servers and virtual servers in your company?",
+      "answers": [
+        "No",
+        "I do not want to answer",
+        "Yes",
+        {"name":"No", "topic":"Infrastructures|Server / A cupboard or a dedicated room", "index": 42}
+        {"name":"I do not want to answer", "topic":"Infrastructures|Server / A cupboard or a dedicated room", "index": 42}
+      ]
+    }
+  ],
+  "Infrastructure|Workstation": [
+    {
+      "type":"s",
+      "name": "Do you have other devices in your company?",
+      "sub":"Keyboards, mouse, graphic tablets, scanners, microphones, speakers, office equipment ...",
+      "answers": [
+        "Yes",
+        "No",
+        {"name":"No", "topic":"Energy consumption", "index": 70}
+      ]
+
+    }
+  ]
+
+}
