@@ -2,7 +2,7 @@ function htmlQuestion(id, data) {
     let str = `<div id="q${id}"><h2>${data.name}</h2>`;
     if (data.sub)
         str += `<h3>${data.sub}</h3>`;
-    if (data.type.matches("(s|m)"))
+    if (data.type.match("(s|m)"))
         for (let i = 0, len = data.answers.length; i < len; ++i) {
             if (data.type.includes("h"))
                 str += "&emsp;";
