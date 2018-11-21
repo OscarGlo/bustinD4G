@@ -1,11 +1,17 @@
 function htmlQuestion(id, data) {
     let str = `<div id="q${id}"><h2>${data.name}</h2>`;
-    if (data.type === "")
+    if (data.sub)
+        str += `<h3>${data.sub}</h3>`;
+    if (data.type.matches("(s|m)"))
         for (let i = 0, len = data.answers.length; i < len; ++i) {
-            let r_id = `r${id}_${i}`, name = data.answers[i];
-            str += `<input type="radio" name="r${id}" id="${r_id}" value="${name}"><label for="${r_id}">${name}</label><br>`;
+            if (data.type.includes("h"))
+                str += "&emsp;";
+            let r_id = `r${id}_${i}`,
+                name = data.answers[i],
+                type = (data.type === "s" ? "radio" : "checkbox");
+            str += `<input type="${type}" name="r${id}" id="${r_id}" value="${name}"><label for="${r_id}">${name}</label><br>`;
         }
-    else
+    else if (data.type === "t")
         str += "<input type='text'>";
     return str + "</div>";
 }
