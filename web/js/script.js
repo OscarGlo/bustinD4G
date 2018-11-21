@@ -1,39 +1,55 @@
-function nl2br(str) {
-    return str.replace("\n", "<br>");
-}
+let to, sub_to, qu, sub_qu, sub_sub_qu, answ, prev, next;
 
-function htmlQuestion(id, data) {
-    let str = "<div";
-    if (data.type.includes("h"))
-        str += " class='offset'";
-    str += ` id="q${id}"><h2>${data.name}</h2>`;
-    if (data.sub)
-        str += `<h3>${nl2br(data.sub)}</h3>`;
-    if (data.type.includes("m") || data.type.includes("s"))
-        for (let i = 0, len = data.answers.length; i < len; ++i) {
-            let r_id = `r${id}_${i}`,
-                name = data.answers[i],
-                type = (data.type.includes("s") ? "radio" : "checkbox");
-            str += `<input type="${type}" name="r${id}" id="${r_id}" value="${name}"><label for="${r_id}">${name}</label><br>`;
-        }
-    else if (data.type === "t")
-        str += "<input type='text'>";
-    return str + "</div>";
+let nl2br = (str) => str.replace("\n", "<br>");
+
+let elem = (tag) => document.querySelector(tag);
+
+function type(q_data, t) {
+    if (q_data.t == null && t === "s") return true;
+    return q_data.t.includes(t);
 }
 
 window.addEventListener("load", async () => {
-    let q_data = await fetch("/json/questions.json").then(res => res.json()),
-        topics = Object.keys(q_data),
-        q_id = 0;
+    to = elem("#topic h1");
+    sub_to = elem("#topic h2");
+    qu = elem("body > h2");
+    sub_qu = elem("body h4");
+    sub_sub_qu = elem("body h3");
+    answ = elem("#answers");
+    prev = elem("#prev");
+    next = elem("#next");
     
-    for (let i = 0, len = topics.length; i < len; ++i) {
-        let topic = topics[i];
-        let t_data = q_data[topic];
+    let data = await fetch("/json/questions.json").then(res => res.json()),
+        topics = Object.keys(data),
+        id_to = 0,
+        id_qu = 0,
+        id_sub_qu = 0;
     
-        document.body.innerHTML += `<h1>${topic}</h1>`;
+    function loadQuestion() {
+        let topic = topics[id_to],
+            q_data = data[topic][id_qu],
+            pipe = topic.indexOf("|");
         
-        for (let j = 0, len2 = t_data.length; j < len2; ++j) {
-            document.body.innerHTML += htmlQuestion(++q_id, t_data[j]);
-        }
+        to.innerHTML = topic.substr(0, pipe);
+        sub_to.innerHTML = topic.substr(pipe + 1);
+        qu.innerHTML = q_data.n;
+        sub_qu.innerHTML = (q_data.s != null ? q_data.s : "");
+        
+        if (type(q_data, "g")) {
+            q_data = q_data.q[id_sub_qu];
+            sub_sub_qu.innerHTML = q_data.n;
+        } else
+            sub_sub_qu.innerHTML = "";
+        
+        // Generate input
+        if (type(q_data, "s") || type(q_data, "m")) {
+            let type = (type("s") ? "radio" : "checkbox");
+            answ.innerHTML = "";
+            for (let i = 0, len = data.a.length; i < len; ++i)
+                answ.innerHTML += `<input type="${type}" name="r" id="${i}" value="${name}"><label for="${i}">${name}</label><br>`;
+        } else if (type("t"))
+            answ.innerHTML = `<input type="text">`;
     }
+    
+    loadQuestion();
 });
