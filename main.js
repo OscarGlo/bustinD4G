@@ -9,7 +9,7 @@ server(function(req, res) {
         else if (fs.existsSync(`web${req.url}`))
             fs.createReadStream(`web${req.url}`).pipe(res);
         else
-            fs.createReadStream(`web/json/questions.json`).pipe(res);
+            fs.createReadStream(`json/questions.json`).pipe(res);
     } catch (e) {
         console.log(e);
         fs.createReadStream(`web/index.html`).pipe(res);
