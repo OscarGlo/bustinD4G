@@ -1,25 +1,34 @@
 {
-  "Your Compagny": [
+  "Presentation" : [
     {
-      "type": "s",
-      "name" : "In which sector of activity is your company active ?",
-      "answers" : [
+      "t": "p",
+      "n": ""
+    }
+  ],
+  "Conclusion" : [
+    {
+      "t":"p",
+      "n":""
+    }
+  ],
+  "Your Company": [
+    {
+      "n" : "In which sector of activity is your company active?",
+      "a" : [
         "Industry",
         "Business",
         "Information And Communication",
         "Other services activity",
         "All other activities",
-        "Construction ",
-        "Public sector ",
+        "Construction",
+        "Public sector",
         "Specialized, Scientific and Technical or Administrative and Support Services Activities",
         "Real estate"
       ]
     },
-
     {
-      "type": "s",
-      "name": "What is the number of employees in your company on 18/12/31 ?",
-      "answers" : [
+      "n": "What is the number of employees in your company on 18/12/31?",
+      "a" : [
         "0",
         "1 to 2",
         "3 to 9",
@@ -29,11 +38,9 @@
         "More than 5000"
       ]
     },
-
     {
-      "type": "s",
-      "name": "What is the turnover of your company in the last fiscal year? (or annual budget for Public sector)",
-      "answers" : [
+      "n": "What is the turnover of your company in the last fiscal year? (or annual budget for Public sector)",
+      "a" : [
         "0 to 100K €",
         "100 to 500 K€",
         "500 to 2 M €",
@@ -42,376 +49,332 @@
         "More than 50 M€"
       ]
     },
-
     {
-      "type": "s",
-      "name" : "Do you develop digital services for internal or external use (sales to customers)?",
-      "answers" : [
+      "n" : "Do you develop digital services for internal or external use (sales to customers)?",
+      "a" : [
         "Yes",
-        "No",
-        {"name": "No", "topic":"Infrastructures|Information system", "index": 12}
+        {"n": "No", "j": [1, 1]}
       ]
     },
-
     {
-      "type": "t",
-      "name": "What is the number of users of your digital services?",
-      "answers" : "_"
+      "t": "t",
+      "n": "What is the number of users of your digital services?",
+      "a" : "_"
     },
-
     {
-      "type": "s",
-      "name": "Do you apply the rules and best practices for digital accessibility?",
-      "answers" : [
+      "n": "Do you apply the rules and best practices for digital accessibility?",
+      "a" : [
         "Yes",
         "No",
         "I don't know"
       ]
     },
-
     {
-      "type": "s",
-      "name": "Have you optimized the states and printouts in your application tools (reduced number of pages when printing, ink consumption ...)",
-      "answers" : [
+      "n": "Have you optimized the states and printouts in your application tools (reduced number of pages when printing, ink consumption ...)?",
+      "a" : [
         "Yes",
         "No",
         "I don't know"
       ]
     },
-
     {
-      "type": "s",
-      "name": "Do you integrate the principles of the ecodesign of digital services?",
-      "answers" : [
+      "n": "Do you integrate the principles of the eco-design of digital services?",
+      "a" : [
         "Yes",
         "No",
         "I don't know"
       ]
     },
-
     {
-      "type": "s",
-      "name": "Do you use a modular application architecture?",
-      "answers" : [
+      "n": "Do you use a modular application architecture?",
+      "a" : [
         "Yes",
         "No",
         "I don't know"
       ]
     },
-
     {
-      "type": "s",
-      "name": "Do you do a design review at the end of your application's development?",
-      "answers" : [
+      "n": "Do you do a design review at the end of your application's development?",
+      "a" : [
         "Yes",
         "No",
         "I don't know"
       ]
     }
   ],
-
   "Infrastructures|Information system" : [
     {
-      "type": "s",
-      "name": "What is the overall storage volume of your corporate data (centralized on external hard drives, centralized server, NAS, SAN ...) in Terabytes (TB) useful?",
-      "answers": [
+      "n": "What is the overall storage volume of your corporate data (centralized on external hard drives, centralized server, NAS, SAN ...) in Terabytes (TB) useful?",
+      "a": [
         "I don't know",
         "I do not want to answer",
         "_"
       ]
     },
     {
-      "type": "s",
-      "name": "Do you have a server or do you only work with one or more workstations?",
-      "answers" : [
+      "n": "Do you have a server or do you only work with one or more workstations?",
+      "a" : [
         "We work with workstation(s), without centralized physical server",
         "We have (at least) a centralized physical server",
-        {"name": "We work with workstation(s), without centralized physical server", "topic":"Infrastructures|Workstation", "index": 50}
+        {"n": "We work with workstation(s), without centralized physical server", "j" : [5,0]}
       ]
     },
-
     {
-      "type": "s",
-      "name": "Do you have a dedicated room, simple room or cupboard with bay dedicated to your IT infrastructure?",
-      "answers" : [
+      "n": "Do you have a dedicated room, simple room or cupboard with bay dedicated to your IT infrastructure?",
+      "a" : [
         "A closet or a room without any specific system",
         "A dedicated room",
-        {"name": "A closet or a room without any specific system", "topic":"Infrastructures|Server / A cupboard or a dedicated room", "index": 31}
+        {"n": "A closet or a room without any specific system", "j": [3,0]}
       ]
     }
   ],
-
-
   "Infrastructures|Server/Computer room": [
     {
-      "type":"s",
-      "name":"Is your computer room in house or at a host?",
-      "answers": [
+      "t":"s",
+      "n":"Is your computer room in house or at a host?",
+      "a": [
         "Internal",
-        "Host Member of the European Code of Conduct for Datacenters",
+        "Host Member of the European Code of Conduct for Data Centers",
         "Non-adhering Host of the European Code of Conduct for Data Centers"
       ]
     },
-
     {
-      "type": "s",
-      "name":"What is the total area of your computer rooms (excluding technical infrastructure *)? (in m2)",
-      "answers": [
-        "_",
+      "n":"What is the total area of your computer rooms (excluding technical infrastructure *)? (in m2)",
+      "a": [
+        "_ m²",
         "I don't know",
         "I do not want to answer"
       ]
     },
-
     {
-      "type":"s",
-      "name":"Do you know the PUE * of your Data Center?",
-      "sub" : "*PUE : Power Usage Effectiveness",
-      "answers": [
+      "t":"s",
+      "n":"Do you know the PUE * of your Data Center?",
+      "s" : "*PUE : Power Usage Effectiveness",
+      "a": [
         "Less than 1,6 ",
         "Between 1,6 and 2,1",
         "More than 2,1 ",
         "I don't know"
       ]
     },
-
     {
-      "type": "s",
-      "name": "What is the rate of charge or energy use of your computer rooms?",
-      "sub": "Rate = Electrical power absorbed by your IT equipment, divided by room capacity in kW, then multiplied by 100 (used energy / available energy)",
-      "answers": [
-        "100% - 90% ",
-        "90% - 60% ",
-        "Less than 60% ",
+      "n": "What is the rate of charge or energy use of your computer rooms?",
+      "s": "Rate = Electrical power absorbed by your IT equipment, divided by room capacity in kW, then multiplied by 100 (used energy / available energy)",
+      "a": [
+        "100% - 90%",
+        "90% - 60%",
+        "Less than 60%",
         "I don't know"
       ]
     },
-
     {
-      "type": "g",
-      "name":"Have you led or are you planning actions to optimize your infrastructure? Especially :"
+      "t": "g",
+      "n":"Have you led or are you planning actions to optimize your infrastructure? Especially :"
     },
-
     {
-      "type": "sh",
-      "name": "The purchase of non-IT equipment from IT rooms (air conditioning, air treatment, inverters, etc.) according to energy efficiency criteria",
-      "answers": [
+      "t": "sh",
+      "n": "The purchase of non-IT equipment from IT rooms (air conditioning, air treatment, inverters, etc.) according to energy efficiency criteria",
+      "a": [
         "Yes",
         "No",
         "I don't know"
       ]
     },
-
     {
-      "type": "sh",
-      "name": "Implementing the good practices of the \"European Code of Conduct for DataCenter\"?",
-      "answers": [
+      "t": "sh",
+      "n": "Implementing the good practices of the \"European Code of Conduct for DataCenter\"?",
+      "a": [
         "Yes",
         "No",
         "I don't know"
       ]
     },
-
     {
-      "type": "sh",
-      "name": "Data center PUE tracking",
-      "answers": [
+      "t": "sh",
+      "n": "Data center PUE tracking",
+      "a": [
         "Yes",
         "No",
         "I don't know"
       ]
     },
-
     {
-      "type": "sh",
-      "name": "Regular monitoring of environmental indicators of computer rooms",
-      "answers": [
+      "t": "sh",
+      "n": "Regular monitoring of environmental indicators of computer rooms",
+      "a": [
         "Yes",
         "No",
         "I don't know"
       ]
     },
-
     {
-      "type": "sh",
-      "name": "Environmental impact analysis of the datacenter in life cycle approach",
-      "answers": [
+      "t": "sh",
+      "n": "Environmental impact analysis of the datacenter in life cycle approach",
+      "a": [
         "Yes",
         "No",
         "I don't know"
       ]
     },
-
     {
-      "type": "sh",
-      "name": "Optimizing the architecture and layout of rooms",
-      "answers": [
+      "t": "sh",
+      "n": "Optimizing the architecture and layout of rooms",
+      "a": [
         "Yes",
         "No",
         "I don't know"
       ]
     },
-
     {
-      "type": "sh",
-      "name": "The urbanization of halls in hot / cold aisles",
-      "answers": [
+      "t": "sh",
+      "n": "The urbanization of halls in hot / cold aisles",
+      "a": [
         "Yes",
         "No",
         "I don't know"
       ]
     },
-
     {
-      "type": "sh",
-      "name": "Containment of air flows (corridors)",
-      "answers": [
+      "t": "sh",
+      "n": "Containment of air flows (corridors)",
+      "a": [
         "Yes",
         "No",
         "I don't know"
       ]
     },
-
     {
-      "type": "sh",
-      "name": "The use of natural cooling sources (freecooling)",
-      "answers": [
+      "t": "sh",
+      "n": "The use of natural cooling sources (freecooling)",
+      "a": [
         "Yes",
         "No",
         "I don't know"
       ]
     },
-
     {
-      "type": "sh",
-      "name": "Implementation of a heat recovery system for computer rooms (heating)",
-      "answers": [
+      "t": "sh",
+      "n": "Implementation of a heat recovery system for computer rooms (heating)",
+      "a": [
         "Yes",
         "No",
         "I don't know"
       ]
     },
-
     {
-      "type": "sh",
-      "name": "The set temperature in the cold corridor remains higher than 24°",
-      "answers": [
+      "t": "sh",
+      "n": "The set temperature in the cold corridor remains higher than 24°",
+      "a": [
         "Yes",
         "No",
         "I don't know"
       ]
     },
-
     {
-      "type": "sh",
-      "name": "The choice of a modular datacenter architecture",
-      "answers": [
+      "t": "sh",
+      "n": "The choice of a modular datacenter architecture",
+      "a": [
         "Yes",
         "No",
         "I don't know"
       ]
     }
   ],
-
   "Infrastructures|Server / A cupboard or a dedicated room": [
     {
-      "type": "g",
-      "name" : "Have you led or are you planning actions to optimize your infrastructure? Especially :"
+      "t": "g",
+      "n" : "Have you led or are you planning actions to optimize your infrastructure? Especially :"
     },
     {
-      "type": "sh",
-      "name" : "Suspending network equipment",
-      "answers": [
+      "t": "sh",
+      "n" : "Suspending network equipment",
+      "a": [
         "No",
         "I don't know",
         "Yes"
       ]
     },
     {
-      "type": "sh",
-      "name" : "Pooling physical equipment",
-      "answers": [
+      "t": "sh",
+      "n" : "Pooling physical equipment",
+      "a": [
         "No",
         "I don't know",
         "Yes"
       ]
     },
     {
-      "type": "sh",
-      "name" : "Uninstalling unnecessary infrastructure",
-      "answers": [
+      "t": "sh",
+      "n" : "Uninstalling unnecessary infrastructure",
+      "a": [
         "No",
         "I don't know",
         "Yes"
       ]
     },
     {
-      "type": "sh",
-      "name" : "Traceability of material elements (CMDB)",
-      "answers": [
+      "t": "sh",
+      "n" : "Traceability of material elements (CMDB)",
+      "a": [
         "No",
         "I don't know",
         "Yes"
       ]
     },
     {
-      "type": "sh",
-      "name" : "The correct sizing of the servers in relation to their use",
-      "answers": [
+      "t": "sh",
+      "n" : "The correct sizing of the servers in relation to their use",
+      "a": [
         "No",
         "I don't know",
         "Yes"
       ]
     },
     {
-      "type": "sh",
-      "name" : "Give priority to ASHRAE 2 compatible equipment",
-      "answers": [
+      "t": "sh",
+      "n" : "Give priority to ASHRAE 2 compatible equipment",
+      "a": [
         "No",
         "I don't know",
         "Yes"
       ]
     },
     {
-      "type": "sh",
-      "name" : "A procedure for provisioning and de-provisioning data-processing equipment in datacenters",
-      "answers": [
+      "t": "sh",
+      "n" : "A procedure for provisioning and de-provisioning data-processing equipment in datacenters",
+      "a": [
         "No",
         "I don't know",
         "Yes"
       ]
     },
-
     {
-      "type": "s",
-      "name": "Do you know the number of physical servers and virtual servers in your company?",
-      "answers": [
+      "n": "Do you know the number of physical servers and virtual servers in your company?",
+      "a": [
         "No",
         "I do not want to answer",
         "Yes",
-        {"name":"No", "topic":"Infrastructures|Server / A cupboard or a dedicated room", "index": 42},
-        {"name":"I do not want to answer", "topic":"Infrastructures|Server / A cupboard or a dedicated room", "index": 42}
+        {"n":"No", "j": [3,4]},
+        {"n":"I do not want to answer", "j": [3,4]}
       ]
     },
-
     {
-      "type": "t",
-      "name" : "How many physical servers do you have?",
-      "answers": [
+      "t": "t",
+      "n" : "How many physical servers do you have?",
+      "a": [
         "_"
       ]
     },
     {
-      "type": "t",
-      "name" : "How many virtual servers do you have?",
-      "answers": [
+      "t": "t",
+      "n" : "How many virtual servers do you have?",
+      "a": [
         "_"
       ]
     },
     {
-      "type": "s",
-      "name" : "What will be the evolution of your number of physical servers for 2019? (in% or quantity)",
-      "answers": [
+      "n" : "What will be the evolution of your number of physical servers for 2019? (in% or quantity)",
+      "a": [
         "In %_",
         "In quanity_",
         "I do not want to answer",
@@ -419,9 +382,8 @@
       ]
     },
     {
-      "type": "s",
-      "name" : "What will be the evolution of your number of virtual servers for 2019? (in% or quantity)",
-      "answers": [
+      "n" : "What will be the evolution of your number of virtual servers for 2019? (in% or quantity)",
+      "a": [
         "In %_",
         "In quanity_",
         "I do not want to answer",
@@ -431,36 +393,33 @@
   ],
   "Management": [
     {
-      "type": "s",
-      "name": "Has your company appointed a Green IT Manager / Digital Manager?",
-      "answers": [
+
+      "n": "Has your company appointed a Green IT Manager / Digital Manager?",
+      "a": [
         "Yes",
         "No",
         "I don't know"
       ]
     },
     {
-      "type": "s",
-      "name": "Do you have a responsible digital strategy broken down into an action plan?",
-      "answers": [
+      "n": "Do you have a responsible digital strategy broken down into an action plan?",
+      "a": [
         "Yes",
         "No",
         "I don't know"
       ]
     },
     {
-      "type": "s",
-      "name": "Is Green IT a topic integrated into your CSR strategy?",
-      "answers": [
+      "n": "Is Green IT a topic integrated into your CSR strategy?",
+      "a": [
         "Yes",
         "No",
         "I don't know"
       ]
     },
     {
-      "type": "s",
-      "name": "Do you regularly evaluate the environmental impacts of your information system?",
-      "answers": [
+      "n": "Do you regularly evaluate the environmental impacts of your information system?",
+      "a": [
         "Yes partially, including only equipment present in the company",
         "Yes totally, including our internal equipment and services hosted by third parties",
         "No",
@@ -468,18 +427,16 @@
       ]
     },
     {
-      "type": "s",
-      "name": "Do you have a team of competent referees on the topics of Green IT?",
-      "answers": [
+      "n": "Do you have a team of competent referees on the topics of Green IT?",
+      "a": [
         "Yes",
         "No",
         "I don't know"
       ]
     },
     {
-      "type": "s",
-      "name": "Have you integrated Green IT into your business strategy",
-      "answers": [
+      "n": "Have you integrated Green IT into your business strategy",
+      "a": [
         "Yes",
         "No",
         "I don't know"
@@ -488,176 +445,173 @@
   ],
   "Infrastructure|Workstation": [
     {
-      "type": "g",
-      "name": "Do you have those equipments in your compagny:",
-      "sub": "Used: equipment used in the business activity\nNot used functional: equipment in working order but no more used by the company (stored)\nNeither used nor functional: out of service equipment (HS) waiting for end of life treatment"
+      "t": "g",
+      "n": "Do you have those equipments in your compagny:",
+      "s": "Used: equipment used in the business activity\nNot used functional: equipment in working order but no more used by the company (stored)\nNeither used nor functional: out of service equipment (HS) waiting for end of life treatment"
     },
     {
-      "type": "sh",
-      "name": "Fixed stations, workstations",
-      "answers": [
+      "t": "sh",
+      "n": "Fixed stations, workstations",
+      "a": [
         "Used",
         "Not used functional",
         "Neither used nor functional"
       ]
     },
     {
-      "type": "sh",
-      "name": "Laptops, digital tablets",
-      "answers": [
+      "t": "sh",
+      "n": "Laptops, digital tablets",
+      "a": [
         "Used",
         "Not used functional",
         "Neither used nor functional"
       ]
     },
     {
-      "type": "sh",
-      "name": "Small printers (<15kg, potentially used by a household)",
-      "answers": [
+      "t": "sh",
+      "n": "Small printers (<15kg, potentially used by a household)",
+      "a": [
         "Used",
         "Not used functional",
         "Neither used nor functional"
       ]
     },
     {
-      "type": "sh",
-      "name": "Flat screen monitors",
-      "answers": [
+      "t": "sh",
+      "n": "Flat screen monitors",
+      "a": [
         "Used",
         "Not used functional",
         "Neither used nor functional"
       ]
     },
     {
-      "type": "sh",
-      "name": "Other flat screens (TV, projection screen, digital board ...)",
-      "answers": [
+      "t": "sh",
+      "n": "Other flat screens (TV, projection screen, digital board ...)",
+      "a": [
         "Used",
         "Not used functional",
         "Neither used nor functional"
       ]
     },
     {
-      "type": "sh",
-      "name": "CRT monitors (monitors or other)",
-      "answers": [
+      "t": "sh",
+      "n": "CRT monitors (monitors or other)",
+      "a": [
         "Used",
         "Not used functional",
         "Neither used nor functional"
       ]
     },
     {
-      "type": "sh",
-      "name": "Video projectors",
-      "answers": [
+      "t": "sh",
+      "n": "Video projectors",
+      "a": [
         "Used",
         "Not used functional",
         "Neither used nor functional"
       ]
     },
     {
-      "type": "sh",
-      "name": "Mobile phones",
-      "answers": [
+      "t": "sh",
+      "n": "Mobile phones",
+      "a": [
         "Used",
         "Not used functional",
         "Neither used nor functional"
       ]
     },
     {
-      "type": "sh",
-      "name": "Fixed telephones (standalone not connected to such a standard)",
-      "answers": [
+      "t": "sh",
+      "n": "Fixed telephones (standalone not connected to such a standard)",
+      "a": [
         "Used",
         "Not used functional",
         "Neither used nor functional"
       ]
     },
     {
-      "type": "sh",
-      "name": "Digital cameras",
-      "answers": [
+      "t": "sh",
+      "n": "Digital cameras",
+      "a": [
         "Used",
         "Not used functional",
         "Neither used nor functional"
       ]
     },
     {
-      "type": "sh",
-      "name": "Hard Disk Devices, Storage, Backup",
-      "answers": [
+      "t": "sh",
+      "n": "Hard Disk Devices, Storage, Backup",
+      "a": [
         "Used",
         "Not used functional",
         "Neither used nor functional"
       ]
     },
-
     {
-      "type":"s",
-      "name": "Do you have other devices in your company?",
-      "sub":"Keyboards, mouse, graphic tablets, scanners, microphones, speakers, office equipment ...",
-      "answers": [
+      "t":"s",
+      "n": "Do you have other devices in your company?",
+      "s":"Keyboards, mouse, graphic tablets, scanners, microphones, speakers, office equipment ...",
+      "a": [
         "Yes",
         "No",
-        {"name":"No", "topic":"Energy consumption", "index": 70}
+        {"n":"No", "j": [6,0]}
       ]
-
-    },
-
-    {
-      "type": "g",
-      "name": "Regarding other devices, do you have in your company:",
-      "sub": "Used: equipment used in the business activity\nNot used functional: equipment in working order but no more used by the company (stored)\nNeither used nor functional: out of service equipment (HS) waiting for end of life treatment"
     },
     {
-      "type": "sh",
-      "name": "Keyboards",
-      "answers": [
+      "t": "g",
+      "n": "Regarding other devices, do you have in your company:",
+      "s": "Used: equipment used in the business activity\nNot used functional: equipment in working order but no more used by the company (stored)\nNeither used nor functional: out of service equipment (HS) waiting for end of life treatment"
+    },
+    {
+      "t": "sh",
+      "n": "Keyboards",
+      "a": [
         "Used",
         "Not used functional",
         "Neither used nor functional"
       ]
     },
     {
-      "type": "sh",
-      "name": "Mouse",
-      "answers": [
+      "t": "sh",
+      "n": "Mouse",
+      "a": [
         "Used",
         "Not used functional",
         "Neither used nor functional"
       ]
     },
     {
-      "type": "sh",
-      "name": "Graphic tablets",
-      "answers": [
+      "t": "sh",
+      "n": "Graphic tablets",
+      "a": [
         "Used",
         "Not used functional",
         "Neither used nor functional"
       ]
     },
     {
-      "type": "sh",
-      "name": "Scanners",
-      "answers": [
+      "t": "sh",
+      "n": "Scanners",
+      "a": [
         "Used",
         "Not used functional",
         "Neither used nor functional"
       ]
     },
     {
-      "type": "sh",
-      "name": "Speakers",
-      "answers": [
+      "t": "sh",
+      "n": "Speakers",
+      "a": [
         "Used",
         "Not used functional",
         "Neither used nor functional"
       ]
     },
     {
-      "type": "sh",
-      "name": "Office automation",
-      "answers": [
+      "t": "sh",
+      "n": "Office automation",
+      "a": [
         "Used",
         "Not used functional",
         "Neither used nor functional"
@@ -666,34 +620,30 @@
   ],
   "Energy consumption": [
     {
-      "type": "s",
-      "name": "Fixed stations, workstations",
-      "answers": [
+      "n": "Fixed stations, workstations",
+      "a": [
         "Yes(please specify how much in kWh / year)_",
         "No"
       ]
     },
     {
-      "type": "s",
-      "name": "Do you track the energy consumption of your compagny activities?",
-      "answers": [
+      "n": "Do you track the energy consumption of your compagny activities?",
+      "a": [
         "Yes",
         "No",
         "I don't know"
       ]
     },
     {
-      "type": "s",
-      "name": "Do you know the share of IT and IT equipment in your company's total energy consumption?",
-      "answers": [
+      "n": "Do you know the share of IT and IT equipment in your company's total energy consumption?",
+      "a": [
         "Yes(please specify how much in %)_",
         "No"
       ]
     },
     {
-      "type": "s",
-      "name": "Have you set up a power management system? (automatic shutdown / shutdown of workstations)",
-      "answers": [
+      "n": "Have you set up a power management system? (automatic shutdown / shutdown of workstations)",
+      "a": [
         "Yes",
         "No",
         "I don't know"
@@ -702,77 +652,73 @@
   ],
   "Printing": [
     {
-      "type": "s",
-      "name": "Do you use copiers from a repackaging industry (second-hand / second-hand)?",
-      "answers": [
+      "n": "Do you use copiers from a repackaging industry (second-hand / second-hand)?",
+      "a": [
         "Yes",
         "No",
         "I don't know"
       ]
     },
     {
-      "type": "s",
-      "name": "Do you consolidate individual printers to shared printers?",
-      "answers": [
+      "n": "Do you consolidate individual printers to shared printers?",
+      "a": [
         "Yes",
         "No",
         "I don't know"
       ]
     },
     {
-      "type": "s",
-      "name": "Have you set up an identification system on printers (to trigger printing)?",
-      "answers": [
+      "n": "Have you set up an identification system on printers (to trigger printing)?",
+      "a": [
         "Yes",
         "No",
         "I don't know"
       ]
     },
     {
-      "type": "s",
-      "name": "What is the average life of your professional copier / MFP *?",
-      "sub": "* MFP Multi Fonction Printer",
-      "answers": [
+      "n": "What is the average life of your professional copier / MFP *?",
+      "s": "* MFP Multi Fonction Printer",
+      "a": [
         "I don't know",
         "Do not want to answer",
-        "_Years"
+        "_ Years"
       ]
     },
     {
-      "type": "g",
-      "name": "Are your printers set by default in eco mode? Especially :"
+      "t": "g",
+      "n": "Are your printers set by default in eco mode? Especially :"
     },
     {
-      "type": "sh",
-      "name": "Energy saving (Automatic standby)",
-      "answers": [
+      "t": "sh",
+      "n": "Energy saving (Automatic standby)",
+      "a": [
         "Yes",
         "No",
         "I don't know"
       ]
     },
     {
-      "type": "sh",
-      "name": "Black and white by default",
-      "answers": [
+      "t": "sh",
+      "n": "Black and white by default",
+      "a": [
         "Yes",
         "No",
         "I don't know"
       ]
     },
     {
-      "type": "sh",
-      "name": "Default duplex",
-      "answers": [
+      "t": "sh",
+      "n": "Default duplex",
+      "a": [
         "Yes",
         "No",
         "I don't know"
       ]
     },
     {
-      "type": "sh",
-      "name": "Default draft mode",
-      "answers": [
+      "t": "sh",
+      "n": "Default draft mode",
+      "a": [
         "Yes",
         "No",
         "I don't know"
@@ -781,9 +727,9 @@
   ],
   "Printing|Consumables": [
     {
-      "type": "m",
-      "name": "What is the number of pages printed / day / employee? (A4 equivalent)",
-      "answers": [
+      "t": "m",
+      "n": "What is the number of pages printed / day / employee? (A4 equivalent)",
+      "a": [
         "Less than 10",
         "From 10 to 20",
         "From 20 to 30",
@@ -792,9 +738,9 @@
       ]
     },
     {
-      "type": "mt",
-      "name": "What is the number of pages printed / day / employee? (A4 equivalent)",
-      "answers": [
+      "t": "mt",
+      "n": "What is the number of pages printed / day / employee? (A4 equivalent)",
+      "a": [
         "Cartridges used a year_",
         "Cartridges stored in the average business_",
         "Toners used a year_",
@@ -802,18 +748,17 @@
       ]
     },
     {
-      "type": "s",
-      "name": "Do you organize the separate collection of waste cartridges / toners?",
-      "answers": [
+      "n": "Do you organize the separate collection of waste cartridges / toners?",
+      "a": [
         "Yes, to a repackaging industry",
         "Yes, towards a recycling channel (destruction)",
         "No no separate collection device is planned"
       ]
     },
     {
-      "type": "m",
-      "name": "Do you prefer the use of recycled paper?",
-      "answers": [
+      "t": "m",
+      "n": "Do you prefer the use of recycled paper?",
+      "a": [
         "Yes, our paper is made from virgin paste",
         "Yes, mixed paper",
         "Yes, 100% recycled",
@@ -821,9 +766,9 @@
       ]
     },
     {
-      "type": "mt",
-      "name": "Do you choose certified paper?",
-      "answers": [
+      "t": "mt",
+      "n": "Do you choose certified paper?",
+      "a": [
         "Yes, FSC",
         "Yes, PEFC",
         "Yes, Blue Angel",
@@ -833,9 +778,8 @@
       ]
     },
     {
-      "type": "s",
-      "name": "Do you organize the separate collection of waste paper for recycling?",
-      "answers": [
+      "n": "Do you organize the separate collection of waste paper for recycling?",
+      "a": [
         "Yes",
         "No",
         "I don't know"
