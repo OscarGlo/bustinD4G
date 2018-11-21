@@ -112,7 +112,7 @@
 
   "Infrastructures|Information system" : [
     {
-      "type": "st",
+      "type": "s",
       "name": "What is the overall storage volume of your corporate data (centralized on external hard drives, centralized server, NAS, SAN ...) in Terabytes (TB) useful?",
       "answers": [
         "I don't know",
@@ -154,7 +154,7 @@
     },
 
     {
-      "type":"st",
+      "type": "s",
       "name":"What is the total area of your computer rooms (excluding technical infrastructure *)? (in m2)",
       "answers": [
         "_",
@@ -409,7 +409,7 @@
       ]
     },
     {
-      "type": "st",
+      "type": "s",
       "name" : "What will be the evolution of your number of physical servers for 2019? (in% or quantity)",
       "answers": [
         "In %_",
@@ -419,7 +419,7 @@
       ]
     },
     {
-      "type": "st",
+      "type": "s",
       "name" : "What will be the evolution of your number of virtual servers for 2019? (in% or quantity)",
       "answers": [
         "In %_",
@@ -666,7 +666,7 @@
   ],
   "Energy consumption": [
     {
-      "type": "st",
+      "type": "s",
       "name": "Fixed stations, workstations",
       "answers": [
         "Yes(please specify how much in kWh / year)_",
@@ -683,7 +683,7 @@
       ]
     },
     {
-      "type": "st",
+      "type": "s",
       "name": "Do you know the share of IT and IT equipment in your company's total energy consumption?",
       "answers": [
         "Yes(please specify how much in %)_",
@@ -729,7 +729,7 @@
       ]
     },
     {
-      "type": "st",
+      "type": "s",
       "name": "What is the average life of your professional copier / MFP *?",
       "sub": "* MFP Multi Fonction Printer",
       "answers": [
