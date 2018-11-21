@@ -5,7 +5,7 @@ let nl2br = (str) => str.replace("\n", "<br>");
 let elem = (tag) => document.querySelector(tag);
 
 function type(q_data, t) {
-    if (q_data.t == null && t === "s") return true;
+    if (q_data.t == null) return (t === "s");
     return q_data.t.includes(t);
 }
 
@@ -30,25 +30,29 @@ window.addEventListener("load", async () => {
             q_data = data[topic][id_qu],
             pipe = topic.indexOf("|");
         
+        
         to.innerHTML = topic.substr(0, pipe);
-        sub_to.innerHTML = topic.substr(pipe + 1);
-        qu.innerHTML = q_data.n;
-        sub_qu.innerHTML = (q_data.s != null ? q_data.s : "");
+        sub_to.innerHTML = (pipe !== -1 ? topic.substr(pipe + 1) : "");
         
-        if (type(q_data, "g")) {
-            q_data = q_data.q[id_sub_qu];
-            sub_sub_qu.innerHTML = q_data.n;
-        } else
-            sub_sub_qu.innerHTML = "";
-        
-        // Generate input
-        if (type(q_data, "s") || type(q_data, "m")) {
-            let type = (type("s") ? "radio" : "checkbox");
-            answ.innerHTML = "";
-            for (let i = 0, len = data.a.length; i < len; ++i)
-                answ.innerHTML += `<input type="${type}" name="r" id="${i}" value="${name}"><label for="${i}">${name}</label><br>`;
-        } else if (type("t"))
-            answ.innerHTML = `<input type="text">`;
+        if (!type("p")) {
+            qu.innerHTML = q_data.n;
+            sub_qu.innerHTML = (q_data.s != null ? q_data.s : "");
+    
+            if (type(q_data, "g")) {
+                q_data = q_data.q[id_sub_qu];
+                sub_sub_qu.innerHTML = q_data.n;
+            } else
+                sub_sub_qu.innerHTML = "";
+    
+            // Generate input
+            if (type(q_data, "s") || type(q_data, "m")) {
+                let type = (type("s") ? "radio" : "checkbox");
+                answ.innerHTML = "";
+                for (let i = 0, len = data.a.length; i < len; ++i)
+                    answ.innerHTML += `<input type="${type}" name="r" id="${i}" value="${name}"><label for="${i}">${name}</label><br>`;
+            } else if (type("t"))
+                answ.innerHTML = `<input type="text">`;
+        }
     }
     
     loadQuestion();
