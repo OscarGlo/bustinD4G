@@ -1,0 +1,97 @@
+{"Management": [
+    {
+      "type": "s",
+      "name" : "Has your company appointed a Green IT Manager / Digital Manager?",
+      "answers" : [
+        "Yes",
+        "No",
+        "I don't know"
+      ]
+    },
+    {
+      "type": "s",
+      "name" : "Do you have a responsible digital strategy broken down into an action plan?",
+      "answers" : [
+        "Yes",
+        "No",
+        "I don't know"
+      ]
+    },
+    {
+      "type": "s",
+      "name" : "Is Green IT a topic integrated into your CSR strategy?",
+      "answers" : [
+        "Yes",
+        "No",
+        "I don't know"
+      ]
+    },
+    {
+      "type": "s",
+      "name" : "Do you regularly evaluate the environmental impacts of your information system?",
+      "answers" : [
+        "Yes partially, including only equipment present in the company",
+        "Yes totally, including our internal equipment and services hosted by third parties",
+        "No",
+        "I don't know"
+      ]
+    },
+    {
+      "type": "s",
+      "name" : "Do you have a team of competent referees on the topics of Green IT?",
+      "answers" : [
+        "Yes",
+        "No",
+        "I don't know"
+      ]
+    },
+    {
+      "type": "s",
+      "name" : "Have you integrated Green IT into your business strategy",
+      "answers" : [
+        "Yes",
+        "No",
+        "I don't know"
+      ]
+    }
+  ],
+  "Infrastructure|Workstation": [
+    {
+      "type": "g",
+      "name" : "Do you have those equipments in your compagny:",
+      "sub" : [
+        "Used: equipment used in the business activity",
+        "Not used functional: equipment in working order but no more used by the company (stored)",
+        "Neither used nor functional: out of service equipment (HS) waiting for end of life treatment"
+      ]
+    },
+    {
+      "type": "s",
+      "name" : "Fixed stations, workstations",
+      "answers" : [
+        "Used",
+        "Not used functional",
+        "I don't know"
+      ]
+    },
+    {
+      "type": "s",
+      "name" : "Laptops, digital tablets",
+      "answers" : [
+        "Used",
+        "Not used functional",
+        "I don't know"
+      ]
+    },
+    {
+      "type": "s",
+      "name" : "Laptops, digital tablets",
+      "answers" : [
+        "Used",
+        "Not used functional",
+        "I don't know"
+      ]
+    }
+  ]
+
+}
