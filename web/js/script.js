@@ -31,7 +31,7 @@ function loadQuestion() {
         
         // Generate input
         if (type(q_data, "s") || type(q_data, "m")) {
-            let type = (type("s") ? "radio" : "checkbox");
+            let type = (type(q_data, "s") ? "radio" : "checkbox");
             answ.innerHTML = "";
             for (let i = 0, len = data.a.length; i < len; ++i)
                 answ.innerHTML += `<input type="${type}" name="r" id="${i}" value="${name}"><label for="${i}">${name}</label><br>`;
