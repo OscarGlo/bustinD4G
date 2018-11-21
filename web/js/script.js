@@ -1,6 +1,6 @@
 let to, sub_to, qu, sub_qu, sub_sub_qu, answ, prev, next,
-    id_to, id_qu, id_sub_qu,
-    topics, data;
+    id_to = 0, id_qu = 0, id_sub_qu = 0,
+    topics, data, qu_stack = [];
 
 let nl2br = (str) => str.replace("\n", "<br>");
 
@@ -21,7 +21,7 @@ function loadQuestion() {
     
     if (!type(q_data, "p")) {
         qu.innerHTML = q_data.n;
-        sub_qu.innerHTML = (q_data.s != null ? q_data.s : "");
+        sub_qu.innerHTML = (q_data.s != null ? nl2br(q_data.s) : "");
         
         if (type(q_data, "g")) {
             q_data = q_data.q[id_sub_qu];
@@ -42,6 +42,32 @@ function loadQuestion() {
     }
 }
 
+function next_qu() {
+    qu_stack.push([id_to, id_qu, id_sub_qu]);
+    
+    if (data[topics[id_to]][id_qu].t === "g") {
+        id_sub_qu++;
+        if (data[topics[id_to]][id_qu].q[id_sub_qu] == null) {
+            id_sub_qu = 0;
+            id_qu++;
+        }
+    } else
+        id_qu++;
+    
+    if (data[topics[id_to]][id_qu] == null) {
+        id_qu = 0;
+        id_to++;
+    }
+    
+    loadQuestion();
+}
+
+function prev_qu() {
+    [id_to, id_qu, id_sub_qu] = qu_stack.pop();
+    
+    loadQuestion();
+}
+
 window.addEventListener("load", async () => {
     to = elem("#topic h1");
     sub_to = elem("#topic h2");
@@ -55,9 +81,9 @@ window.addEventListener("load", async () => {
     data = await fetch("/json/questions.json").then(res => res.json());
     
     topics = Object.keys(data);
-    id_to = 0;
-    id_qu = 0;
-    id_sub_qu = 0;
+    
+    prev.addEventListener("click", prev_qu);
+    next.addEventListener("click", next_qu);
     
     loadQuestion();
 });
