@@ -21,7 +21,7 @@ function loadQuestion() {
     sub_to.innerHTML = (pipe !== -1 ? topic.substr(pipe + 1) : "");
     
     let c = data[topic].c;
-    to_div.style.backgroundColor = `rvb(${c.join(",")})`;
+    to_div.style.backgroundColor = `rgb(${c.join(",")})`;
     
     if (data[topic].q) {
         let q_data = data[topic].q[id_qu];
