@@ -116,6 +116,8 @@ function next_qu() {
 
 function prev_qu() {
     if (!prev.classList.contains("dis")) {
+        save_ans();
+        
         [id_to, id_qu, id_sub_qu] = qu_stack.pop();
         
         next.classList.remove("dis");
