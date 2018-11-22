@@ -13,7 +13,7 @@ function type(q_data, t) {
 
 function loadQuestion() {
     let topic = topics[id_to],
-        q_data = data[topic][id_qu],
+        q_data = data[topic].q[id_qu],
         pipe = topic.indexOf("|");
     
     to.innerHTML = (pipe !== -1 ? topic.substr(0, pipe) : topic);
@@ -45,16 +45,16 @@ function loadQuestion() {
 function next_qu() {
     qu_stack.push([id_to, id_qu, id_sub_qu]);
     
-    if (data[topics[id_to]][id_qu].t === "g") {
+    if (data[topics[id_to]].q[id_qu].t === "g") {
         id_sub_qu++;
-        if (data[topics[id_to]][id_qu].q[id_sub_qu] == null) {
+        if (data[topics[id_to]].q[id_qu].q[id_sub_qu] == null) {
             id_sub_qu = 0;
             id_qu++;
         }
     } else
         id_qu++;
     
-    if (data[topics[id_to]][id_qu] == null) {
+    if (data[topics[id_to]].q[id_qu] == null) {
         id_qu = 0;
         id_to++;
     }
