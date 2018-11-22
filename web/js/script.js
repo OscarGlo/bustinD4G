@@ -4,12 +4,7 @@ let to_div, to, sub_to, qu, sub_qu, sub_sub_qu, answ, prev, next,
 
 let nl2br = (str) => str.replace("\n", "<br>");
 
-let elem = (tag) => document.querySelector(tag);
-
-function type(q_data, t) {
-    if (q_data.t == null) return (t === "s");
-    return q_data.t.includes(t);
-}
+let type = (q_data, t) => (q_data.t == null && t === "s") || q_data.t === t;
 
 async function send() {
     await fetch("/", {
@@ -143,15 +138,16 @@ function prev_qu() {
 }
 
 window.addEventListener("load", async () => {
-    to_div = elem("body > div:first-child");
-    to = elem("h1");
-    sub_to = elem("body > div:first-child > h2");
-    qu = elem("body > div:last-child > h2");
-    sub_qu = elem("body > div:last-child > h4");
-    sub_sub_qu = elem("body > div:last-child > h3");
-    answ = elem("body > div:last-child > div > div");
-    prev = elem("body > div:last-child > button:first-of-type");
-    next = elem("body > div:last-child > button:last-of-type");
+    let e = document.querySelector;
+    to_div = e("body > div:first-child");
+    to = e("h1");
+    sub_to = e("body > div:first-child > h2");
+    qu = e("body > div:last-child > h2");
+    sub_qu = e("body > div:last-child > h4");
+    sub_sub_qu = e("body > div:last-child > h3");
+    answ = e("body > div:last-child > div > div");
+    prev = e("body > div:last-child > button:first-of-type");
+    next = e("body > div:last-child > button:last-of-type");
     
     data = await fetch("/json/q.json").then(res => res.json());
     
