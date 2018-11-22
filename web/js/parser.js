@@ -88,19 +88,16 @@ function decoder(str){
                 answers += "X";
                 i++;
             }else{
-                i++;
-                do{
-
+                while(str.charAt(i) === "1" && str.charAt(i) === "1"){
+                    i=i+2;
                     let tmp = "";
                     for(let j = 0; j < 3; ++j){
-                        i++;
                         tmp += str.charAt(i);
+                        i++;
                     }
                     console.log(tmp);
                     answers += parseInt(tmp, 2);
-                    i=i+2;
-                }while(str.charAt(i-1) === "1" && str.charAt(i) === "1");
-                i--;
+                }
             }
         }
     }
