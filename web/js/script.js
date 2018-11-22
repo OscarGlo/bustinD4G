@@ -16,10 +16,9 @@ function getAnswer() {
         ans = [];
     for (let i = 0, len = nodes.length; i < len; ++i) {
         let node = nodes[i];
-        if (node.tagName === "LABEL") {
-            if (node.childNodes[0].checked)
-                ans.push(node.childNodes[1].data);
-        } else if (node.tagName === "INPUT")
+        if (node.tagName === "LABEL" && node.childNodes[0].checked)
+            ans.push(node.childNodes[1].data);
+        else if (node.tagName === "INPUT")
             ans.push(node.value);
     }
     return ans.join("|");
@@ -54,12 +53,13 @@ function loadQuestion() {
         // Generate input
         if (type(q_data, "s") || type(q_data, "m")) {
             let ty = (type(q_data, "s") ? "radio" : "checkbox");
+            let spanT = (ty === "radio" ? "checkmark" : "checkblock");
             answ.innerHTML = "";
             for (let i = 0, len = ans.length; i < len; ++i) {
                 let name = ans[i],
                     nameText = name.replace("_", "<input type='text'>");
                 answ.innerHTML += `<label class="container"><input type="${ty}" name="r">${nameText}`
-                    + `<span class="checkmark"></span></label>`;
+                    + `<span class="${spanT}"></span></label>`;
             }
         } else if (type(q_data, "t"))
             answ.innerHTML = `<input type="text">`;
