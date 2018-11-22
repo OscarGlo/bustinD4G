@@ -43,7 +43,7 @@ function loadQuestion() {
             answ.innerHTML = "";
             for (let i = 0, len = ans.length; i < len; ++i) {
                 let name = (typeof ans[i] === "object" ? ans[i].n : ans[i]),
-                    nameText = name.replace("_", "<input type='text'>");
+                    nameText = name.replace("_", "<input type='number'>");
                 answ.innerHTML += `<label class="container"><input type="${ty}" name="r">${nameText}`
                     + `<span class="${spanT}"></span></label>`;
             }
@@ -52,19 +52,23 @@ function loadQuestion() {
         
         let saved = ans_table[[id_to, id_qu, id_sub_qu]];
         if (saved) {
-            if (saved.includes("|")) {
-                let spl = saved.split("|");
-                for (let i = 0, len = spl.length; i < len; ++i) {
-                    let val = spl[i];
-                    if (val !== "") {
+            let num = 0;
+            if (saved.includes("_") || saved.includes("x")) {
+                for (let i = 0, len = saved.length; i < len; ++i) {
+                    let val = saved.charAt(i);
+                    if (val !== "_") {
                         answ.childNodes[i].childNodes[0].checked = true;
-                        if (val !== "█")
-                            answ.childNodes[i].childNodes[1].value = val;
+                        if (val !== "x") {
+                            let nex = saved.charAt(i+1);
+                            if (nex && nex.match(/[0-9]/))
+                                num = num * 10 + parseInt(nex);
+                            else
+                                answ.childNodes[i].childNodes[1].value = num;
+                        }
                     }
                 }
-            } else {
+            } else
                 answ.childNodes[0].value = saved;
-            }
         }
     } else {
         qu.innerHTML = sub_sub_qu.innerHTML = answ.innerHTML = "";
@@ -74,15 +78,14 @@ function loadQuestion() {
 
 function getAnswer() {
     let nodes = answ.childNodes,
-        ans = [];
+        ans = "";
     for (let i = 0, len = nodes.length; i < len; ++i) {
         let node = nodes[i];
         if (node.tagName === "LABEL")
-            ans.push(node.childNodes[0].checked ? (node.childNodes[1].tagName === "INPUT" ? node.childNodes[1].value : "█") : "");
+            ans.push(node.childNodes[0].checked ? (node.childNodes[1].tagName === "INPUT" ? node.childNodes[1].value : "_") : "x");
         else if (node.tagName === "INPUT")
             ans.push(node.value);
     }
-    return ans.join("|");
 }
 
 function save_ans(ans) {
