@@ -97,7 +97,8 @@ function decoder(str){
                     }
                     console.log(tmp);
                     answers += parseInt(tmp, 2);
-                }while(str.charAt(i+1) === "1" && str.charAt(i+2) === "1")
+                    i=i+2;
+                }while(str.charAt(i-1) === "1" && str.charAt(i) === "1")
             }
         }
     }
