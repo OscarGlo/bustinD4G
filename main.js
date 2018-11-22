@@ -10,6 +10,8 @@ server(function(req, res) {
         else
             fs.createReadStream("web/index.html").pipe(res);
     } else if (req.method === "POST") {
-        console.log(req);
+        req.on("data", data => {
+            console.log(data);
+        })
     }
 }).listen(80);
