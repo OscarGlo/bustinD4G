@@ -56,8 +56,6 @@ function codeAnswers(ans) {
                     num = 0;
                 }
             }
-            
-            console.log(char, bin);
         }
     }
     
@@ -87,8 +85,6 @@ function decoder(code){
         }
         str += tmp
     }
-    console.log(str);
-
 
     let answers = "";
     for(let i = 0, len = str.length; i < len; i++){
@@ -107,7 +103,6 @@ function decoder(code){
                         tmp += str.charAt(i);
                         i++;
                     }
-                    console.log(tmp);
                     octal += parseInt(tmp, 2).toString();
                 }
                 answers += parseInt(octal, 8);
