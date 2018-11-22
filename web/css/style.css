@@ -70,23 +70,33 @@ h1{
     background-color: #eee;
 }
 
-.container:hover [type="radio"] ~ .checkmark {
+.checkblock {
+    position: absolute;
+    top:0;
+    left: 0;
+    height: 30px;
+    width: 30px;
+    border: solid black 2px;
+    background-color: #eee;
+}
+
+.container:hover [type="radio"] ~ .checkmark,.container:hover [type="checkbox"] ~ .checkblock {
 
     background-color: #8ecee5;
 }
 
-.container [type="radio"]:checked ~ .checkmark {
+.container [type="radio"]:checked ~ .checkmark,.container [type="checkbox"]:checked ~ .checkblock {
     background-color: #008CBB;
 }
 /* Create the indicator (the dot/circle - hidden when not checked) */
-.checkmark:after {
+.checkmark:after , .checkblock:after {
     content: "";
     position: absolute;
     display: none;
 }
 
 /* Show the indicator (dot/circle) when checked */
-.container [type="radio"]:checked ~ .checkmark:after {
+.container [type="radio"]:checked ~ .checkmark:after,.container [type="checkbox"]:checked ~ .checkbox:after {
     display: block;
 }
 
@@ -97,6 +107,13 @@ h1{
     width: 8px;
     height: 8px;
     border-radius: 50%;
+    background: white;
+}
+.container .checkblock:after{
+    top: 9px;
+    left: 9px;
+    width: 8px;
+    height: 8px;
     background: white;
 }
 
