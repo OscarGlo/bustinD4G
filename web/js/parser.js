@@ -86,6 +86,7 @@ function decoder(code){
         for(let j = tmp.length; j < 6; j++){
             tmp = "0" + tmp;
         }
+        str += tmp
     }
     console.log(str);
 
