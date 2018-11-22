@@ -44,12 +44,15 @@ function loadQuestion() {
             for (let i = 0, len = ans.length; i < len; ++i) {
                 let name = ans[i],
                     nameText = name.replace("_", "<input type='text'");
-                answ.innerHTML += `<input type="${ty}" name="r" id="${i}" value="${name}"><label for="${i}">${nameText}</label><br>`;
+                answ.innerHTML += `<label class="container">${nameText}<input type="${ty}" value="${name}" name="r">`
+                    + `<span class="checkmark"></span></label>`;
             }
         } else if (type(q_data, "t"))
             answ.innerHTML = `<input type="text">`;
-    } else
-        qu.innerHTML = sub_qu.innerHTML = sub_sub_qu.innerHTML = answ.innerHTML = "";
+    } else {
+        qu.innerHTML = sub_sub_qu.innerHTML = answ.innerHTML = "";
+        sub_qu.innerHTML = data[topic].n;
+    }
 }
 
 function next_qu() {
