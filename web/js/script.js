@@ -135,15 +135,15 @@ function prev_qu() {
 }
 
 window.addEventListener("load", async () => {
-    to_div = elem("#topic");
-    to = elem("#topic h1");
-    sub_to = elem("#topic h2");
-    qu = elem("#bottom h2");
-    sub_qu = elem("#bottom h4");
-    sub_sub_qu = elem("#bottom h3");
-    answ = elem("#answers > div");
-    prev = elem("#prev");
-    next = elem("#next");
+    to_div = elem("body > div:first-child");
+    to = elem("h1");
+    sub_to = elem("body > div:first-child > h2");
+    qu = elem("body > div:last-child > h2");
+    sub_qu = elem("body > div:last-child > h4");
+    sub_sub_qu = elem("body > div:last-child > h3");
+    answ = elem("body > div:last-child > div > div");
+    prev = elem("body > div:last-child > button:first");
+    next = elem("body > div:last-child > button:last");
     
     data = await fetch("/json/q.json").then(res => res.json());
     
