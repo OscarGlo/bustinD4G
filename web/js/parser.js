@@ -78,12 +78,12 @@ function decodeAnswers(data, str) {
 
 }
 
-function decoder(code){
+function decoder(str){
 
-    let str = "";
-    for (let char in code){
-        str += charCode(char);
-    }
+    //let str = "";
+    //for (let char in code){
+    //    str += charCode(char);
+    //}
 
     let answers = "";
     for(let i = 0, len = str.length; i < len; i++){
