@@ -88,6 +88,7 @@ function decoder(str){
                 answers += "X";
                 i++;
             }else{
+                let octal = ""
                 while(str.charAt(i) === "1" && str.charAt(i) === "1"){
                     i=i+2;
                     let tmp = "";
@@ -96,8 +97,9 @@ function decoder(str){
                         i++;
                     }
                     console.log(tmp);
-                    answers += parseInt(tmp, 2);
+                    octal += parseInt(tmp, 2).toString();
                 }
+                answers += parseInt(octal, 8);
                 i--;
             }
         }
