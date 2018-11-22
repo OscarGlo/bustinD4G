@@ -95,16 +95,14 @@ function next_qu() {
         
         qu_stack.push([id_to, id_qu, id_sub_qu]);
     
-        jump = (data[topics[id_to]].q ? data[topics[id_to]].q[id_qu].j : null);
+        let jump = (data[topics[id_to]].q ? data[topics[id_to]].q[id_qu].j : null);
+        
+        console.log(jump);
         
         if (jump) {
             [id_to, id_qu] = jump;
         } else {
             if (data[topics[id_to]].q) {
-                if (jump) {
-            
-                }
-        
                 if (data[topics[id_to]].q[id_qu].t === "g") {
                     id_sub_qu++;
                     if (data[topics[id_to]].q[id_qu].q[id_sub_qu] == null) {
