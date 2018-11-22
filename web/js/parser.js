@@ -78,7 +78,15 @@ function decodeAnswers(data, str) {
 
 }
 
-function decoder(str){
+function decoder(code){
+
+    let str = ""
+    for (let i = 0, len = code.length; i < len; i++){
+        str += charCode(code.charAt(i));
+    }
+    console.log(str);
+
+
     let answers = "";
     for(let i = 0, len = str.length; i < len; i++){
         if(str.charAt(i) === "0"){
