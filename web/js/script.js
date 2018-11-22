@@ -82,9 +82,9 @@ function getAnswer() {
     for (let i = 0, len = nodes.length; i < len; ++i) {
         let node = nodes[i];
         if (node.tagName === "LABEL")
-            ans.push(node.childNodes[0].checked ? (node.childNodes[1].tagName === "INPUT" ? node.childNodes[1].value : "_") : "x");
+            ans += (node.childNodes[0].checked ? (node.childNodes[1].tagName === "INPUT" ? node.childNodes[1].value : "_") : "x");
         else if (node.tagName === "INPUT")
-            ans.push(node.value);
+            ans += node.value;
     }
     return ans;
 }
