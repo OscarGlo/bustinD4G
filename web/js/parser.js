@@ -82,7 +82,10 @@ function decoder(code){
 
     let str = "";
     for (let i = 0, len = code.length; i < len; i++){
-        str += charCode(code.charAt(i)).toString(2);
+        let tmp = charCode(code.charAt(i)).toString(2);
+        for(let j = tmp.length; j < 6; i++){
+            tmp = "0" + tmp;
+        }
     }
     console.log(str);
 
