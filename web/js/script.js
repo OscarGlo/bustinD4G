@@ -43,7 +43,7 @@ function loadQuestion() {
             answ.innerHTML = "";
             for (let i = 0, len = ans.length; i < len; ++i) {
                 let name = ans[i],
-                    nameText = name.replace("_", "<input type='text'");
+                    nameText = name.replace("_", "<input type='text'>");
                 answ.innerHTML += `<label class="container">${nameText}<input type="${ty}" value="${name}" name="r">`
                     + `<span class="checkmark"></span></label>`;
             }
