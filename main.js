@@ -11,7 +11,7 @@ server(function(req, res) {
             fs.createReadStream("web/index.html").pipe(res);
     } else if (req.method === "POST") {
         req.on("data", data => {
-            console.log(data);
+            console.log(data.toString());
         })
     }
 }).listen(80);
