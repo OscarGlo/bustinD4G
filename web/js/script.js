@@ -128,7 +128,8 @@ function prev_qu() {
         
         [id_to, id_qu, id_sub_qu] = qu_stack.pop();
         
-        if (next.innerHTML === "")
+        if (next.innerHTML === "Submit")
+            next.innerHTML = "&gt;&gt;";
         next.classList.remove("dis");
         if (qu_stack.length === 0)
             prev.classList.add("dis");
