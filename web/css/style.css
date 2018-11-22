@@ -132,8 +132,9 @@ h3 {
 }
 
 #answers div {
+  width:100%;
   padding-left: 22%;
-  padding-right: 18%;
+  padding-right: 20%;
 }
 
 #next {
