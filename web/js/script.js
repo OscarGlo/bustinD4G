@@ -11,6 +11,13 @@ function type(q_data, t) {
     return q_data.t.includes(t);
 }
 
+async function send() {
+    await fetch("/", {
+        method: "post",
+        body: codeAnswers(ans_table)
+    });
+}
+
 function loadQuestion() {
     let topic = topics[id_to],
         pipe = topic.indexOf("|");
@@ -113,7 +120,7 @@ function next_qu() {
     
             prev.classList.remove("dis");
             if (id_to === topics.length - 1)
-                next.classList.add("dis");
+                next.innerHTML = "Submit";
         }
     
         loadQuestion();
@@ -126,6 +133,7 @@ function prev_qu() {
         
         [id_to, id_qu, id_sub_qu] = qu_stack.pop();
         
+        if (next.innerHTML === "")
         next.classList.remove("dis");
         if (qu_stack.length === 0)
             prev.classList.add("dis");
@@ -150,7 +158,12 @@ window.addEventListener("load", async () => {
     topics = Object.keys(data);
     
     prev.addEventListener("click", prev_qu);
-    next.addEventListener("click", next_qu);
+    next.addEventListener("click", async () => {
+        if (next.innerHTML === "Submit") {
+            await send();
+            document.body.innerHTML = "The form was sent.<br><a href='/'>Reload the page</a>"
+        } else next_qu();
+    });
     
     loadQuestion();
 });
