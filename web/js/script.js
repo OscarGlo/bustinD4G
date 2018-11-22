@@ -12,23 +12,24 @@ function type(q_data, t) {
 }
 
 function loadQuestion() {
-    let topic = topics[id_to],
-        q_data = data[topic].q[id_qu],
-        pipe = topic.indexOf("|");
+    let topic = topics[id_to];
     
-    to.innerHTML = (pipe !== -1 ? topic.substr(0, pipe) : topic);
-    sub_to.innerHTML = (pipe !== -1 ? topic.substr(pipe + 1) : "");
+    if (data[topic].q) {
+        let q_data = data[topic].q[id_qu],
+            pipe = topic.indexOf("|");
     
-    if (!type(q_data, "p")) {
+        to.innerHTML = (pipe !== -1 ? topic.substr(0, pipe) : topic);
+        sub_to.innerHTML = (pipe !== -1 ? topic.substr(pipe + 1) : "");
+    
         qu.innerHTML = q_data.n;
         sub_qu.innerHTML = (q_data.s != null ? nl2br(q_data.s) : "");
-        
+    
         if (type(q_data, "g")) {
             q_data = q_data.q[id_sub_qu];
             sub_sub_qu.innerHTML = q_data.n;
         } else
             sub_sub_qu.innerHTML = "";
-        
+    
         // Generate input
         if (type(q_data, "s") || type(q_data, "m")) {
             let ty = (type(q_data, "s") ? "radio" : "checkbox");
@@ -39,7 +40,8 @@ function loadQuestion() {
             }
         } else if (type(q_data, "t"))
             answ.innerHTML = `<input type="text">`;
-    }
+    } else
+        qu.innerHTML = sub_qu.innerHTML = sub_sub_qu.innerHTML = answ.innerHTML = "";
 }
 
 function next_qu() {
