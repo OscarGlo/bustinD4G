@@ -96,8 +96,10 @@ function next_qu() {
         qu_stack.push([id_to, id_qu, id_sub_qu]);
         
         let jump = null;
-        if (data[topics[id_to]].q && data[topics[id_to]].q[id_qu].a)
-            jump = data[topics[id_to]].q[id_qu].a[ans.split("|").indexOf("█")].j;
+        if (data[topics[id_to]].q && data[topics[id_to]].q[id_qu].a) {
+            jump = data[topics[id_to]].q[id_qu].a[ans.split("|").indexOf("█")];
+            if (jump) jump = jump.j;
+        }
         
         if (jump) {
             [id_to, id_qu] = jump;
