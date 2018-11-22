@@ -82,7 +82,7 @@ function getAnswer() {
     for (let i = 0, len = nodes.length; i < len; ++i) {
         let node = nodes[i];
         if (node.tagName === "LABEL")
-            ans += (node.childNodes[0].checked ? (node.childNodes[1].tagName === "INPUT" ? node.childNodes[1].value : "_") : "x");
+            ans += (node.childNodes[0].checked ? (node.childNodes[1].tagName === "INPUT" ? node.childNodes[1].value : "x") : "_");
         else if (node.tagName === "INPUT")
             ans += node.value;
     }
