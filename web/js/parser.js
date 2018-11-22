@@ -23,7 +23,7 @@ function ids_next(data, id_to, id_qu, id_sub_qu) {
 
 let chars = "0123456789-_abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-speCharsBin = {"_": "01", "x": "10"};
+speCharsBin = {"_": "0", "x": "10"};
 speChars = Object.keys(speCharsBin);
 
 let charCode = (char) => chars.indexOf(char);
@@ -37,7 +37,7 @@ function oct3(num) {
     return str;
 }
 
-function simplifyAnswers(ans) {
+function codeAnswers(ans) {
     let keys = Object.keys(ans),
         bin = "", num = 0;
     
@@ -59,7 +59,6 @@ function simplifyAnswers(ans) {
             
             console.log(char, bin);
         }
-        if (i !== len - 1) bin += "00";
     }
     
     let res = "";
