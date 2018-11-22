@@ -144,7 +144,6 @@
 		"c": [242, 242, 242],
 		"q": [
 			{
-				"t":"s",
 				"n":"Is your computer room in house or at a host?",
 				"a": [
 					"Internal",
@@ -161,7 +160,6 @@
 				]
 			},
 			{
-				"t":"s",
 				"n":"Do you know the PUE * of your Data Center?",
 				"s":"*PUE: Power Usage Effectiveness",
 				"a": [
