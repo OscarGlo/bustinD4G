@@ -1,7 +1,7 @@
 {
 	"Presentation": {
-		"t": "p",
-		"n": "As we all know, technology is becoming incredibly common in our increasingly tech-aware world. Those computers, whether big or small, helps companies like yours, simplify the lives of your employees and simplify tasks. But an important point often ignored by firms is the environmental impact of these computers. Using 100 computers switched on 27/7 for a year produces 69,205.8 kg of CO2 per year. Half of the French businesses that have participated in the following survey did not have sufficient information to complete it in its entirety.  It would take 12 hectares of woodlands to absorb this amount of carbon dioxide. Measuring the environmental footprint of your enterprise is an essential task for building a better tomorrow for our world and your firm. That is why we thank you for answering this survey."
+		"t":"p",
+		"n":"As we all know, technology is becoming incredibly common in our increasingly tech-aware world. Those computers, whether big or small, helps companies like yours, simplify the lives of your employees and simplify tasks. But an important point often ignored by firms is the environmental impact of these computers. Using 100 computers switched on 27/7 for a year produces 69,205.8 kg of CO2 per year. Half of the French businesses that have participated in the following survey did not have sufficient information to complete it in its entirety.  It would take 12 hectares of woodlands to absorb this amount of carbon dioxide. Measuring the environmental footprint of your enterprise is an essential task for building a better tomorrow for our world and your firm. That is why we thank you for answering this survey."
 	},
 	"Your company": {
 		"c": [
@@ -11,7 +11,7 @@
 		],
 		"q": [
 			{
-				"n": "In which sector of activity is your company active?",
+				"n":"In which sector of activity is your company active?",
 				"a": [
 					"Industry",
 					"Business",
@@ -25,7 +25,7 @@
 				]
 			},
 			{
-				"n": "What is the number of employees in your company on 18/12/31?",
+				"n":"What is the number of employees in your company on 18/12/31?",
 				"a": [
 					"0",
 					"1 to 2",
@@ -37,7 +37,7 @@
 				]
 			},
 			{
-				"n": "What is the turnover of your company in the last fiscal year? (or annual budget for Public sector)",
+				"n":"What is the turnover of your company in the last fiscal year? (or annual budget for Public sector)",
 				"a": [
 					"0 to 100K €",
 					"100 to 500 K€",
@@ -48,11 +48,11 @@
 				]
 			},
 			{
-				"n": "Do you develop digital services for internal or external use (sales to customers)?",
+				"n":"Do you develop digital services for internal or external use (sales to customers)?",
 				"a": [
 					"Yes",
 					{
-						"n": "No",
+						"n":"No",
 						"j": [
 							1,
 							1
@@ -61,12 +61,12 @@
 				]
 			},
 			{
-				"t": "t",
-				"n": "What is the number of users of your digital services?",
-				"a": "_"
+				"t":"t",
+				"n":"What is the number of users of your digital services?",
+				"a":"_"
 			},
 			{
-				"n": "Do you apply the rules and best practices for digital accessibility?",
+				"n":"Do you apply the rules and best practices for digital accessibility?",
 				"a": [
 					"Yes",
 					"No",
@@ -74,7 +74,7 @@
 				]
 			},
 			{
-				"n": "Have you optimized the states and printouts in your application tools (reduced number of pages when printing, ink consumption ...)?",
+				"n":"Have you optimized the states and printouts in your application tools (reduced number of pages when printing, ink consumption ...)?",
 				"a": [
 					"Yes",
 					"No",
@@ -82,7 +82,7 @@
 				]
 			},
 			{
-				"n": "Do you integrate the principles of the eco-design of digital services?",
+				"n":"Do you integrate the principles of the eco-design of digital services?",
 				"a": [
 					"Yes",
 					"No",
@@ -90,7 +90,7 @@
 				]
 			},
 			{
-				"n": "Do you use a modular application architecture?",
+				"n":"Do you use a modular application architecture?",
 				"a": [
 					"Yes",
 					"No",
@@ -98,7 +98,7 @@
 				]
 			},
 			{
-				"n": "Do you do a design review at the end of your application's development?",
+				"n":"Do you do a design review at the end of your application's development?",
 				"a": [
 					"Yes",
 					"No",
@@ -111,7 +111,7 @@
 		"c": [222, 234, 246],
 		"q": [
 			{
-				"n": "What is the overall storage volume of your corporate data (centralized on external hard drives, centralized server, NAS, SAN ...) in Terabytes (TB) useful?",
+				"n":"What is the overall storage volume of your corporate data (centralized on external hard drives, centralized server, NAS, SAN ...) in Terabytes (TB) useful?",
 				"a": [
 					"I don't know",
 					"I do not want to answer",
@@ -119,23 +119,23 @@
 				]
 			},
 			{
-				"n": "Do you have a server or do you only work with one or more workstations?",
+				"n":"Do you have a server or do you only work with one or more workstations?",
 				"a": [
 					"We work with workstation(s), without centralized physical server",
 					"We have (Dat least) a centralized physical server",
 					{
-						"n": "We work with workstation(s), without centralized physical server",
+						"n":"We work with workstation(s), without centralized physical server",
 						"j": [5, 0]
 					}
 				]
 			},
 			{
-				"n": "Do you have a dedicated room, simple room or cupboard with bay dedicated to your IT infrastructure?",
+				"n":"Do you have a dedicated room, simple room or cupboard with bay dedicated to your IT infrastructure?",
 				"a": [
 					"A closet or a room without any specific system",
 					"A dedicated room",
 					{
-						"n": "A closet or a room without any specific system",
+						"n":"A closet or a room without any specific system",
 						"j": [3, 0]
 					}
 				]
@@ -146,8 +146,8 @@
 		"c": [242, 242, 242],
 		"q": [
 			{
-				"t": "s",
-				"n": "Is your computer room in house or at a host?",
+				"t":"s",
+				"n":"Is your computer room in house or at a host?",
 				"a": [
 					"Internal",
 					"Host Member of the European Code of Conduct for Data Centers",
@@ -155,7 +155,7 @@
 				]
 			},
 			{
-				"n": "What is the total area of your computer rooms (excluding technical infrastructure *)? (in m2)",
+				"n":"What is the total area of your computer rooms (excluding technical infrastructure *)? (in m2)",
 				"a": [
 					"_ m²",
 					"I don't know",
@@ -163,19 +163,19 @@
 				]
 			},
 			{
-				"t": "s",
-				"n": "Do you know the PUE * of your Data Center?",
-				"s": "*PUE : Power Usage Effectiveness",
+				"t":"s",
+				"n":"Do you know the PUE * of your Data Center?",
+				"s":"*PUE: Power Usage Effectiveness",
 				"a": [
-					"Less than 1,6 ",
+					"Less than 1,6",
 					"Between 1,6 and 2,1",
-					"More than 2,1 ",
+					"More than 2,1",
 					"I don't know"
 				]
 			},
 			{
-				"n": "What is the rate of charge or energy use of your computer rooms?",
-				"s": "Rate = Electrical power absorbed by your IT equipment, divided by room capacity in kW, then multiplied by 100 (used energy / available energy)",
+				"n":"What is the rate of charge or energy use of your computer rooms?",
+				"s":"Rate = Electrical power absorbed by your IT equipment, divided by room capacity in kW, then multiplied by 100 (used energy / available energy)",
 				"a": [
 					"100% - 90%",
 					"90% - 60%",
@@ -184,8 +184,8 @@
 				]
 			},
 			{
-				"t": "g",
-				"n": "Have you led or are you planning actions to optimize your infrastructure? Especially :",
+				"t":"g",
+				"n":"Have you led or are you planning actions to optimize your infrastructure? Especially:",
 				"a": [
 					"Yes",
 					"No",
@@ -212,8 +212,8 @@
 		"c": [242, 242, 242],
 		"q": [
 			{
-				"t": "g",
-				"n": "Have you led or are you planning actions to optimize your infrastructure? Especially :",
+				"t":"g",
+				"n":"Have you led or are you planning actions to optimize your infrastructure? Especially:",
 				"a": [
 					"No",
 					"I don't know",
@@ -230,37 +230,37 @@
 				]
 			},
 			{
-				"n": "Do you know the number of physical servers and virtual servers in your company?",
+				"n":"Do you know the number of physical servers and virtual servers in your company?",
 				"a": [
 					"No",
 					"I do not want to answer",
 					"Yes",
 					{
-						"n": "No",
+						"n":"No",
 						"j": [3, 4]
 					},
 					{
-						"n": "I do not want to answer",
+						"n":"I do not want to answer",
 						"j": [3, 4]
 					}
 				]
 			},
 			{
-				"t": "t",
-				"n": "How many physical servers do you have?",
+				"t":"t",
+				"n":"How many physical servers do you have?",
 				"a": [
 					"_"
 				]
 			},
 			{
-				"t": "t",
-				"n": "How many virtual servers do you have?",
+				"t":"t",
+				"n":"How many virtual servers do you have?",
 				"a": [
 					"_"
 				]
 			},
 			{
-				"n": "What will be the evolution of your number of physical servers for 2019? (in% or quantity)",
+				"n":"What will be the evolution of your number of physical servers for 2019? (in% or quantity)",
 				"a": [
 					"In % _",
 					"In quantity _",
@@ -269,7 +269,7 @@
 				]
 			},
 			{
-				"n": "What will be the evolution of your number of virtual servers for 2019? (in % or quantity)",
+				"n":"What will be the evolution of your number of virtual servers for 2019? (in % or quantity)",
 				"a": [
 					"In % _",
 					"In quantity _",
@@ -283,7 +283,7 @@
 		"c": [226, 239, 217],
 		"q": [
 			{
-				"n": "Has your company appointed a Green IT Manager / Digital Manager?",
+				"n":"Has your company appointed a Green IT Manager / Digital Manager?",
 				"a": [
 					"Yes",
 					"No",
@@ -291,7 +291,7 @@
 				]
 			},
 			{
-				"n": "Do you have a responsible digital strategy broken down into an action plan?",
+				"n":"Do you have a responsible digital strategy broken down into an action plan?",
 				"a": [
 					"Yes",
 					"No",
@@ -299,7 +299,7 @@
 				]
 			},
 			{
-				"n": "Is Green IT a topic integrated into your CSR strategy?",
+				"n":"Is Green IT a topic integrated into your CSR strategy?",
 				"a": [
 					"Yes",
 					"No",
@@ -307,7 +307,7 @@
 				]
 			},
 			{
-				"n": "Do you regularly evaluate the environmental impacts of your information system?",
+				"n":"Do you regularly evaluate the environmental impacts of your information system?",
 				"a": [
 					"Yes partially, including only equipment present in the company",
 					"Yes totally, including our internal equipment and services hosted by third parties",
@@ -316,7 +316,7 @@
 				]
 			},
 			{
-				"n": "Do you have a team of competent referees on the topics of Green IT?",
+				"n":"Do you have a team of competent referees on the topics of Green IT?",
 				"a": [
 					"Yes",
 					"No",
@@ -324,7 +324,7 @@
 				]
 			},
 			{
-				"n": "Have you integrated Green IT into your business strategy",
+				"n":"Have you integrated Green IT into your business strategy",
 				"a": [
 					"Yes",
 					"No",
@@ -337,9 +337,9 @@
 		"c": [242, 242, 242],
 		"q": [
 			{
-				"t": "g",
-				"n": "Do you have those equipments in your company:",
-				"s": "Used: equipment used in the business activity\nNot used functional: equipment in working order but no more used by the company (stored)\nNeither used nor functional: out of service equipment (HS) waiting for end of life treatment",
+				"t":"g",
+				"n":"Do you have those equipments in your company:",
+				"s":"Used: equipment used in the business activity\nNot used functional: equipment in working order but no more used by the company (stored)\nNeither used nor functional: out of service equipment (HS) waiting for end of life treatment",
 				"a": [
 					"Used",
 					"Not used functional",
@@ -360,21 +360,21 @@
 				]
 			},
 			{
-				"n": "Do you have other devices in your company?",
-				"s": "Keyboards, mouse, graphic tablets, scanners, microphones, speakers, office equipment ...",
+				"n":"Do you have other devices in your company?",
+				"s":"Keyboards, mouse, graphic tablets, scanners, microphones, speakers, office equipment ...",
 				"a": [
 					"Yes",
 					"No",
 					{
-						"n": "No",
+						"n":"No",
 						"j": [6, 0]
 					}
 				]
 			},
 			{
-				"t": "g",
-				"n": "Regarding other devices, do you have in your company:",
-				"s": "Used: equipment used in the business activity\nNot used functional: equipment in working order but no more used by the company (stored)\nNeither used nor functional: out of service equipment (HS) waiting for end of life treatment",
+				"t":"g",
+				"n":"Regarding other devices, do you have in your company:",
+				"s":"Used: equipment used in the business activity\nNot used functional: equipment in working order but no more used by the company (stored)\nNeither used nor functional: out of service equipment (HS) waiting for end of life treatment",
 				"a": [
 					"Used",
 					"Not used functional",
@@ -395,14 +395,14 @@
 		"c": [237, 215, 253],
 		"q": [
 			{
-				"n": "Fixed stations, workstations",
+				"n":"Fixed stations, workstations",
 				"a": [
 					"Yes(please specify how much in kWh / year)_",
 					"No"
 				]
 			},
 			{
-				"n": "Do you track the energy consumption of your company activities?",
+				"n":"Do you track the energy consumption of your company activities?",
 				"a": [
 					"Yes",
 					"No",
@@ -410,14 +410,14 @@
 				]
 			},
 			{
-				"n": "Do you know the share of IT and IT equipment in your company's total energy consumption?",
+				"n":"Do you know the share of IT and IT equipment in your company's total energy consumption?",
 				"a": [
 					"Yes(please specify how much in %)_",
 					"No"
 				]
 			},
 			{
-				"n": "Have you set up a power management system? (automatic shutdown / shutdown of workstations)",
+				"n":"Have you set up a power management system? (automatic shutdown / shutdown of workstations)",
 				"a": [
 					"Yes",
 					"No",
@@ -430,7 +430,7 @@
 		"c": [254, 242, 203],
 		"q": [
 			{
-				"n": "Do you use copiers from a repackaging industry (second-hand / second-hand)?",
+				"n":"Do you use copiers from a repackaging industry (second-hand / second-hand)?",
 				"a": [
 					"Yes",
 					"No",
@@ -438,7 +438,7 @@
 				]
 			},
 			{
-				"n": "Do you consolidate individual printers to shared printers?",
+				"n":"Do you consolidate individual printers to shared printers?",
 				"a": [
 					"Yes",
 					"No",
@@ -446,7 +446,7 @@
 				]
 			},
 			{
-				"n": "Have you set up an identification system on printers (to trigger printing)?",
+				"n":"Have you set up an identification system on printers (to trigger printing)?",
 				"a": [
 					"Yes",
 					"No",
@@ -454,8 +454,8 @@
 				]
 			},
 			{
-				"n": "What is the average life of your professional copier / MFP *?",
-				"s": "* MFP Multi Fonction Printer",
+				"n":"What is the average life of your professional copier / MFP *?",
+				"s":"* MFP Multi Fonction Printer",
 				"a": [
 					"I don't know",
 					"Do not want to answer",
@@ -463,8 +463,8 @@
 				]
 			},
 			{
-				"t": "g",
-				"n": "Are your printers set by default in eco mode? Especially :",
+				"t":"g",
+				"n":"Are your printers set by default in eco mode? Especially:",
 				"a": [
 					"Yes",
 					"No",
@@ -483,8 +483,8 @@
 		"c": [242, 242, 242],
 		"q": [
 			{
-				"t": "m",
-				"n": "What is the number of pages printed / day / employee? (A4 equivalent)",
+				"t":"m",
+				"n":"What is the number of pages printed / day / employee? (A4 equivalent)",
 				"a": [
 					"Less than 10",
 					"From 10 to 20",
@@ -494,8 +494,8 @@
 				]
 			},
 			{
-				"t": "mt",
-				"n": "What is the number of pages printed / day / employee? (A4 equivalent)",
+				"t":"mt",
+				"n":"What is the number of pages printed / day / employee? (A4 equivalent)",
 				"a": [
 					"Cartridges used a year_",
 					"Cartridges stored in the average business_",
@@ -504,7 +504,7 @@
 				]
 			},
 			{
-				"n": "Do you organize the separate collection of waste cartridges / toners?",
+				"n":"Do you organize the separate collection of waste cartridges / toners?",
 				"a": [
 					"Yes, to a repackaging industry",
 					"Yes, towards a recycling channel (destruction)",
@@ -512,8 +512,8 @@
 				]
 			},
 			{
-				"t": "m",
-				"n": "Do you prefer the use of recycled paper?",
+				"t":"m",
+				"n":"Do you prefer the use of recycled paper?",
 				"a": [
 					"Yes, our paper is made from virgin paste",
 					"Yes, mixed paper",
@@ -522,8 +522,8 @@
 				]
 			},
 			{
-				"t": "mt",
-				"n": "Do you choose certified paper?",
+				"t":"mt",
+				"n":"Do you choose certified paper?",
 				"a": [
 					"Yes, FSC",
 					"Yes, PEFC",
@@ -534,7 +534,7 @@
 				]
 			},
 			{
-				"n": "Do you organize the separate collection of waste paper for recycling?",
+				"n":"Do you organize the separate collection of waste paper for recycling?",
 				"a": [
 					"Yes",
 					"No",
@@ -544,7 +544,7 @@
 		]
 	},
 	"Conclusion": {
-		"t": "p",
-		"n": "Thank you for participating in our survey. Green IT offers lots of actions with different levels of difficulties, different economic objectives, and different scopes. You can inspire your employees to practice ecological gestures, optimize the already existing hardware/software to be more eco-friendly or completely change your projects patterns from the ground up to respect the earth. The respondents for this survey increased since 2015, which shows an ever-growing interest in Green IT. Once again we thank you for making Green IT a priority."
+		"t":"p",
+		"n":"Thank you for participating in our survey. Green IT offers lots of actions with different levels of difficulties, different economic objectives, and different scopes. You can inspire your employees to practice ecological gestures, optimize the already existing hardware/software to be more eco-friendly or completely change your projects patterns from the ground up to respect the earth. The respondents for this survey increased since 2015, which shows an ever-growing interest in Green IT. Once again we thank you for making Green IT a priority."
 	}
 }
