@@ -84,7 +84,7 @@ function save_ans(ans) {
 
 function next_qu() {
     let ans = getAnswer();
-    if (ans !== "" && !next.classList.contains("dis")) {
+    if (!ans.match(/\|*/) && !next.classList.contains("dis")) {
         save_ans(ans);
         
         qu_stack.push([id_to, id_qu, id_sub_qu]);
