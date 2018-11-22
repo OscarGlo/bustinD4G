@@ -77,6 +77,9 @@ function next_qu() {
             id_to++;
     
         prev.classList.remove("dis");
+        
+        if (id_to === topics.length - 1)
+            next.classList.add("dis");
     
         loadQuestion();
     }
