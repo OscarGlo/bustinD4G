@@ -97,7 +97,7 @@ function next_qu() {
     
         let jump = (data[topics[id_to]].q ? data[topics[id_to]].q[id_qu].j : null);
         
-        console.log(data[topics[id_to]].q[id_qu], jump);
+        console.log((data[topics[id_to]].q ? data[topics[id_to]].q[id_qu] : "no q"), jump);
         
         if (jump) {
             [id_to, id_qu] = jump;
