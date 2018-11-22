@@ -47,19 +47,22 @@ function loadQuestion() {
 function next_qu() {
     qu_stack.push([id_to, id_qu, id_sub_qu]);
     
-    if (data[topics[id_to]].q[id_qu].t === "g") {
-        id_sub_qu++;
-        if (data[topics[id_to]].q[id_qu].q[id_sub_qu] == null) {
-            id_sub_qu = 0;
+    if (data[topics[id_to]].q) {
+        if (data[topics[id_to]].q[id_qu].t === "g") {
+            id_sub_qu++;
+            if (data[topics[id_to]].q[id_qu].q[id_sub_qu] == null) {
+                id_sub_qu = 0;
+                id_qu++;
+            }
+        } else
             id_qu++;
+    
+        if (data[topics[id_to]].q[id_qu] == null) {
+            id_qu = 0;
+            id_to++;
         }
     } else
-        id_qu++;
-    
-    if (data[topics[id_to]].q[id_qu] == null) {
-        id_qu = 0;
         id_to++;
-    }
     
     loadQuestion();
 }
