@@ -11,6 +11,19 @@ function type(q_data, t) {
     return q_data.t.includes(t);
 }
 
+function getAnswer() {
+    let nodes = answ.childNodes,
+        ans = [];
+    for (let i = 0, len = nodes.length; i < len; ++i) {
+        let node = nodes[i];
+        if (node.nodeName === "input")
+            ans.push(node.value);
+        else if (node.nodeName === "label")
+            ans.push(node.childNodes[0].value);
+    }
+    return ans.join("|");
+}
+
 function loadQuestion() {
     console.log(id_to, id_qu, id_sub_qu);
     
