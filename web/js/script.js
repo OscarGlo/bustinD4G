@@ -77,7 +77,7 @@ function getAnswer() {
     for (let i = 0, len = nodes.length; i < len; ++i) {
         let node = nodes[i];
         if (node.tagName === "LABEL")
-            ans.push(node.childNodes[0].checked ? "█" : "");
+            ans.push(node.childNodes[0].checked ? (node.childNodes[1].tagName === "INPUT" ? node.childNodes[1].value : "█") : "");
         else if (node.tagName === "INPUT")
             ans.push(node.value);
     }
