@@ -88,9 +88,9 @@ function decoder(str){
             if(str.charAt(i) === "0"){
                 answers += "X";
             }else if(str.charAt(i) === "1"){
-                i++;
                 let tmp = "";
-                for(let i = 0; i < 3; ++i){
+                for(let j = 0; j < 3; ++j){
+                    i++
                     tmp += str.charAt(i);
                 }
                 answers += parseInt(tmp, 2);
