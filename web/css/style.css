@@ -59,7 +59,7 @@ h1{
     display: none;
 }
 
-.container [type="checbox"]{
+.container [type="checkbox"]{
     position: absolute;
     opacity: 0;
     cursor: pointer;
