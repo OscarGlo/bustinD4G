@@ -14,7 +14,7 @@ hr {
 #topic {
   text-shadow: #888 -1px 1px, #888 1px 1px;
   display: flex;
-  justify-content: : flex-start;
+  justify-content: flex-start;
   align-items: baseline;
   padding: 30px 0px 0px 80px;
   height: 15%;
@@ -25,18 +25,18 @@ hr {
 }
 
 #bottom h2 {
-  padding: 20px 0px 0px 80px;
+  padding: 20px 80px 0px 80px;
   text-shadow: #aaaaaa 1px 1px, #aaaaaa 1px -1px;
 }
 
 h4 {
-  padding: 0px 0px 0px 80px;
+  padding: 0px 80px 0px 80px;
 
 }
 
 h3 {
   border-radius: 10px;
-  padding: 10px 0px 10px 120px;
+  padding: 10px 120px 10px 120px;
   text-shadow: #aaaaaa 1px 1px, #aaaaaa 1px -1px;
 }
 
@@ -85,7 +85,6 @@ h3 {
   h4 {
     font-size: 17px;
   }
-
 }
 
 button {
