@@ -59,6 +59,13 @@ h1{
     display: none;
 }
 
+.container [type="checbox"]{
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    display: none;
+}
+
 .checkmark {
     position: absolute;
     top:0;
@@ -96,7 +103,7 @@ h1{
 }
 
 /* Show the indicator (dot/circle) when checked */
-.container [type="radio"]:checked ~ .checkmark:after,.container [type="checkbox"]:checked ~ .checkbox:after {
+.container [type="radio"]:checked ~ .checkmark:after,.container [type="checkbox"]:checked ~ .checkblock:after {
     display: block;
 }
 
