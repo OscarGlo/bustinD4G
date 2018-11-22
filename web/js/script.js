@@ -138,7 +138,7 @@ function prev_qu() {
 }
 
 window.addEventListener("load", async () => {
-    let e = document.querySelector;
+    let e = (s) => document.querySelector(s);
     to_div = e("body > div:first-child");
     to = e("h1");
     sub_to = e("body > div:first-child > h2");
