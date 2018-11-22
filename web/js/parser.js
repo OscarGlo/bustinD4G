@@ -77,38 +77,28 @@ function decodeAnswers(data, str){
     let topics = data;
     let id_to = 1, id_qu = 0, id_sub_qu = 0;
     let answers = [];
-    let nb_questions = 0;
 
     let count = 0, end = str.length;
     let nb_answers;
 
     while (count + topics[id_to].q[id_qu].a.length < end){
 
-        for(let i = 0, len=topics[id_to].q.length; i<len; i++){
-            //nb_answers = topics[id_to].q[i].a.length
-        }
-
         nb_answers = topics[id_to].q[id_qu].a.length;
-        count += nb_answers;
-        answers[[id_to, id_qu, id_sub_qu]] = str.substring(0, nb_answers);
 
-        let res = topics[answers[[id_to, id_qu, id_sub_qu]].indexOf("x")];
+        answers[[id_to, id_qu, id_sub_qu]] = decoded.substring(count, count + nb_answers);
+
+        count += nb_answers;
+
+        let res = topics[id_to].q[id_qu].a[answers[[id_to, id_qu, id_sub_qu]].indexOf("x")];
 
         if(typeof res === "object"){
             id_to = res.j[0];
             id_qu = res.j[1];
         }else{
-            if(res.q[id_qu].t === "g"){
-                if(id_sub_qu < res.q[id_qu].q.length - 1){
-                    id_sub_qu++;
-                }else{
-
-                }
-            }
+            [id_to, id_qu, id_sub_qu] = ids_next(data, id_to, id_qu, id_sub_qu);
         }
-
-
     }
+    return answers;
 }
 
 
