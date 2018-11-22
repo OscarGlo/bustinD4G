@@ -37,7 +37,7 @@ function loadQuestion() {
             let ty = (type(q_data, "s") ? "radio" : "checkbox");
             answ.innerHTML = "";
             for (let i = 0, len = q_data.a.length; i < len; ++i) {
-                let name = q_data.a[i];
+                let name = (typeof q_data === "string" ? q_data : q_data.a[i]);
                 answ.innerHTML += `<input type="${ty}" name="r" id="${i}" value="${name}"><label for="${i}">${name}</label><br>`;
             }
         } else if (type(q_data, "t"))
