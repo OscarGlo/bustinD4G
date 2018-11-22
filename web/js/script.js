@@ -11,15 +11,19 @@ function type(q_data, t) {
     return q_data.t.includes(t);
 }
 
+function parseCheckLabel(html) {
+    return html.replace(/<input type="text" .*?value="(.*?)".*?>/g, "$1").replace(/<input .*?>/g, "");
+}
+
 function getAnswer() {
     let nodes = answ.childNodes,
         ans = [];
     for (let i = 0, len = nodes.length; i < len; ++i) {
         let node = nodes[i];
-        if (node.nodeName === "INPUT")
+        if (node.tagName === "LABEL" && node.childNodes[0].checked)
+            ans.push(parseCheckLabel(node.innerHTML));
+        else if (node.tagName === "INPUT")
             ans.push(node.value);
-        else if (node.nodeName === "LABEL")
-            ans.push(node.childNodes[0].value);
     }
     return ans.join("|");
 }
@@ -53,12 +57,13 @@ function loadQuestion() {
         // Generate input
         if (type(q_data, "s") || type(q_data, "m")) {
             let ty = (type(q_data, "s") ? "radio" : "checkbox");
+            let spanT = (ty === "radio" ? "checkmark" : "checkblock");
             answ.innerHTML = "";
             for (let i = 0, len = ans.length; i < len; ++i) {
                 let name = ans[i],
                     nameText = name.replace("_", "<input type='text'>");
-                answ.innerHTML += `<label class="container">${nameText}<input type="${ty}" value="${name}" name="r">`
-                    + `<span class="checkmark"></span></label>`;
+                answ.innerHTML += `<label class="container"><input type="${ty}" name="r">${nameText}`
+                    + `<span class="${spanT}"></span></label>`;
             }
         } else if (type(q_data, "t"))
             answ.innerHTML = `<input type="text">`;
