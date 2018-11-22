@@ -12,23 +12,26 @@ function type(q_data, t) {
 }
 
 function loadQuestion() {
+    console.log(id_to, id_qu, id_sub_qu);
+    
     let topic = topics[id_to],
-        q_data = data[topic][id_qu],
         pipe = topic.indexOf("|");
     
     to.innerHTML = (pipe !== -1 ? topic.substr(0, pipe) : topic);
     sub_to.innerHTML = (pipe !== -1 ? topic.substr(pipe + 1) : "");
     
-    if (!type(q_data, "p")) {
+    if (data[topic].q) {
+        let q_data = data[topic].q[id_qu];
+    
         qu.innerHTML = q_data.n;
         sub_qu.innerHTML = (q_data.s != null ? nl2br(q_data.s) : "");
-        
+    
         if (type(q_data, "g")) {
             q_data = q_data.q[id_sub_qu];
             sub_sub_qu.innerHTML = q_data.n;
         } else
             sub_sub_qu.innerHTML = "";
-        
+    
         // Generate input
         if (type(q_data, "s") || type(q_data, "m")) {
             let ty = (type(q_data, "s") ? "radio" : "checkbox");
@@ -39,25 +42,29 @@ function loadQuestion() {
             }
         } else if (type(q_data, "t"))
             answ.innerHTML = `<input type="text">`;
-    }
+    } else
+        qu.innerHTML = sub_qu.innerHTML = sub_sub_qu.innerHTML = answ.innerHTML = "";
 }
 
 function next_qu() {
     qu_stack.push([id_to, id_qu, id_sub_qu]);
     
-    if (data[topics[id_to]][id_qu].t === "g") {
-        id_sub_qu++;
-        if (data[topics[id_to]][id_qu].q[id_sub_qu] == null) {
-            id_sub_qu = 0;
+    if (data[topics[id_to]].q) {
+        if (data[topics[id_to]].q[id_qu].t === "g") {
+            id_sub_qu++;
+            if (data[topics[id_to]].q[id_qu].q[id_sub_qu] == null) {
+                id_sub_qu = 0;
+                id_qu++;
+            }
+        } else
             id_qu++;
+    
+        if (data[topics[id_to]].q[id_qu] == null) {
+            id_qu = 0;
+            id_to++;
         }
     } else
-        id_qu++;
-    
-    if (data[topics[id_to]][id_qu] == null) {
-        id_qu = 0;
         id_to++;
-    }
     
     loadQuestion();
 }
@@ -71,10 +78,10 @@ function prev_qu() {
 window.addEventListener("load", async () => {
     to = elem("#topic h1");
     sub_to = elem("#topic h2");
-    qu = elem("body > h2");
-    sub_qu = elem("body h4");
-    sub_sub_qu = elem("body h3");
-    answ = elem("#answers");
+    qu = elem("#bottom h2");
+    sub_qu = elem("#bottom h4");
+    sub_sub_qu = elem("#bottom h3");
+    answ = elem("#answers > div");
     prev = elem("#prev");
     next = elem("#next");
     

@@ -14,7 +14,7 @@ hr {
 #topic {
   text-shadow: #888 -1px 1px, #888 1px 1px;
   display: flex;
-  justify-content: : flex-start;
+  justify-content: flex-start;
   align-items: baseline;
   padding: 30px 0px 0px 80px;
   height: 15%;
@@ -25,18 +25,58 @@ hr {
 }
 
 #bottom h2 {
-  padding: 20px 0px 0px 80px;
+  padding: 20px 80px 0px 80px;
   text-shadow: #aaaaaa 1px 1px, #aaaaaa 1px -1px;
 }
 
+.container {
+	display: block;
+	position: relative;
+	padding-left: 35px;
+	margin-bottom: 12px;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+
+}
+
+.container input {
+	position: absolute;
+	opacity: 0;
+	cursor: pointer;
+	display: none;
+}
+
+.checkmark {
+	position: absolute;
+	top:0;
+	left: 0;
+	height: 30px;
+	width: 30px;
+	border: solid black 2px;
+	border-radius: 100px;
+	background-color: #eee;
+}
+
+.container:hover input ~ .checkmark {
+
+	background-color: #8ecee5;
+}
+
+.container input:checked ~ .checkmark {
+	background-color: #008CBA;
+}
+
 h4 {
-  padding: 0px 0px 0px 80px;
+  padding: 0px 80px 0px 80px;
 
 }
 
 h3 {
   border-radius: 10px;
-  padding: 10px 0px 10px 120px;
+  padding: 10px 120px 10px 120px;
   text-shadow: #aaaaaa 1px 1px, #aaaaaa 1px -1px;
 }
 
@@ -85,7 +125,6 @@ h3 {
   h4 {
     font-size: 17px;
   }
-
 }
 
 button {
