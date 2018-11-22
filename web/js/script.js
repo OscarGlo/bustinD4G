@@ -71,9 +71,9 @@ function prev_qu() {
 window.addEventListener("load", async () => {
     to = elem("#topic h1");
     sub_to = elem("#topic h2");
-    qu = elem("body > h2");
-    sub_qu = elem("body h4");
-    sub_sub_qu = elem("body h3");
+    qu = elem("#bottom h2");
+    sub_qu = elem("#bottom h4");
+    sub_sub_qu = elem("#bottom h3");
     answ = elem("#answers");
     prev = elem("#prev");
     next = elem("#next");
