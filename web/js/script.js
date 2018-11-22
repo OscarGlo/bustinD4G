@@ -87,7 +87,7 @@ function prev_qu() {
         [id_to, id_qu, id_sub_qu] = qu_stack.pop();
     
         if (qu_stack.length === 0) prev.classList.add("dis");
-        prev.loadQuestion();
+        loadQuestion();
     }
 }
 
