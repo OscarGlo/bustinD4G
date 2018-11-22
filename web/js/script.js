@@ -1,4 +1,4 @@
-let to, sub_to, qu, sub_qu, sub_sub_qu, answ, prev, next,
+let to_div, to, sub_to, qu, sub_qu, sub_sub_qu, answ, prev, next,
     id_to = 0, id_qu = 0, id_sub_qu = 0,
     topics, data, qu_stack = [];
 
@@ -20,15 +20,20 @@ function loadQuestion() {
     to.innerHTML = (pipe !== -1 ? topic.substr(0, pipe) : topic);
     sub_to.innerHTML = (pipe !== -1 ? topic.substr(pipe + 1) : "");
     
+    let c = data[topic].c;
+    to_div.style.backgroundColor = `rgb(${c.join(",")})`;
+    
     if (data[topic].q) {
         let q_data = data[topic].q[id_qu];
     
         qu.innerHTML = q_data.n;
         sub_qu.innerHTML = (q_data.s != null ? nl2br(q_data.s) : "");
+        
+        let ans = q_data.a;
     
         if (type(q_data, "g")) {
             q_data = q_data.q[id_sub_qu];
-            sub_sub_qu.innerHTML = q_data.n;
+            sub_sub_qu.innerHTML = q_data;
         } else
             sub_sub_qu.innerHTML = "";
     
@@ -36,14 +41,18 @@ function loadQuestion() {
         if (type(q_data, "s") || type(q_data, "m")) {
             let ty = (type(q_data, "s") ? "radio" : "checkbox");
             answ.innerHTML = "";
-            for (let i = 0, len = q_data.a.length; i < len; ++i) {
-                let name = q_data.a[i];
-                answ.innerHTML += `<input type="${ty}" name="r" id="${i}" value="${name}"><label for="${i}">${name}</label><br>`;
+            for (let i = 0, len = ans.length; i < len; ++i) {
+                let name = ans[i],
+                    nameText = name.replace("_", "<input type='text'>");
+                answ.innerHTML += `<label class="container">${nameText}<input type="${ty}" value="${name}" name="r">`
+                    + `<span class="checkmark"></span></label>`;
             }
         } else if (type(q_data, "t"))
             answ.innerHTML = `<input type="text">`;
-    } else
-        qu.innerHTML = sub_qu.innerHTML = sub_sub_qu.innerHTML = answ.innerHTML = "";
+    } else {
+        qu.innerHTML = sub_sub_qu.innerHTML = answ.innerHTML = "";
+        sub_qu.innerHTML = data[topic].n;
+    }
 }
 
 function next_qu() {
@@ -76,6 +85,7 @@ function prev_qu() {
 }
 
 window.addEventListener("load", async () => {
+    to_div = elem("#topic");
     to = elem("#topic h1");
     sub_to = elem("#topic h2");
     qu = elem("#bottom h2");
