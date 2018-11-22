@@ -17,6 +17,7 @@ html, body {height: 100%;}
   position: fixed;
   width: 100%;
   background-color: white;
+  z-index: 10;
 }
 
 h1{
@@ -126,7 +127,13 @@ h3 {
   align-self: center;
   padding-top: 5vh;
   flex-grow: 1;
+  z-index: 1;
 
+}
+
+#answers div {
+  padding-left: 22%;
+  padding-right: 18%;
 }
 
 #next {
@@ -170,6 +177,7 @@ button {
   box-shadow: 0 4px 16px 0 rgba(0,0,0,0.2), 0 3px 20px 0 rgba(0,0,0,0.19);
   text-shadow: #ccc 1px 1px, #ccc 1px -1px;
   cursor: pointer;
+  z-index: 1;
 }
 button:hover {
   background-color: #008CBA;
