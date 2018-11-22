@@ -19,8 +19,10 @@ function getAnswer() {
         if (node.tagName === "LABEL")
             if (node.childNodes[0].checked)
                 ans.push(node.childNodes[1].data);
-        else if (node.tagName === "INPUT")
+        else if (node.tagName === "INPUT") {
+            console.log(node, node.value);
             ans.push(node.value);
+        }
     }
     return ans.join("|");
 }
