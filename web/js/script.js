@@ -1,6 +1,6 @@
 let to_div, to, sub_to, qu, sub_qu, sub_sub_qu, answ, prev, next,
     id_to = 0, id_qu = 0, id_sub_qu = 0,
-    topics, data, qu_stack = [];
+    topics, data, qu_stack = [], ans_table = {};
 
 let nl2br = (str) => str.replace("\n", "<br>");
 
@@ -11,26 +11,7 @@ function type(q_data, t) {
     return q_data.t.includes(t);
 }
 
-function parseCheckLabel(html) {
-    return html.replace(/<input type="text" .*?value="(.*?)".*?>/g, "$1").replace(/<input .*?>/g, "");
-}
-
-function getAnswer() {
-    let nodes = answ.childNodes,
-        ans = [];
-    for (let i = 0, len = nodes.length; i < len; ++i) {
-        let node = nodes[i];
-        if (node.tagName === "LABEL" && node.childNodes[0].checked)
-            ans.push(parseCheckLabel(node.innerHTML));
-        else if (node.tagName === "INPUT")
-            ans.push(node.value);
-    }
-    return ans.join("|");
-}
-
 function loadQuestion() {
-    console.log(id_to, id_qu, id_sub_qu);
-    
     let topic = topics[id_to],
         pipe = topic.indexOf("|");
     
@@ -67,14 +48,45 @@ function loadQuestion() {
             }
         } else if (type(q_data, "t"))
             answ.innerHTML = `<input type="text">`;
+        
+        let saved = ans_table[[id_to, id_qu, id_sub_qu]];
+        if (saved) {
+            let spl = saved.split("|");
+            for (let i = 0, len = spl.length; i < len; ++i) {
+                let val = spl[i];
+                if (val !== "") {
+                    answ.childNodes[i].childNodes[0].checked = true;
+                }
+            }
+        }
     } else {
         qu.innerHTML = sub_sub_qu.innerHTML = answ.innerHTML = "";
         sub_qu.innerHTML = data[topic].n;
     }
 }
 
+function getAnswer() {
+    let nodes = answ.childNodes,
+        ans = [];
+    for (let i = 0, len = nodes.length; i < len; ++i) {
+        let node = nodes[i];
+        if (node.tagName === "LABEL")
+            ans.push(node.childNodes[0].checked ? "█" : "");
+        else if (node.tagName === "INPUT")
+            ans.push(node.value);
+    }
+    return ans.join("|");
+}
+
+function save_ans(ans) {
+    ans_table[[id_to, id_qu, id_sub_qu]] = (ans == null ? getAnswer() : ans);
+}
+
 function next_qu() {
-    if (!next.classList.contains("dis")) {
+    let ans = getAnswer();
+    if (ans !== "" && !next.classList.contains("dis")) {
+        save_ans(ans);
+        
         qu_stack.push([id_to, id_qu, id_sub_qu]);
     
         if (data[topics[id_to]].q) {
