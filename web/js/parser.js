@@ -79,10 +79,23 @@ function decodeAnswers(data, str) {
 }
 
 function decoder(str){
+    let answers = "";
     for(let i = 0, len = str.length; i < len; ++i){
-        if(str.charAt(i) === "0" && str.charAt(i+1) === "0"){
-            
-            i;
+        if(str.charAt(i) === "0"){
+            answers += "_";
+        }else if(str.charAt(i) === "1"){
+            i++;
+            if(str.charAt(i) === "0"){
+                answers += "X";
+            }else if(str.charAt(i) === "1"){
+                i++;
+                let tmp = "";
+                for(let i = 0; i < 3; ++i){
+                    tmp += str.charAt(i);
+                }
+                answers += parseInt(tmp, 2);
+            }
         }
     }
+    return answers;
 }
