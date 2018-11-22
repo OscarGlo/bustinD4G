@@ -1,6 +1,6 @@
 let to_div, to, sub_to, qu, sub_qu, sub_sub_qu, answ, prev, next,
     id_to = 0, id_qu = 0, id_sub_qu = 0,
-    topics, data, qu_stack = [];
+    topics, data, qu_stack = [], ans_table = {};
 
 let nl2br = (str) => str.replace("\n", "<br>");
 
@@ -12,8 +12,6 @@ function type(q_data, t) {
 }
 
 function loadQuestion() {
-    console.log(id_to, id_qu, id_sub_qu);
-    
     let topic = topics[id_to],
         pipe = topic.indexOf("|");
     
@@ -40,48 +38,100 @@ function loadQuestion() {
         // Generate input
         if (type(q_data, "s") || type(q_data, "m")) {
             let ty = (type(q_data, "s") ? "radio" : "checkbox");
+            let spanT = (ty === "radio" ? "checkmark" : "checkblock");
             answ.innerHTML = "";
             for (let i = 0, len = ans.length; i < len; ++i) {
                 let name = ans[i],
                     nameText = name.replace("_", "<input type='text'>");
-                answ.innerHTML += `<label class="container">${nameText}<input type="${ty}" value="${name}" name="r">`
-                    + `<span class="checkmark"></span></label>`;
+                answ.innerHTML += `<label class="container"><input type="${ty}" name="r">${nameText}`
+                    + `<span class="${spanT}"></span></label>`;
             }
         } else if (type(q_data, "t"))
             answ.innerHTML = `<input type="text">`;
+        
+        let saved = ans_table[[id_to, id_qu, id_sub_qu]];
+        if (saved) {
+            if (saved.includes("|")) {
+                let spl = saved.split("|");
+                for (let i = 0, len = spl.length; i < len; ++i) {
+                    let val = spl[i];
+                    if (val !== "") {
+                        answ.childNodes[i].childNodes[0].checked = true;
+                        if (val !== "█")
+                            answ.childNodes[i].childNodes[1].value = val;
+                    }
+                }
+            } else {
+                answ.childNodes[0].value = saved;
+            }
+        }
     } else {
         qu.innerHTML = sub_sub_qu.innerHTML = answ.innerHTML = "";
         sub_qu.innerHTML = data[topic].n;
     }
 }
 
+function getAnswer() {
+    let nodes = answ.childNodes,
+        ans = [];
+    for (let i = 0, len = nodes.length; i < len; ++i) {
+        let node = nodes[i];
+        if (node.tagName === "LABEL")
+            ans.push(node.childNodes[0].checked ? "█" : "");
+        else if (node.tagName === "INPUT")
+            ans.push(node.value);
+    }
+    return ans.join("|");
+}
+
+function save_ans(ans) {
+    ans_table[[id_to, id_qu, id_sub_qu]] = (ans == null ? getAnswer() : ans);
+}
+
 function next_qu() {
-    qu_stack.push([id_to, id_qu, id_sub_qu]);
+    let ans = getAnswer();
+    if ((!ans.match(/^\|*$/) || id_to === 0) && !next.classList.contains("dis")) {
+        save_ans(ans);
+        
+        qu_stack.push([id_to, id_qu, id_sub_qu]);
     
-    if (data[topics[id_to]].q) {
-        if (data[topics[id_to]].q[id_qu].t === "g") {
-            id_sub_qu++;
-            if (data[topics[id_to]].q[id_qu].q[id_sub_qu] == null) {
-                id_sub_qu = 0;
+        if (data[topics[id_to]].q) {
+            if (data[topics[id_to]].q[id_qu].t === "g") {
+                id_sub_qu++;
+                if (data[topics[id_to]].q[id_qu].q[id_sub_qu] == null) {
+                    id_sub_qu = 0;
+                    id_qu++;
+                }
+            } else
                 id_qu++;
+        
+            if (data[topics[id_to]].q[id_qu] == null) {
+                id_qu = 0;
+                id_to++;
             }
         } else
-            id_qu++;
-    
-        if (data[topics[id_to]].q[id_qu] == null) {
-            id_qu = 0;
             id_to++;
-        }
-    } else
-        id_to++;
     
-    loadQuestion();
+        prev.classList.remove("dis");
+        if (id_to === topics.length - 1)
+            next.classList.add("dis");
+    
+        loadQuestion();
+    }
 }
 
 function prev_qu() {
-    [id_to, id_qu, id_sub_qu] = qu_stack.pop();
-    
-    loadQuestion();
+    if (!prev.classList.contains("dis")) {
+        save_ans();
+        
+        [id_to, id_qu, id_sub_qu] = qu_stack.pop();
+        
+        next.classList.remove("dis");
+        if (qu_stack.length === 0)
+            prev.classList.add("dis");
+        
+        loadQuestion();
+    }
 }
 
 window.addEventListener("load", async () => {

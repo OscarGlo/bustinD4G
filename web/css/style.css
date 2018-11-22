@@ -52,7 +52,14 @@ h1{
 
 }
 
-.container input {
+.container [type="radio"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    display: none;
+}
+
+.container [type="checkbox"]{
     position: absolute;
     opacity: 0;
     cursor: pointer;
@@ -70,23 +77,33 @@ h1{
     background-color: #eee;
 }
 
-.container:hover input ~ .checkmark {
+.checkblock {
+    position: absolute;
+    top:0;
+    left: 0;
+    height: 30px;
+    width: 30px;
+    border: solid black 2px;
+    background-color: #eee;
+}
+
+.container:hover [type="radio"] ~ .checkmark,.container:hover [type="checkbox"] ~ .checkblock {
 
     background-color: #8ecee5;
 }
 
-.container input:checked ~ .checkmark {
+.container [type="radio"]:checked ~ .checkmark,.container [type="checkbox"]:checked ~ .checkblock {
     background-color: #008CBB;
 }
 /* Create the indicator (the dot/circle - hidden when not checked) */
-.checkmark:after {
+.checkmark:after , .checkblock:after {
     content: "";
     position: absolute;
     display: none;
 }
 
 /* Show the indicator (dot/circle) when checked */
-.container input:checked ~ .checkmark:after {
+.container [type="radio"]:checked ~ .checkmark:after,.container [type="checkbox"]:checked ~ .checkblock:after {
     display: block;
 }
 
@@ -97,6 +114,13 @@ h1{
     width: 8px;
     height: 8px;
     border-radius: 50%;
+    background: white;
+}
+.container .checkblock:after{
+    top: 9px;
+    left: 9px;
+    width: 8px;
+    height: 8px;
     background: white;
 }
 
@@ -148,12 +172,35 @@ h3 {
   left: 10%;
 }
 
+#res {
+  right: 10px;
+  top: 40px;
+}
+
+#lienPartageable {
+  right: 10px;
+  top: 10px;
+}
+#lienPartageable, #res{
+  position: fixed;
+  padding: 2px 8px;
+  transition-duration: 0.4s;
+  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.2), 0 2px 3px 0 rgba(0,0,0,0.19);
+  text-shadow: #ccc 1px 1px, #ccc 1px -1px;
+  cursor: pointer;
+  border: none;
+}
 @media screen and (min-width: 1301px) {
   * {
     font-size: 40px;
   }
-  h4 {
+  h4,#lienPartageable,#res {
     font-size: 22px;
+  }
+  #res {
+    right: 150px;
+    top: 10px;
+    padding: 4px 8px;
   }
 }
 
@@ -161,7 +208,7 @@ h3 {
   * {
     font-size: 30px;
   }
-  h4 {
+  h4,#lienPartageable,#res {
     font-size: 17px;
   }
 }
@@ -180,6 +227,25 @@ button {
   z-index: 1;
 }
 button:hover {
+  background-color: #008CBA;
+  color: white;
+  text-shadow: unset;
+}
+
+.dis {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.dis:hover {
+    background-color: #ffffff;
+    color: black;
+    text-shadow: #ccc 1px 1px, #ccc 1px -1px;
+
+}
+
+
+#lienPartageable:hover{
   background-color: #008CBA;
   color: white;
   text-shadow: unset;
