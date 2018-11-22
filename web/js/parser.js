@@ -80,16 +80,16 @@ function decodeAnswers(data, str) {
 
 function decoder(str){
     let answers = "";
-    for(let i = 0, len = str.length; i < len; ){
+    for(let i = 0, len = str.length; i < len; i++){
         if(str.charAt(i) === "0"){
             answers += "_";
-            i++;
         }else if(str.charAt(i) === "1"){
             if(str.charAt(i + 1) === "0"){
                 answers += "X";
             }else{
+                i++;
                 do{
-                    i=i+2;
+
                     let tmp = "";
                     for(let j = 0; j < 3; ++j){
                         i++;
