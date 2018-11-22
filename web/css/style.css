@@ -172,12 +172,35 @@ h3 {
   left: 10%;
 }
 
+#res {
+  right: 10px;
+  top: 40px;
+}
+
+#lienPartageable {
+  right: 10px;
+  top: 10px;
+}
+#lienPartageable, #res{
+  position: fixed;
+  padding: 2px 8px;
+  transition-duration: 0.4s;
+  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.2), 0 2px 3px 0 rgba(0,0,0,0.19);
+  text-shadow: #ccc 1px 1px, #ccc 1px -1px;
+  cursor: pointer;
+  border: none;
+}
 @media screen and (min-width: 1301px) {
   * {
     font-size: 40px;
   }
-  h4,#lienPartageable {
+  h4,#lienPartageable,#res {
     font-size: 22px;
+  }
+  #res {
+    right: 150px;
+    top: 10px;
+    padding: 4px 8px;
   }
 }
 
@@ -185,7 +208,7 @@ h3 {
   * {
     font-size: 30px;
   }
-  h4,#lienPartageable {
+  h4,#lienPartageable,#res {
     font-size: 17px;
   }
 }
@@ -220,17 +243,7 @@ button:hover {
     text-shadow: #ccc 1px 1px, #ccc 1px -1px;
 
 }
-#lienPartageable{
-  position: fixed;
-  right: 10px;
-  top: 10px;
-  padding: 2px 8px;
-  transition-duration: 0.4s;
-  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.2), 0 2px 3px 0 rgba(0,0,0,0.19);
-  text-shadow: #ccc 1px 1px, #ccc 1px -1px;
-  cursor: pointer;
-  border: none;
-}
+
 
 #lienPartageable:hover{
   background-color: #008CBA;
