@@ -14,14 +14,14 @@ function type(q_data, t) {
 function loadQuestion() {
     console.log(id_to, id_qu, id_sub_qu);
     
-    let topic = topics[id_to];
+    let topic = topics[id_to],
+        pipe = topic.indexOf("|");
+    
+    to.innerHTML = (pipe !== -1 ? topic.substr(0, pipe) : topic);
+    sub_to.innerHTML = (pipe !== -1 ? topic.substr(pipe + 1) : "");
     
     if (data[topic].q) {
-        let q_data = data[topic].q[id_qu],
-            pipe = topic.indexOf("|");
-    
-        to.innerHTML = (pipe !== -1 ? topic.substr(0, pipe) : topic);
-        sub_to.innerHTML = (pipe !== -1 ? topic.substr(pipe + 1) : "");
+        let q_data = data[topic].q[id_qu];
     
         qu.innerHTML = q_data.n;
         sub_qu.innerHTML = (q_data.s != null ? nl2br(q_data.s) : "");
