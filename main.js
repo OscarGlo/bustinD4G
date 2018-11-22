@@ -1,3 +1,5 @@
+"use strict";
+
 const server = require('http').createServer;
 const fs = require('fs');
 const parser = require('./web/js/parser.js');
