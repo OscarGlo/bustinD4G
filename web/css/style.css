@@ -8,7 +8,7 @@
 html, body {height: 100%;}
 
 
-#topic {
+body > div:first-child {
   text-shadow: #888 1px 1px, #888 1px -1px;
   display: flex;
   padding: 0px 80px 0px 80px;
@@ -25,7 +25,7 @@ h1{
   top : 25%;
 }
 
-#topic h2 {
+body > div:first-child h2 {
   padding-left: 80px;
   padding-right: 80px;
   position: relative;
@@ -33,7 +33,7 @@ h1{
 
 }
 
-#bottom h2 {
+body > div:nth-child(2) h2 {
   padding: 20px 80px 0px 80px;
   text-shadow: #aaaaaa 1px 1px, #aaaaaa 1px -1px;
 
@@ -135,7 +135,7 @@ h3 {
   text-shadow: #aaaaaa 1px 1px, #aaaaaa 1px -1px;
 }
 
-#bottom {
+body > div:nth-child(2) {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -144,7 +144,7 @@ h3 {
 
 }
 
-#answers {
+body > div:nth-child(2) > div:first-of-type {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -155,33 +155,33 @@ h3 {
   width: 100%;
 }
 
-#answers div {
+body > div:nth-child(2) > div:first-of-type div {
   padding-left: 22%;
   padding-right: 20%;
 }
 
-#next {
+body > div:nth-child(2) > button:nth-of-type(2) {
   position: fixed;
   bottom: 5%;
   right: 10%;
 }
 
-#prev {
+body > div:nth-child(2) > button:first-of-type  {
   position: fixed;
   bottom: 5%;
   left: 10%;
 }
 
-#res {
+body > div:first-child > button:nth-of-type(2) {
   right: 10px;
   top: 40px;
 }
 
-#lienPartageable {
+body > div:first-child > button:first-of-type {
   right: 10px;
   top: 10px;
 }
-#lienPartageable, #res{
+body > div:first-child > button{
   position: fixed;
   padding: 2px 8px;
   transition-duration: 0.4s;
@@ -194,10 +194,10 @@ h3 {
   * {
     font-size: 40px;
   }
-  h4,#lienPartageable,#res {
+  h4,body > div:first-child > button {
     font-size: 22px;
   }
-  #res {
+  body > div:first-child > button:nth-of-type(2) {
     right: 150px;
     top: 10px;
     padding: 4px 8px;
@@ -208,7 +208,7 @@ h3 {
   * {
     font-size: 30px;
   }
-  h4,#lienPartageable,#res {
+  h4,body > div:first-child > button:first-of-type,body > div:first-child > button:nth-of-type(2) {
     font-size: 17px;
   }
 }
@@ -245,7 +245,7 @@ button:hover {
 }
 
 
-#lienPartageable:hover{
+body > div:first-child > button:first-of-type:hover{
   background-color: #008CBA;
   color: white;
   text-shadow: unset;
