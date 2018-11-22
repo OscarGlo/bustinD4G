@@ -12,14 +12,16 @@ function type(q_data, t) {
 }
 
 function loadQuestion() {
-    let topic = topics[id_to];
+    console.log(id_to, id_qu, id_sub_qu);
+    
+    let topic = topics[id_to],
+        pipe = topic.indexOf("|");
+    
+    to.innerHTML = (pipe !== -1 ? topic.substr(0, pipe) : topic);
+    sub_to.innerHTML = (pipe !== -1 ? topic.substr(pipe + 1) : "");
     
     if (data[topic].q) {
-        let q_data = data[topic].q[id_qu],
-            pipe = topic.indexOf("|");
-    
-        to.innerHTML = (pipe !== -1 ? topic.substr(0, pipe) : topic);
-        sub_to.innerHTML = (pipe !== -1 ? topic.substr(pipe + 1) : "");
+        let q_data = data[topic].q[id_qu];
     
         qu.innerHTML = q_data.n;
         sub_qu.innerHTML = (q_data.s != null ? nl2br(q_data.s) : "");
@@ -35,7 +37,7 @@ function loadQuestion() {
             let ty = (type(q_data, "s") ? "radio" : "checkbox");
             answ.innerHTML = "";
             for (let i = 0, len = q_data.a.length; i < len; ++i) {
-                let name = q_data.a[i];
+                let name = (typeof q_data === "string" ? q_data : q_data.a[i]);
                 answ.innerHTML += `<input type="${ty}" name="r" id="${i}" value="${name}"><label for="${i}">${name}</label><br>`;
             }
         } else if (type(q_data, "t"))
