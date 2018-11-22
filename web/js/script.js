@@ -109,7 +109,7 @@ function next_qu() {
         if (jump) {
             [id_to, id_qu] = jump;
         } else {
-            [id_to, id_qu, id_sub_qu] = ids_next(id_to, id_qu, id_sub_qu);
+            [id_to, id_qu, id_sub_qu] = ids_next(data, id_to, id_qu, id_sub_qu);
     
             prev.classList.remove("dis");
             if (id_to === topics.length - 1)
