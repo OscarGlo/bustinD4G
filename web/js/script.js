@@ -41,7 +41,7 @@ function loadQuestion() {
             let spanT = (ty === "radio" ? "checkmark" : "checkblock");
             answ.innerHTML = "";
             for (let i = 0, len = ans.length; i < len; ++i) {
-                let name = ans[i],
+                let name = (typeof ans[i] === "object" ? ans[i].n : ans[i]),
                     nameText = name.replace("_", "<input type='text'>");
                 answ.innerHTML += `<label class="container"><input type="${ty}" name="r">${nameText}`
                     + `<span class="${spanT}"></span></label>`;
@@ -95,26 +95,36 @@ function next_qu() {
         
         qu_stack.push([id_to, id_qu, id_sub_qu]);
     
-        if (data[topics[id_to]].q) {
-            if (data[topics[id_to]].q[id_qu].t === "g") {
-                id_sub_qu++;
-                if (data[topics[id_to]].q[id_qu].q[id_sub_qu] == null) {
-                    id_sub_qu = 0;
+        jump = (data[topics[id_to]].q ? data[topics[id_to]].q[id_qu].j : null);
+        
+        if (jump) {
+            [id_to, id_qu] = jump;
+        } else {
+            if (data[topics[id_to]].q) {
+                if (jump) {
+            
+                }
+        
+                if (data[topics[id_to]].q[id_qu].t === "g") {
+                    id_sub_qu++;
+                    if (data[topics[id_to]].q[id_qu].q[id_sub_qu] == null) {
+                        id_sub_qu = 0;
+                        id_qu++;
+                    }
+                } else
                     id_qu++;
+        
+                if (data[topics[id_to]].q[id_qu] == null) {
+                    id_qu = 0;
+                    id_to++;
                 }
             } else
-                id_qu++;
-        
-            if (data[topics[id_to]].q[id_qu] == null) {
-                id_qu = 0;
                 id_to++;
-            }
-        } else
-            id_to++;
     
-        prev.classList.remove("dis");
-        if (id_to === topics.length - 1)
-            next.classList.add("dis");
+            prev.classList.remove("dis");
+            if (id_to === topics.length - 1)
+                next.classList.add("dis");
+        }
     
         loadQuestion();
     }
