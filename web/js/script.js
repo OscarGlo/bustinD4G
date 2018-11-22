@@ -19,6 +19,7 @@ function loadQuestion() {
     sub_to.innerHTML = (pipe !== -1 ? topic.substr(pipe + 1) : "");
     
     let c = data[topic].c;
+    if (!c) c = [255, 255, 255];
     to_div.style.backgroundColor = `rgb(${c.join(",")})`;
     
     if (data[topic].q) {
@@ -41,8 +42,8 @@ function loadQuestion() {
             let spanT = (ty === "radio" ? "checkmark" : "checkblock");
             answ.innerHTML = "";
             for (let i = 0, len = ans.length; i < len; ++i) {
-                let name = ans[i],
-                    nameText = name.replace("_", "<input type='text'>");
+                let name = (typeof ans[i] === "object" ? ans[i].n : ans[i]),
+                    nameText = name.replace("_", "<input type='number'>");
                 answ.innerHTML += `<label class="container"><input type="${ty}" name="r">${nameText}`
                     + `<span class="${spanT}"></span></label>`;
             }
@@ -51,19 +52,23 @@ function loadQuestion() {
         
         let saved = ans_table[[id_to, id_qu, id_sub_qu]];
         if (saved) {
-            if (saved.includes("|")) {
-                let spl = saved.split("|");
-                for (let i = 0, len = spl.length; i < len; ++i) {
-                    let val = spl[i];
-                    if (val !== "") {
+            let num = 0;
+            if (saved.includes("_") || saved.includes("x")) {
+                for (let i = 0, len = saved.length; i < len; ++i) {
+                    let val = saved.charAt(i);
+                    if (val !== "_") {
                         answ.childNodes[i].childNodes[0].checked = true;
-                        if (val !== "█")
-                            answ.childNodes[i].childNodes[1].value = val;
+                        if (val !== "x") {
+                            let nex = saved.charAt(i+1);
+                            if (nex && nex.match(/[0-9]/))
+                                num = num * 10 + parseInt(nex);
+                            else
+                                answ.childNodes[i].childNodes[1].value = num;
+                        }
                     }
                 }
-            } else {
+            } else
                 answ.childNodes[0].value = saved;
-            }
         }
     } else {
         qu.innerHTML = sub_sub_qu.innerHTML = answ.innerHTML = "";
@@ -73,15 +78,15 @@ function loadQuestion() {
 
 function getAnswer() {
     let nodes = answ.childNodes,
-        ans = [];
+        ans = "";
     for (let i = 0, len = nodes.length; i < len; ++i) {
         let node = nodes[i];
         if (node.tagName === "LABEL")
-            ans.push(node.childNodes[0].checked ? "█" : "");
+            ans += (node.childNodes[0].checked ? (node.childNodes[1].tagName === "INPUT" ? node.childNodes[1].value : "x") : "_");
         else if (node.tagName === "INPUT")
-            ans.push(node.value);
+            ans += node.value;
     }
-    return ans.join("|");
+    return ans;
 }
 
 function save_ans(ans) {
@@ -90,31 +95,26 @@ function save_ans(ans) {
 
 function next_qu() {
     let ans = getAnswer();
-    if ((!ans.match(/^\|*$/) || id_to === 0) && !next.classList.contains("dis")) {
+    if ((!ans.match(/^_*$/) || id_to === 0) && !next.classList.contains("dis")) {
         save_ans(ans);
         
         qu_stack.push([id_to, id_qu, id_sub_qu]);
-    
-        if (data[topics[id_to]].q) {
-            if (data[topics[id_to]].q[id_qu].t === "g") {
-                id_sub_qu++;
-                if (data[topics[id_to]].q[id_qu].q[id_sub_qu] == null) {
-                    id_sub_qu = 0;
-                    id_qu++;
-                }
-            } else
-                id_qu++;
         
-            if (data[topics[id_to]].q[id_qu] == null) {
-                id_qu = 0;
-                id_to++;
-            }
-        } else
-            id_to++;
+        let jump = null;
+        if (data[topics[id_to]].q && data[topics[id_to]].q[id_qu].a) {
+            jump = data[topics[id_to]].q[id_qu].a[ans.indexOf("x")];
+            if (jump) jump = jump.j;
+        }
+        
+        if (jump) {
+            [id_to, id_qu] = jump;
+        } else {
+            [id_to, id_qu, id_sub_qu] = ids_next(data, id_to, id_qu, id_sub_qu);
     
-        prev.classList.remove("dis");
-        if (id_to === topics.length - 1)
-            next.classList.add("dis");
+            prev.classList.remove("dis");
+            if (id_to === topics.length - 1)
+                next.classList.add("dis");
+        }
     
         loadQuestion();
     }
@@ -145,7 +145,7 @@ window.addEventListener("load", async () => {
     prev = elem("#prev");
     next = elem("#next");
     
-    data = await fetch("/json/questions.json").then(res => res.json());
+    data = await fetch("/json/q.json").then(res => res.json());
     
     topics = Object.keys(data);
     

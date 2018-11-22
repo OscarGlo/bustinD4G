@@ -54,7 +54,7 @@
 					{
 						"n":"No",
 						"j": [
-							1,
+							2,
 							1
 						]
 					}
@@ -123,7 +123,7 @@
 				"a": [
 					{
                       "n":"We work with workstation(s), without centralized physical server",
-                      "j": [5, 0]
+                      "j": [6, 0]
                     },
                   "We have (at least) a centralized physical server"
                 ]
@@ -133,7 +133,7 @@
 				"a": [
 					{
                       "n":"A closet or a room without any specific system",
-                      "j": [3, 0]
+                      "j": [4, 0]
                     },
                   "A dedicated room"
                 ]
@@ -233,11 +233,11 @@
 					"Yes",
 					{
 						"n":"No",
-						"j": [3, 4]
+						"j": [4, 4]
 					},
 					{
 						"n":"I do not want to answer",
-						"j": [3, 4]
+						"j": [4, 4]
 					}
 				]
 			},
@@ -362,7 +362,7 @@
 					"Yes",
 					{
 						"n":"No",
-						"j": [6, 0]
+						"j": [7, 0]
 					}
 				]
 			},
