@@ -83,7 +83,7 @@ function decoder(code){
     let str = "";
     for (let i = 0, len = code.length; i < len; i++){
         let tmp = charCode(code.charAt(i)).toString(2);
-        for(let j = tmp.length; j < 6; i++){
+        for(let j = tmp.length; j < 6; j++){
             tmp = "0" + tmp;
         }
     }
