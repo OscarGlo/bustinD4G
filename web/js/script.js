@@ -16,13 +16,11 @@ function getAnswer() {
         ans = [];
     for (let i = 0, len = nodes.length; i < len; ++i) {
         let node = nodes[i];
-        if (node.tagName === "LABEL")
+        if (node.tagName === "LABEL") {
             if (node.childNodes[0].checked)
                 ans.push(node.childNodes[1].data);
-        else if (node.tagName === "INPUT") {
-            console.log(node, node.value);
+        } else if (node.tagName === "INPUT")
             ans.push(node.value);
-        }
     }
     return ans.join("|");
 }
