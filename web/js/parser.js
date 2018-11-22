@@ -86,6 +86,7 @@ function decoder(str){
         }else if(str.charAt(i) === "1"){
             if(str.charAt(i + 1) === "0"){
                 answers += "X";
+                i++;
             }else{
                 i++;
                 do{
