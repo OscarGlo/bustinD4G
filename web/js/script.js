@@ -102,7 +102,7 @@ function next_qu() {
         
         let jump = null;
         if (data[topics[id_to]].q && data[topics[id_to]].q[id_qu].a) {
-            jump = data[topics[id_to]].q[id_qu].a[ans.split("|").indexOf("█")];
+            jump = data[topics[id_to]].q[id_qu].a[ans.indexOf("x")];
             if (jump) jump = jump.j;
         }
         
