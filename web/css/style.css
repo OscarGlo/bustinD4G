@@ -70,12 +70,12 @@ h1{
     background-color: #eee;
 }
 
-.container:hover input ~ .checkmark {
+.container:hover [type="radio"] ~ .checkmark {
 
     background-color: #8ecee5;
 }
 
-.container input:checked ~ .checkmark {
+.container [type="radio"]:checked ~ .checkmark {
     background-color: #008CBB;
 }
 /* Create the indicator (the dot/circle - hidden when not checked) */
@@ -86,7 +86,7 @@ h1{
 }
 
 /* Show the indicator (dot/circle) when checked */
-.container input:checked ~ .checkmark:after {
+.container [type="radio"]:checked ~ .checkmark:after {
     display: block;
 }
 
