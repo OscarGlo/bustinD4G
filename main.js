@@ -1,6 +1,6 @@
 const server = require('http').createServer;
 const fs = require('fs');
-const parser = require('./web/js/parser.js');
+//const parser = require('./web/js/parser.js');
 
 server(function(req, res) {
     if (req.method === "GET") {
