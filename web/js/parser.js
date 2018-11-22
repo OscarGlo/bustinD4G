@@ -87,13 +87,15 @@ function decoder(str){
             i++;
             if(str.charAt(i) === "0"){
                 answers += "X";
-            }else if(str.charAt(i) === "1"){
-                let tmp = "";
-                for(let j = 0; j < 3; ++j){
-                    i++
-                    tmp += str.charAt(i);
-                }
-                answers += parseInt(tmp, 2);
+            }else{
+                do{
+                    let tmp = "";
+                    for(let j = 0; j < 3; ++j){
+                        i++;
+                        tmp += str.charAt(i);
+                    }
+                    answers += parseInt(tmp, 2);
+                }while(str.charAt(i+1) === "1" && str.charAt(i+2) === "1")
             }
         }
     }
