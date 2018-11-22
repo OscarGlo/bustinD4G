@@ -77,7 +77,6 @@ function next_qu() {
             id_to++;
     
         prev.classList.remove("dis");
-        
         if (id_to === topics.length - 1)
             next.classList.add("dis");
     
@@ -88,9 +87,11 @@ function next_qu() {
 function prev_qu() {
     if (!prev.classList.contains("dis")) {
         [id_to, id_qu, id_sub_qu] = qu_stack.pop();
-    
-        if (qu_stack.length === 0) prev.classList.add("dis");
-        next.classList.add("dis");
+        
+        next.classList.remove("dis");
+        if (qu_stack.length === 0)
+            prev.classList.add("dis");
+        
         loadQuestion();
     }
 }
