@@ -86,6 +86,7 @@ function getAnswer() {
         else if (node.tagName === "INPUT")
             ans.push(node.value);
     }
+    return ans;
 }
 
 function save_ans(ans) {
