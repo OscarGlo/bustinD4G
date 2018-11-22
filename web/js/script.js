@@ -11,13 +11,17 @@ function type(q_data, t) {
     return q_data.t.includes(t);
 }
 
+function parseCheckLabel(html) {
+    return html.replace(/<input type="text" .*?value="(.*?)".*?>/g, "$1").replace(/<input .*?>/g, "");
+}
+
 function getAnswer() {
     let nodes = answ.childNodes,
         ans = [];
     for (let i = 0, len = nodes.length; i < len; ++i) {
         let node = nodes[i];
         if (node.tagName === "LABEL" && node.childNodes[0].checked)
-            ans.push(node.childNodes[1].data);
+            ans.push(parseCheckLabel(node.innerHTML));
         else if (node.tagName === "INPUT")
             ans.push(node.value);
     }
