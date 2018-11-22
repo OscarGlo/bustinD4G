@@ -99,6 +99,7 @@ function decoder(str){
                     answers += parseInt(tmp, 2);
                     i=i+2;
                 }while(str.charAt(i-1) === "1" && str.charAt(i) === "1")
+                i--;
             }
         }
     }
