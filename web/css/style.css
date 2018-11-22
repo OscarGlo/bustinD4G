@@ -30,44 +30,66 @@ hr {
 }
 
 .container {
-	display: block;
-	position: relative;
-	padding-left: 35px;
-	margin-bottom: 12px;
-	cursor: pointer;
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
+    display: block;
+    position: relative;
+    padding-left: 50px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 
 }
 
 .container input {
-	position: absolute;
-	opacity: 0;
-	cursor: pointer;
-	display: none;
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    display: none;
 }
 
 .checkmark {
-	position: absolute;
-	top:0;
-	left: 0;
-	height: 30px;
-	width: 30px;
-	border: solid black 2px;
-	border-radius: 100px;
-	background-color: #eee;
+    position: absolute;
+    top:0;
+    left: 0;
+    height: 30px;
+    width: 30px;
+    border: solid black 2px;
+    border-radius: 100px;
+    background-color: #eee;
 }
 
 .container:hover input ~ .checkmark {
 
-	background-color: #8ecee5;
+    background-color: #8ecee5;
 }
 
 .container input:checked ~ .checkmark {
-	background-color: #008CBA;
+    background-color: #008CBA;
 }
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.container .checkmark:after {
+    top: 9px;
+    left: 9px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: white;
+}
+
 
 h4 {
   padding: 0px 80px 0px 80px;
