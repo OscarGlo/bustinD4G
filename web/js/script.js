@@ -51,12 +51,18 @@ function loadQuestion() {
         
         let saved = ans_table[[id_to, id_qu, id_sub_qu]];
         if (saved) {
-            let spl = saved.split("|");
-            for (let i = 0, len = spl.length; i < len; ++i) {
-                let val = spl[i];
-                if (val !== "") {
-                    answ.childNodes[i].childNodes[0].checked = true;
+            if (saved.includes("|")) {
+                let spl = saved.split("|");
+                for (let i = 0, len = spl.length; i < len; ++i) {
+                    let val = spl[i];
+                    if (val !== "") {
+                        answ.childNodes[i].childNodes[0].checked = true;
+                        if (val !== "█")
+                            answ.childNodes[i].childNodes[1].value = val;
+                    }
                 }
+            } else {
+                answ.childNodes[0].value = saved;
             }
         }
     } else {
