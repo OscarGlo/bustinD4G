@@ -29,6 +29,46 @@ hr {
   text-shadow: #aaaaaa 1px 1px, #aaaaaa 1px -1px;
 }
 
+.container {
+	display: block;
+	position: relative;
+	padding-left: 35px;
+	margin-bottom: 12px;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+
+}
+
+.container input {
+	position: absolute;
+	opacity: 0;
+	cursor: pointer;
+	display: none;
+}
+
+.checkmark {
+	position: absolute;
+	top:0;
+	left: 0;
+	height: 30px;
+	width: 30px;
+	border: solid black 2px;
+	border-radius: 100px;
+	background-color: #eee;
+}
+
+.container:hover input ~ .checkmark {
+
+	background-color: #8ecee5;
+}
+
+.container input:checked ~ .checkmark {
+	background-color: #008CBA;
+}
+
 h4 {
   padding: 0px 80px 0px 80px;
 
