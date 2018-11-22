@@ -78,7 +78,13 @@ function decodeAnswers(data, str) {
 
 }
 
-function decoder(str){
+function decoder(code){
+
+    let str = "";
+    for (let char in code){
+        str += charCode(char);
+    }
+
     let answers = "";
     for(let i = 0, len = str.length; i < len; i++){
         if(str.charAt(i) === "0"){
@@ -96,7 +102,8 @@ function decoder(str){
                         i++;
                     }
                     console.log(tmp);
-                    answers += parseInt(tmp, 2);
+                    let octal = parseInt(tmp, 2).toString();
+                    answers += parseInt(octal, 8);
                 }
                 i--;
             }
