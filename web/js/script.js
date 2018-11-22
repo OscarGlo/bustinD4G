@@ -1,4 +1,4 @@
-let to, sub_to, qu, sub_qu, sub_sub_qu, answ, prev, next,
+let to_div, to, sub_to, qu, sub_qu, sub_sub_qu, answ, prev, next,
     id_to = 0, id_qu = 0, id_sub_qu = 0,
     topics, data, qu_stack = [];
 
@@ -20,6 +20,9 @@ function loadQuestion() {
     to.innerHTML = (pipe !== -1 ? topic.substr(0, pipe) : topic);
     sub_to.innerHTML = (pipe !== -1 ? topic.substr(pipe + 1) : "");
     
+    let c = data[topic].c;
+    to_div.style.backgroundColor = `rvb(${c.join(",")})`;
+    
     if (data[topic].q) {
         let q_data = data[topic].q[id_qu];
     
@@ -39,8 +42,9 @@ function loadQuestion() {
             let ty = (type(q_data, "s") ? "radio" : "checkbox");
             answ.innerHTML = "";
             for (let i = 0, len = ans.length; i < len; ++i) {
-                let name = ans[i];
-                answ.innerHTML += `<input type="${ty}" name="r" id="${i}" value="${name}"><label for="${i}">${name}</label><br>`;
+                let name = ans[i],
+                    nameText = name.replace("_", "<input type='text'");
+                answ.innerHTML += `<input type="${ty}" name="r" id="${i}" value="${name}"><label for="${i}">${nameText}</label><br>`;
             }
         } else if (type(q_data, "t"))
             answ.innerHTML = `<input type="text">`;
@@ -78,6 +82,7 @@ function prev_qu() {
 }
 
 window.addEventListener("load", async () => {
+    to_div = elem("#topic");
     to = elem("#topic h1");
     sub_to = elem("#topic h2");
     qu = elem("#bottom h2");
