@@ -142,8 +142,8 @@ window.addEventListener("load", async () => {
     sub_qu = elem("body > div:last-child > h4");
     sub_sub_qu = elem("body > div:last-child > h3");
     answ = elem("body > div:last-child > div > div");
-    prev = elem("body > div:last-child > button:first");
-    next = elem("body > div:last-child > button:last");
+    prev = elem("body > div:last-child > button:first-of-type");
+    next = elem("body > div:last-child > button:last-of-type");
     
     data = await fetch("/json/q.json").then(res => res.json());
     
