@@ -19,6 +19,7 @@ function loadQuestion() {
     sub_to.innerHTML = (pipe !== -1 ? topic.substr(pipe + 1) : "");
     
     let c = data[topic].c;
+    if (!c) c = [255, 255, 255];
     to_div.style.backgroundColor = `rgb(${c.join(",")})`;
     
     if (data[topic].q) {
@@ -66,7 +67,6 @@ function loadQuestion() {
             }
         }
     } else {
-        console.log("aaaa");
         qu.innerHTML = sub_sub_qu.innerHTML = answ.innerHTML = "";
         sub_qu.innerHTML = data[topic].n;
     }
