@@ -59,6 +59,13 @@ h1{
     display: none;
 }
 
+.container [type="checbox"]{
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    display: none;
+}
+
 .checkmark {
     position: absolute;
     top:0;
