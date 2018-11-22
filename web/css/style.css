@@ -52,7 +52,7 @@ h1{
 
 }
 
-.container input {
+.container [type="radio"] {
     position: absolute;
     opacity: 0;
     cursor: pointer;
