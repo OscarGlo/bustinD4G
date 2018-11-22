@@ -109,22 +109,7 @@ function next_qu() {
         if (jump) {
             [id_to, id_qu] = jump;
         } else {
-            if (data[topics[id_to]].q) {
-                if (data[topics[id_to]].q[id_qu].t === "g") {
-                    id_sub_qu++;
-                    if (data[topics[id_to]].q[id_qu].q[id_sub_qu] == null) {
-                        id_sub_qu = 0;
-                        id_qu++;
-                    }
-                } else
-                    id_qu++;
-        
-                if (data[topics[id_to]].q[id_qu] == null) {
-                    id_qu = 0;
-                    id_to++;
-                }
-            } else
-                id_to++;
+            [id_to, id_qu, id_sub_qu] = ids_next(id_to, id_qu, id_sub_qu);
     
             prev.classList.remove("dis");
             if (id_to === topics.length - 1)
