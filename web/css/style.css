@@ -6,27 +6,36 @@
   font-weight: normal;
 }
 html, body {height: 100%;}
-hr {
-  height: 2px;
-}
 
 
 #topic {
-  text-shadow: #888 -1px 1px, #888 1px 1px;
+  text-shadow: #888 1px 1px, #888 1px -1px;
   display: flex;
-  justify-content: flex-start;
-  align-items: baseline;
-  padding: 30px 0px 0px 80px;
-  height: 15%;
+  padding: 0px 80px 0px 80px;
+  height: 70px;
+  border-bottom: 2px solid black;
+  position: fixed;
+  width: 100%;
+  background-color: white;
+}
+
+h1{
+  position: relative;
+  top : 25%;
 }
 
 #topic h2 {
   padding-left: 80px;
+  padding-right: 80px;
+  position: relative;
+  top : 25%;
+
 }
 
 #bottom h2 {
   padding: 20px 80px 0px 80px;
   text-shadow: #aaaaaa 1px 1px, #aaaaaa 1px -1px;
+
 }
 
 .container {
@@ -90,7 +99,6 @@ hr {
     background: white;
 }
 
-
 h4 {
   padding: 0px 80px 0px 80px;
 
@@ -98,16 +106,17 @@ h4 {
 
 h3 {
   border-radius: 10px;
-  padding: 10px 120px 10px 120px;
+  padding: 10px 120px 0px 120px;
   text-shadow: #aaaaaa 1px 1px, #aaaaaa 1px -1px;
 }
 
 #bottom {
   display: flex;
   flex-direction: column;
-  position: fixed;
   width: 100%;
-  height: 80%;
+  height: 95%;
+  padding-top: 70px;
+
 }
 
 #answers {
@@ -116,17 +125,18 @@ h3 {
   align-items: center;
   align-self: center;
   padding-top: 5vh;
+  flex-grow: 1;
 
 }
 
 #next {
-  position: absolute;
+  position: fixed;
   bottom: 5%;
   right: 10%;
 }
 
 #prev {
-  position: absolute;
+  position: fixed;
   bottom: 5%;
   left: 10%;
 }
