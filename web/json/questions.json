@@ -302,7 +302,7 @@
   "Infrastructure|Workstation": [
     {
       "t": "g",
-      "n": "Do you have those equipments in your compagny:",
+      "n": "Do you have those equipments in your company:",
       "s": "Used: equipment used in the business activity\nNot used functional: equipment in working order but no more used by the company (stored)\nNeither used nor functional: out of service equipment (HS) waiting for end of life treatment",
       "a": [
         "Used",
@@ -361,7 +361,7 @@
       ]
     },
     {
-      "n": "Do you track the energy consumption of your compagny activities?",
+      "n": "Do you track the energy consumption of your company activities?",
       "a": [
         "Yes",
         "No",
@@ -498,7 +498,7 @@
   "Conclusion" : [
     {
       "t": "p",
-      "n": ""
+      "n": "Thank you for participating in our survey. Green IT offers lots of actions with different levels of difficulties, different economic objectives, and different scopes. You can inspire your employees to practice ecological gestures, optimize the already existing hardware/software to be more eco-friendly or completely change your projects patterns from the ground up to respect the earth. The respondents for this survey increased since 2015, which shows an ever-growing interest in Green IT. Once again we thank you for making Green IT a priority."
     }
   ]
 }
