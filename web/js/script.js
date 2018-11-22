@@ -74,7 +74,7 @@ window.addEventListener("load", async () => {
     qu = elem("#bottom h2");
     sub_qu = elem("#bottom h4");
     sub_sub_qu = elem("#bottom h3");
-    answ = elem("#answers");
+    answ = elem("#answers > div");
     prev = elem("#prev");
     next = elem("#next");
     
