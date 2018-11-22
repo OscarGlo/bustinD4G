@@ -100,6 +100,8 @@ function decodeAnswers(data, str){
         }else{
             if(res.q[id_qu].t === "g"){
                 if(id_sub_qu < res.q[id_qu].q.length - 1){
+                    id_sub_qu++;
+                }else{
 
                 }
             }
@@ -148,4 +150,4 @@ function decoder(code){
     return answers;
 }
 
-module.exports = {decodeAnswers: decodeAnswers, codeAnswers: decodeAnswers};
+module.exports = {decodeAnswers: decodeAnswers, codeAnswers: codeAnswers};
