@@ -98,6 +98,7 @@ function decoder(str){
                     console.log(tmp);
                     answers += parseInt(tmp, 2);
                 }
+                i--;
             }
         }
     }
