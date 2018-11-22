@@ -66,6 +66,7 @@ function loadQuestion() {
             }
         }
     } else {
+        console.log("aaaa");
         qu.innerHTML = sub_sub_qu.innerHTML = answ.innerHTML = "";
         sub_qu.innerHTML = data[topic].n;
     }
