@@ -30,7 +30,7 @@ function loadQuestion() {
     
         if (type(q_data, "g")) {
             q_data = q_data.q[id_sub_qu];
-            sub_sub_qu.innerHTML = q_data.n;
+            sub_sub_qu.innerHTML = q_data;
         } else
             sub_sub_qu.innerHTML = "";
     
