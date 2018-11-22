@@ -74,22 +74,22 @@ function codeAnswers(ans) {
 function decodeAnswers(data, str){
 
     let decoded = decoder(str);
-    let topics = data;
+    let topics = Object.keys(data);
     let id_to = 1, id_qu = 0, id_sub_qu = 0;
     let answers = [];
 
     let count = 0, end = str.length;
     let nb_answers;
 
-    while (count + topics[id_to].q[id_qu].a.length < end){
+    while (count + data[topics[id_to]].q[id_qu].a.length < end){
 
-        nb_answers = topics[id_to].q[id_qu].a.length;
+        nb_answers = data[topics[id_to]].q[id_qu].a.length;
 
         answers[[id_to, id_qu, id_sub_qu]] = decoded.substring(count, count + nb_answers);
 
         count += nb_answers;
 
-        let res = topics[id_to].q[id_qu].a[answers[[id_to, id_qu, id_sub_qu]].indexOf("x")];
+        let res = data[topics[id_to]].q[id_qu].a[answers[[id_to, id_qu, id_sub_qu]].indexOf("x")];
 
         if(typeof res === "object"){
             id_to = res.j[0];
@@ -103,7 +103,6 @@ function decodeAnswers(data, str){
 
 
 function decoder(code){
-
     let str = "";
     for (let i = 0, len = code.length; i < len; i++){
         let tmp = charCode(code.charAt(i)).toString(2);
