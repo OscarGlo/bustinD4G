@@ -12,6 +12,8 @@ function type(q_data, t) {
 }
 
 function loadQuestion() {
+    console.log(id_to, id_qu, id_sub_qu);
+    
     let topic = topics[id_to];
     
     if (data[topic].q) {
