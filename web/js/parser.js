@@ -1,6 +1,6 @@
 let chars = "0123456789-_abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-speCharsBin = {"_": "01", "o": "10"};
+speCharsBin = {"_": "01", "x": "10"};
 speChars = Object.keys(speCharsBin);
 
 function charCode(char) {
