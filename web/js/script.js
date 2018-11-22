@@ -156,7 +156,7 @@ window.addEventListener("load", async () => {
     prev = elem("#prev");
     next = elem("#next");
     
-    data = await fetch("/json/questions.json").then(res => res.json());
+    data = await fetch("/json/q.json").then(res => res.json());
     
     topics = Object.keys(data);
     
