@@ -16,9 +16,9 @@ function getAnswer() {
         ans = [];
     for (let i = 0, len = nodes.length; i < len; ++i) {
         let node = nodes[i];
-        if (node.nodeName === "input")
+        if (node.nodeName === "INPUT")
             ans.push(node.value);
-        else if (node.nodeName === "label")
+        else if (node.nodeName === "LABEL")
             ans.push(node.childNodes[0].value);
     }
     return ans.join("|");
