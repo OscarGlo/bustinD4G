@@ -4,11 +4,13 @@ let to_div, to, sub_to, qu, sub_qu, sub_sub_qu, answ, prev, next,
 
 let nl2br = (str) => str.replace("\n", "<br>");
 
-let elem = (tag) => document.querySelector(tag);
+let type = (q_data, t) => (q_data.t == null && t === "s") || q_data.t === t;
 
-function type(q_data, t) {
-    if (q_data.t == null) return (t === "s");
-    return q_data.t.includes(t);
+async function send() {
+    await fetch("/", {
+        method: "post",
+        body: codeAnswers(ans_table)
+    });
 }
 
 function loadQuestion() {
@@ -113,7 +115,7 @@ function next_qu() {
     
             prev.classList.remove("dis");
             if (id_to === topics.length - 1)
-                next.classList.add("dis");
+                next.innerHTML = "Submit";
         }
     
         loadQuestion();
@@ -126,6 +128,7 @@ function prev_qu() {
         
         [id_to, id_qu, id_sub_qu] = qu_stack.pop();
         
+        if (next.innerHTML === "")
         next.classList.remove("dis");
         if (qu_stack.length === 0)
             prev.classList.add("dis");
@@ -135,22 +138,28 @@ function prev_qu() {
 }
 
 window.addEventListener("load", async () => {
-    to_div = elem("body > div:first-child");
-    to = elem("h1");
-    sub_to = elem("body > div:first-child > h2");
-    qu = elem("body > div:last-child > h2");
-    sub_qu = elem("body > div:last-child > h4");
-    sub_sub_qu = elem("body > div:last-child > h3");
-    answ = elem("body > div:last-child > div > div");
-    prev = elem("body > div:last-child > button:first-of-type");
-    next = elem("body > div:last-child > button:last-of-type");
+    let e = (s) => document.querySelector(s);
+    to_div = e("body > div:first-child");
+    to = e("h1");
+    sub_to = e("body > div:first-child > h2");
+    qu = e("body > div:last-child > h2");
+    sub_qu = e("body > div:last-child > h4");
+    sub_sub_qu = e("body > div:last-child > h3");
+    answ = e("body > div:last-child > div > div");
+    prev = e("body > div:last-child > button:first-of-type");
+    next = e("body > div:last-child > button:last-of-type");
     
     data = await fetch("/json/q.json").then(res => res.json());
     
     topics = Object.keys(data);
     
     prev.addEventListener("click", prev_qu);
-    next.addEventListener("click", next_qu);
+    next.addEventListener("click", async () => {
+        if (next.innerHTML === "Submit") {
+            await send();
+            document.body.innerHTML = "The form was sent.<br><a href='/'>Reload the page</a>"
+        } else next_qu();
+    });
     
     loadQuestion();
 });
