@@ -80,20 +80,21 @@ function decodeAnswers(data, str) {
 
 function decoder(str){
     let answers = "";
-    for(let i = 0, len = str.length; i < len; ++i){
+    for(let i = 0, len = str.length; i < len; ){
         if(str.charAt(i) === "0"){
             answers += "_";
         }else if(str.charAt(i) === "1"){
-            i++;
-            if(str.charAt(i) === "0"){
+            if(str.charAt(i + 1) === "0"){
                 answers += "X";
             }else{
                 do{
+                    i=i+2;
                     let tmp = "";
                     for(let j = 0; j < 3; ++j){
                         i++;
                         tmp += str.charAt(i);
                     }
+                    console.log(tmp);
                     answers += parseInt(tmp, 2);
                 }while(str.charAt(i+1) === "1" && str.charAt(i+2) === "1")
             }
