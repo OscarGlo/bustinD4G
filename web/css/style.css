@@ -128,11 +128,12 @@ h3 {
   padding-top: 5vh;
   flex-grow: 1;
   z-index: 1;
-
+  width: 100%;
 }
 
 #answers div {
-  width:100%;
+  border: solid pink 2px;
+
   padding-left: 22%;
   padding-right: 20%;
 }
