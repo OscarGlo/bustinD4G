@@ -80,9 +80,9 @@ function decodeAnswers(data, str) {
 
 function decoder(code){
 
-    let str = ""
+    let str = "";
     for (let i = 0, len = code.length; i < len; i++){
-        str += charCode(code.charAt(i));
+        str += charCode(code.charAt(i)).toString(2);
     }
     console.log(str);
 
@@ -96,7 +96,7 @@ function decoder(code){
                 answers += "X";
                 i++;
             }else{
-                let octal = ""
+                let octal = "";
                 while(str.charAt(i) === "1" && str.charAt(i) === "1"){
                     i=i+2;
                     let tmp = "";
