@@ -389,6 +389,8 @@ window.addEventListener("load", async () => {
                     allAns[keys[j]][ans[keys[j]].indexOf("x")] = +1;
                 }
             }
+            
+            console.log(allAns);
         }
     
         for (let i = 0, len = allAns.length; i < len; ++i) {
