@@ -95,7 +95,6 @@ function decodeAnswers(data, str) {
                 strg += "x";
             } else {
                 while (decoded.charAt(count) !== ".") {
-                    console.log(strg);
                     strg += decoded.charAt(count);
                     count++;
                 }
@@ -104,7 +103,7 @@ function decodeAnswers(data, str) {
         }
 
         answers[[id_to, id_qu, id_sub_qu]] = strg;
-        
+        console.log(strg);
         stack.push([id_to, id_qu, id_sub_qu]);
 
         let res = data[topics[id_to]].q[id_qu].a[answers[[id_to, id_qu, id_sub_qu]].indexOf("x")];
