@@ -6,13 +6,15 @@ server(function(req, res) {
     if (req.method === "GET") {
         if (req.url === "/")
             req.url = "web/index.html";
-        if (fs.existsSync(`web${req.url}`))
+        if (req.url === "/results")
+            fs.createReadStream("results.txt").pipe(res);
+        else if (fs.existsSync(`web${req.url}`))
             fs.createReadStream(`web${req.url}`).pipe(res);
         else
             fs.createReadStream("web/index.html").pipe(res);
     } else if (req.method === "POST") {
         req.on("data", data => {
-            console.log(data.toString());
-        })
+            fs.appendFileSync("results.txt", data.toString() + "\n");
+        });
     }
 }).listen(80);
