@@ -115,7 +115,7 @@
 				"a": [
 					"I don't know",
 					"I do not want to answer",
-					"_ TB"
+					"_ Terabytes"
 				]
 			},
 			{
@@ -256,8 +256,8 @@
 			{
 				"n":"What will be the evolution of your number of physical servers for 2019? (in% or quantity)",
 				"a": [
-					"In % _",
-					"In quantity _",
+					"_ %",
+					"_ in quantity",
 					"I do not want to answer",
 					"I don't know"
 				]
@@ -265,8 +265,8 @@
 			{
 				"n":"What will be the evolution of your number of virtual servers for 2019? (in % or quantity)",
 				"a": [
-					"In % _",
-					"In quantity _",
+					"_ %",
+					"_ in quantity",
 					"I do not want to answer",
 					"I don't know"
 				]
@@ -390,7 +390,7 @@
 			{
 				"n":"Fixed stations, workstations",
 				"a": [
-					"Yes(please specify how much in kWh / year)_",
+					"_ Yes (please specify how much in kWh / year)",
 					"No"
 				]
 			},
@@ -405,7 +405,7 @@
 			{
 				"n":"Do you know the share of IT and IT equipment in your company's total energy consumption?",
 				"a": [
-					"Yes(please specify how much in %)_",
+					"_ Yes(please specify how much in %)",
 					"No"
 				]
 			},
@@ -490,10 +490,10 @@
 				"t":"mt",
 				"n":"What is the number of pages printed / day / employee? (A4 equivalent)",
 				"a": [
-					"Cartridges used a year_",
-					"Cartridges stored in the average business_",
-					"Toners used a year_",
-					"Toners stored in the average business_"
+					"_ Cartridges used a year",
+					"_ Cartridges stored in the average business",
+					"_ Toners used a year",
+					"_ Toners stored in the average business"
 				]
 			},
 			{
@@ -522,7 +522,7 @@
 					"Yes, PEFC",
 					"Yes, Blue Angel",
 					"Yes, European Label",
-					"Yes, other_",
+					"_ Yes, other",
 					"I'm not paying attention"
 				]
 			},
