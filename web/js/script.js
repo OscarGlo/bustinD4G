@@ -178,7 +178,7 @@ window.addEventListener("load", async () => {
     topics = Object.keys(data);
     
     let url = window.location.href,
-        slash = url.indexOf("/");
+        slash = url.lastIndexOf("/");
     if (slash > 0) {
         /*let decode = decodeAnswers(data, url.substr(slash + 1)),
             keys = Object.keys(decode);*/
