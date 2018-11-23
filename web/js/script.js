@@ -337,6 +337,9 @@ window.addEventListener("load", async () => {
     prev = e("body > div:last-child > button:first-of-type");
     next = e("body > div:last-child > button:last-of-type");
     copy_url = e("body > div:first-child > button:first-of-type");
+    results = e("body > div:first-child > button:last-of-type");
+    
+    let body = document.getElementsByTagName('body')[0];
     
     data = await fetch("/json/q.json").then(res => res.json());
     
@@ -357,7 +360,7 @@ window.addEventListener("load", async () => {
     next.addEventListener("click", async () => {
         if (next.innerHTML === "Submit") {
             await send();
-            document.body.innerHTML = "The form was sent.<br><a href='/'>Reload the page</a>"
+            body.innerHTML = "The form was sent.<br><a href='/'>Reload the page</a>";
         } else next_qu();
     });
     copy_url.addEventListener("click", () => {
@@ -369,6 +372,12 @@ window.addEventListener("load", async () => {
         el.select();
         document.execCommand('copy');
         document.body.removeChild(el);
+    });
+    results.addEventListener("click", async () => {
+        let res = await fetch("/results").then(res => res.text()).then(txt => txt.split("\n"));
+        body.innerHTML = "";
+        for (let i = 0, len = res.length; i < len; ++i)
+            body.innerHTML += JSON.stringify(decodeAnswers(data, res[i])) + "<br>";
     });
     
     loadQuestion();
