@@ -128,8 +128,10 @@ function next_qu() {
         if(tmp){
             if(tmp !== [id_to, id_qu, id_sub_qu]){
                 delete ans_table[tmp];
-                while(tmp = curry_stack.pop() && tmp !== null){
+                tmp = curry_stack.pop()
+                while( tmp !== null){
                     delete ans_table[tmp];
+                    tmp = curry_stack.pop()
                 }
             }
         }
