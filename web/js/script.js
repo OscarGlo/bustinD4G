@@ -143,10 +143,10 @@ function prev_qu() {
     if (!prev.classList.contains("dis")) {
         save_ans();
 
-        let tmp = qu_stack.pop();
-        console.log(tmp);
-        [id_to, id_qu, id_sub_qu] = tmp;
-        curry_stack.push(tmp);
+        curry_stack.push([id_to, id_qu, id_sub_qu]);
+        console.log([id_to, id_qu, id_sub_qu]);
+        [id_to, id_qu, id_sub_qu] = qu_stack.pop();
+
         
         if (next.innerHTML === "Submit")
             next.innerHTML = "&gt;&gt;";
