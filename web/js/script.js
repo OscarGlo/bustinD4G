@@ -1,4 +1,4 @@
-let to_div, to, sub_to, qu, sub_qu, sub_sub_qu, answ, prev, next,
+let to_div, to, sub_to, qu, sub_qu, sub_sub_qu, answ, prev, next, copy_url, results,
     id_to = 0, id_qu = 0, id_sub_qu = 0,
     topics, data, qu_stack = [], ans_table = {}, curry_stack = [];
 
@@ -169,6 +169,7 @@ window.addEventListener("load", async () => {
     answ = e("body > div:last-child > div > div");
     prev = e("body > div:last-child > button:first-of-type");
     next = e("body > div:last-child > button:last-of-type");
+    copy_url = e("body > div:first-child > button:first-of-type");
     
     data = await fetch("/json/q.json").then(res => res.json());
     
@@ -191,6 +192,16 @@ window.addEventListener("load", async () => {
             await send();
             document.body.innerHTML = "The form was sent.<br><a href='/'>Reload the page</a>"
         } else next_qu();
+    });
+    copy_url.addEventListener("click", () => {
+        const el = document.createElement('textarea');
+        el.value = codeAnswers(ans_table);
+        el.style.position = 'absolute';
+        el.style.left = '-9999px';
+        document.body.appendChild(el);
+        el.select();
+        document.execCommand('copy');
+        document.body.removeChild(el);
     });
     
     loadQuestion();
