@@ -357,10 +357,10 @@ window.addEventListener("load", async () => {
     }
     
     prev.addEventListener("click", prev_qu);
-    next.addEventListener("click", async () => {
+    next.addEventListener("click", () => {
         if (next.innerHTML === "Submit") {
-            await send();
-            body.innerHTML = "The form was sent.<br><a href='/'>Reload the page</a>";
+            send();
+            next.classList.add("dis");
         } else next_qu();
     });
     copy_url.addEventListener("click", () => {
@@ -385,10 +385,24 @@ window.addEventListener("load", async () => {
                 console.log(ans[keys[j]]);
                 if (!allAns[keys[j]])
                     allAns[keys[j]] = [];
-                if (!allAns[keys[j]][ans[keys[j]].indexOf("x")]) {
-                    allAns[keys[j]][ans[keys[j]].indexOf("x")] = 1;
-                } else {
-                    allAns[keys[j]][ans[keys[j]].indexOf("x")] += 1;
+                for (let k = 0, count = 0, num = 0, len3 = ans[keys[j]].length; k < len3; k++) {
+                    let char = ans[keys[j]].charAt(k);
+    
+                    if (char = "_") {
+                        count++;
+                    } else if (char = "x") {
+                        if (allAns[keys[j]][count])
+                            allAns[keys[j]][count] += 1;
+                        else
+                            allAns[keys[j]][count] = 1;
+                        count++;
+                    } else if (char.match(/[0-9]/)) {
+                        num = num * 10 + parseInt(char);
+                    } else if (char === ".") {
+                        allAns[keys[j]][count].push(num);
+                        num = 0;
+                        count++;
+                    }
                 }
             }
             
