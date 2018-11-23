@@ -94,7 +94,7 @@ function decodeAnswers(data, str){
                 strg += "_";
                 count++;
                 i++;
-            } else if (decoded.charAt(count) === "x"{
+            } else if (decoded.charAt(count) === "x"){
                 strg += "x";
                 count ++;
                 i++;
