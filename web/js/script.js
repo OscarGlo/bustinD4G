@@ -178,11 +178,10 @@ window.addEventListener("load", async () => {
     topics = Object.keys(data);
     
     let url = window.location.href,
-        slash = url.lastIndexOf("/");
-    if (slash > 0) {
-        /*let decode = decodeAnswers(data, url.substr(slash + 1)),
-            keys = Object.keys(decode);*/
-        console.log(url.substr(slash + 1));
+        sub = url.substr(url.lastIndexOf("/") + 1);
+    if (sub !== "") {
+        let decode = decodeAnswers(data, sub),
+            keys = Object.keys(decode);
         ans_table = decode;
         [id_to, id_qu, id_sub_qu] = keys[keys.length - 1];
     }
