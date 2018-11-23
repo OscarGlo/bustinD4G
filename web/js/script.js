@@ -358,7 +358,7 @@ window.addEventListener("load", async () => {
     next.addEventListener("click", async () => {
         if (next.innerHTML === "Submit") {
             await send();
-            document.body.innerHTML = "The form was sent.<br><a href='/'>Reload the page</a>"
+            //document.body.innerHTML = "The form was sent.<br><a href='/'>Reload the page</a>"
         } else next_qu();
     });
     copy_url.addEventListener("click", () => {
@@ -370,6 +370,12 @@ window.addEventListener("load", async () => {
         el.select();
         document.execCommand('copy');
         document.body.removeChild(el);
+    });
+    results.addEventListener("click", async () => {
+        let res = await fetch("/results");
+        document.body.innerHTML = "";
+        for (let i = 0, len = res.length; i < len; ++i)
+            document.body.innerHTML += decodeAnswers(data, res[i]);
     });
     
     loadQuestion();
