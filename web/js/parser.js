@@ -84,6 +84,7 @@ function decodeAnswers(data, str) {
 
     while (count < end && id_to < topics.length-1){
 
+        console.log(count, end);
         nb_answers = data[topics[id_to]].q[id_qu].a.length;
 
         let strg = "";
