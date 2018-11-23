@@ -375,7 +375,7 @@ window.addEventListener("load", async () => {
         document.body.removeChild(el);
     });
     results.addEventListener("click", async () => {
-        let res = await fetch("/results");
+        let res = await fetch("/results").then(res => res.json());
         body.innerHTML = "";
         for (let i = 0, len = res.length; i < len; ++i)
             body.innerHTML += decodeAnswers(data, res[i]);
