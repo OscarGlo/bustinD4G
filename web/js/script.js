@@ -87,7 +87,7 @@ function getAnswer() {
         if (node.tagName === "LABEL")
             ans += (node.childNodes[0].checked ? (node.childNodes[1].tagName === "INPUT" ? node.childNodes[1].value : "x") : "_");
         else if (node.tagName === "INPUT")
-            ans += node.value;
+            ans += node.value + ".";
     }
     return ans;
 }
