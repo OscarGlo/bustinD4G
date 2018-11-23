@@ -100,10 +100,8 @@ function next_qu() {
     if ((!ans.match(/^_*$/) || id_to === 0) && !next.classList.contains("dis")) {
         save_ans(ans);
 
-        let tmp = curry_stack.pop();
-        //console.log("curry_stack.pop() " + tmp);
         qu_stack.push([id_to, id_qu, id_sub_qu]);
-        //console.log("qu_stack.push : " + [id_to, id_qu, id_sub_qu]);
+        console.log("qu_stack.push : " + [id_to, id_qu, id_sub_qu]);
 
 
         let jump = null;
@@ -124,7 +122,9 @@ function next_qu() {
 
         loadQuestion();
 
+        let tmp = curry_stack.pop();
             if(tmp){
+                console.log("[id_to, id_qu, id_sub_qu] " + [id_to, id_qu, id_sub_qu]);
                 if(tmp !== [id_to, id_qu, id_sub_qu]){
                     delete ans_table[tmp];
                     tmp = curry_stack.pop();
@@ -134,6 +134,8 @@ function next_qu() {
                     }
                 }
             }
+
+        console.log("curry_stack.pop() " + tmp);
     }
 }
 
