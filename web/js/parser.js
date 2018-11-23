@@ -89,7 +89,6 @@ function decodeAnswers(data, str) {
 
         
         for (let i = 0, len = nb_answers; i < len; i++, count++) {
-            console.log(decoded.charAt(count));
             if (decoded.charAt(count) === "_") {
                 strg += "_";
             } else if (decoded.charAt(count) === "x"){
@@ -103,6 +102,7 @@ function decodeAnswers(data, str) {
         }
 
         console.log(strg);
+        console.log([id_to, id_qu, id_sub_qu]);
         answers[[id_to, id_qu, id_sub_qu]] = strg;
         
         if(strg !== "") stack.push([id_to, id_qu, id_sub_qu]);
