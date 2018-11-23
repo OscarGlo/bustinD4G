@@ -115,7 +115,6 @@ function decodeAnswers(data, str) {
             [id_to, id_qu, id_sub_qu] = ids_next(data, id_to, id_qu, id_sub_qu);
         }
     }
-    console.log(stack);
     return [stack, answers];
 }
 
