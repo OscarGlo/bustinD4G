@@ -122,26 +122,39 @@ function decoder(code){
     }
 
     let answers = "";
-    for(let i = 0, len = str.length; i < len; i++){
+    for(let i = 0, len = str.length; i < len; ){
         if(str.charAt(i) === "0"){
             answers += "_";
+            i++;
         }else if(str.charAt(i) === "1"){
-            if(str.charAt(i + 1) === "0"){
+            i++;
+            if(str.charAt(i) === "0"){
                 answers += "x";
                 i++;
             }else{
-                let octal = "";
-                while(str.charAt(i) === "1" && str.charAt(i) === "1"){
-                    i=i+2;
-                    let tmp = "";
-                    for(let j = 0; j < 3; ++j){
-                        tmp += str.charAt(i);
-                        i++;
-                    }
-                    octal += parseInt(tmp, 2).toString();
+                i++;
+                if(str.charAt(i) === "0"){
+                    i++;
+                    let octal = "";
+                    let endNb = "";
+                    do {
+                        let tmp = "";
+
+                        for (let j = 0; j < 3; ++j) {
+                            tmp += str.charAt(i);
+                            i++;
+                        }
+                        octal += parseInt(tmp, 2).toString();
+                        tmp = "";
+                        for (let j = 0; j < 3; ++j) {
+                            tmp += str.charAt(i);
+                            i++;
+                        }
+                        endNb = tmp;
+                    } while (endNb !== "111");
+                    answers += parseInt(octal, 8);
+                    answers += ".";
                 }
-                answers += parseInt(octal, 8);
-                i--;
             }
         }
     }
