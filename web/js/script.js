@@ -401,8 +401,7 @@ window.addEventListener("load", async () => {
             let q_data = data[topics[id1]].q[id2];
             if (q_data.q) q_data = q_data.q[id3];
             
-            let parseNull = allAns[keys[i]].map(it => (it == null ? 0 : it));
-            body.innerHTML += (typeof q_data === "string" ? q_data : q_data.n) + " -- " + JSON.stringify(parseNull) + "<br>";
+            body.innerHTML += (typeof q_data === "string" ? q_data : q_data.n) + " -- " + JSON.stringify(allAns[keys[i]]) + "<br>";
         }
     });
     
