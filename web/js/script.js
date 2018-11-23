@@ -388,7 +388,7 @@ window.addEventListener("load", async () => {
                 for (let k = 0, count = 0, num = 0, len3 = ans[keys[j]].length; k < len3; k++) {
                     let char = ans[keys[j]].charAt(k);
     
-                    if (char = "_") {
+                    if (char === "_") {
                         count++;
                     } else if (char = "x") {
                         if (allAns[keys[j]][count])
