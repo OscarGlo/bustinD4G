@@ -399,7 +399,9 @@ window.addEventListener("load", async () => {
                     } else if (char.match(/[0-9]/)) {
                         num = num * 10 + parseInt(char);
                     } else if (char === ".") {
-                        allAns[keys[j]][count].push(num);
+                        if (!allAns[keys[j]][count][k])
+                            allAns[keys[j]][count][k] = [];
+                        allAns[keys[j]][count][k].push(num);
                         num = 0;
                         count++;
                     }
