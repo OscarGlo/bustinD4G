@@ -180,9 +180,9 @@ window.addEventListener("load", async () => {
     let url = window.location.href,
         slash = url.indexOf("/");
     if (slash > 0) {
-        let decode = decodeAnswers(data, url.substr(slash + 1)),
-            keys = Object.keys(decode);
-        console.log(url.substr(slash + 1), decode);
+        /*let decode = decodeAnswers(data, url.substr(slash + 1)),
+            keys = Object.keys(decode);*/
+        console.log(url.substr(slash + 1));
         ans_table = decode;
         [id_to, id_qu, id_sub_qu] = keys[keys.length - 1];
     }
