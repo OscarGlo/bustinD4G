@@ -128,7 +128,8 @@ function next_qu() {
         console.log("[id_to, id_qu, id_sub_qu] " + [id_to, id_qu, id_sub_qu]);
         console.log("tmp[0]" + tmp[0]);
         console.log("id_to" + id_to);
-        console.log("tmp[0] !== id_to" + tmp[0] == id_to);
+        console.log("tmp[0] !== id_to" + tmp[0] !== id_to);
+        console.log("1=1" + 1 === 1);
             while(tmp !== undefined || same){
                 console.log("tmp !== [id_to, id_qu, id_sub_qu] "+ tmp !== [id_to, id_qu, id_sub_qu]);
                 if(tmp !== [id_to, id_qu, id_sub_qu]){
