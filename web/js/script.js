@@ -338,6 +338,7 @@ window.addEventListener("load", async () => {
     prev = e("body > div:last-child > button:first-of-type");
     next = e("body > div:last-child > button:last-of-type");
     copy_url = e("body > div:first-child > button:first-of-type");
+    results = e("body > div:first-child > button:last-of-type");
     
     let body = document.getElementsByTagName('body')[0];
     
