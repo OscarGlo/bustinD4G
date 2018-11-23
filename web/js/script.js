@@ -381,7 +381,10 @@ window.addEventListener("load", async () => {
             let ans = decodeAnswers(data, res[i])[1],
                 keys = Object.keys(ans);
             console.log(ans);
-            for (let j = 0, len2 = keys.length; j < len2; ++j) {
+            
+            body.innerHTML += JSON.stringify(ans) + "<br>";
+            
+            /*for (let j = 0, len2 = keys.length; j < len2; ++j) {
                 console.log(ans[keys[j]]);
                 if (!allAns[keys[j]])
                     allAns[keys[j]] = [];
@@ -418,6 +421,7 @@ window.addEventListener("load", async () => {
             if (q_data.q) q_data = q_data.q[id3];
             
             body.innerHTML += (typeof q_data === "string" ? q_data : q_data.n) + " -- " + JSON.stringify(allAns[keys[i]]) + "<br>";
+        }*/
         }
     });
     
