@@ -380,6 +380,7 @@ window.addEventListener("load", async () => {
         for (let i = 0, len = res.length; i < len; ++i) {
             let ans = decodeAnswers(data, res[i])[1],
                 keys = Object.keys(ans);
+            console.log(ans);
             for (let j = 0, len2 = ans.length; j < len2; ++j) {
                 if (!allAns[keys[j]])
                     allAns[keys[j]] = [];
