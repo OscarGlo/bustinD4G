@@ -83,8 +83,10 @@ function decodeAnswers(data, str){
     let count = 0, end = str.length;
     let nb_answers;
 
+    console.log("end: " + end);
     while (count < end){
         console.log("début: " + count);
+
         nb_answers = data[topics[id_to]].q[id_qu].a.length;
 
         let strg = "";
