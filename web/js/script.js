@@ -402,7 +402,7 @@ window.addEventListener("load", async () => {
             if (q_data.q) q_data = q_data.q[id3];
             
             let parseNull = allAns[keys[i]].map(it => (it == null ? 0 : it));
-            body.innerHTML += q_data.n + " -- " + JSON.stringify(parseNull) + "<br>";
+            body.innerHTML += (typeof q_data === "string" ? q_data : q_data.n) + " -- " + JSON.stringify(parseNull) + "<br>";
         }
     });
     
