@@ -127,7 +127,7 @@ function next_qu() {
         let same = false;
         console.log("[id_to, id_qu, id_sub_qu] " + [id_to, id_qu, id_sub_qu]);
             while(tmp !== undefined || same){
-                console.log("tmp !== [id_to, id_qu, id_sub_qu] "+ tmp !== [id_to, id_qu, id_sub_qu])
+                console.log("tmp !== [id_to, id_qu, id_sub_qu] "+ tmp !== [id_to, id_qu, id_sub_qu]);
                 if(tmp !== [id_to, id_qu, id_sub_qu]){
                     delete ans_table[tmp];
                     tmp = curry_stack.pop();
