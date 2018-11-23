@@ -57,6 +57,7 @@ function codeAnswers(ans) {
                     num = 0;
                 }
             }
+            console.log(char, bin);
         }
     }
     
