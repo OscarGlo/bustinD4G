@@ -378,7 +378,7 @@ window.addEventListener("load", async () => {
         let res = await fetch("/results").then(res => res.text()).then(txt => txt.split("\n"));
         body.innerHTML = "";
         for (let i = 0, len = res.length; i < len; ++i)
-            body.innerHTML += decodeAnswers(data, res[i])[1] + "<br>";
+            body.innerHTML += JSON.stringify(decodeAnswers(data, res[i])[1]) + "<br>";
     });
     
     loadQuestion();
