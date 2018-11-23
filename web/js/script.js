@@ -126,7 +126,7 @@ function next_qu() {
         if(tmp){
             if(tmp !== [id_to, id_qu, id_sub_qu]){
                 delete ans_table[tmp];
-                while(tmp = curry_stack.pop() !== null){
+                while(tmp = curry_stack.pop() && tmp !== null){
                     delete ans_table[tmp];
                     console.log("boucle");
                 }
