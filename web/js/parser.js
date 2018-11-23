@@ -114,8 +114,10 @@ function decodeAnswers(data, str) {
         if (typeof res === "object") {
             id_to = res.j[0];
             id_qu = res.j[1];
-        } else {
+        } else if(typeof  res === "string"){
             [id_to, id_qu, id_sub_qu] = ids_next(data, id_to, id_qu, id_sub_qu);
+        }else{
+            break;
         }
     }
     return [stack, answers];
