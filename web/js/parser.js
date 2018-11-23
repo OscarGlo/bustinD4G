@@ -99,6 +99,7 @@ function decodeAnswers(data, str) {
                     strg += decoded.charAt(count);
                     count++;
                 }
+                count--;
             }
         }
 
