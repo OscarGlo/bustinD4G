@@ -91,7 +91,7 @@ function decodeAnswers(data, str) {
     let decoded = decoder(str);
     let topics = Object.keys(data);
     let id_to = 1, id_qu = 0, id_sub_qu = 0;
-    let answers = [];
+    let answers = {};
     
     let count = 0, end = decoded.length;
     let nb_answers;
@@ -101,7 +101,6 @@ function decodeAnswers(data, str) {
         nb_answers = data[topics[id_to]].q[id_qu].a.length;
         
         let strg = "";
-        
         
         for (let i = 0, len = nb_answers; i < len; i++, count++) {
             if (decoded.charAt(count) === "_") {
