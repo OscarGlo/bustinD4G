@@ -125,7 +125,10 @@ function next_qu() {
         let tmp = curry_stack.pop();
         if(tmp){
             if(tmp !== [id_to, id_qu, id_sub_qu]){
-                console.log("c'est grillé !");
+                delete ans_table[tmp];
+                while(tmp = curry_stack.pop() !== null){
+                    delete ans_table[tmp];
+                }
             }
         }
     
