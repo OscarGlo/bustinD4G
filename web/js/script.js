@@ -339,6 +339,8 @@ window.addEventListener("load", async () => {
     next = e("body > div:last-child > button:last-of-type");
     copy_url = e("body > div:first-child > button:first-of-type");
     
+    let body = document.getElementsByTagName('body')[0];
+    
     data = await fetch("/json/q.json").then(res => res.json());
     
     topics = Object.keys(data);
@@ -358,7 +360,7 @@ window.addEventListener("load", async () => {
     next.addEventListener("click", async () => {
         if (next.innerHTML === "Submit") {
             await send();
-            //document.body.innerHTML = "The form was sent.<br><a href='/'>Reload the page</a>"
+            body.innerHTML = "The form was sent.<br><a href='/'>Reload the page</a>";
         } else next_qu();
     });
     copy_url.addEventListener("click", () => {
@@ -373,9 +375,9 @@ window.addEventListener("load", async () => {
     });
     results.addEventListener("click", async () => {
         let res = await fetch("/results");
-        document.body.innerHTML = "";
+        body.innerHTML = "";
         for (let i = 0, len = res.length; i < len; ++i)
-            document.body.innerHTML += decodeAnswers(data, res[i]);
+            body.innerHTML += decodeAnswers(data, res[i]);
     });
     
     loadQuestion();
