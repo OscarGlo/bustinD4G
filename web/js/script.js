@@ -114,6 +114,19 @@ function next_qu() {
         
         if (jump) {
             [id_to, id_qu] = jump;
+            let tmp = curry_stack.pop();
+            //console.log("tmp" + tmp);
+            //console.log("id" + [id_to, id_qu, id_sub_qu]);
+            if(tmp){
+                if(tmp !== [id_to, id_qu, id_sub_qu]){
+                    delete ans_table[tmp];
+                    tmp = curry_stack.pop()
+                    while( tmp !== undefined){
+                        delete ans_table[tmp];
+                        tmp = curry_stack.pop()
+                    }
+                }
+            }
         } else {
             [id_to, id_qu, id_sub_qu] = ids_next(data, id_to, id_qu, id_sub_qu);
     
@@ -122,19 +135,7 @@ function next_qu() {
                 next.innerHTML = "Submit";
         }
 
-        let tmp = curry_stack.pop();
-        //console.log("tmp" + tmp);
-        //console.log("id" + [id_to, id_qu, id_sub_qu]);
-        if(tmp){
-            if(tmp !== [id_to, id_qu, id_sub_qu]){
-                delete ans_table[tmp];
-                tmp = curry_stack.pop()
-                while( tmp !== undefined){
-                    delete ans_table[tmp];
-                    tmp = curry_stack.pop()
-                }
-            }
-        }
+
     
         loadQuestion();
 
