@@ -88,7 +88,9 @@ function decodeAnswers(data, str) {
 
         let strg = "";
 
+        
         for (let i = 0, len = nb_answers; i < len; i++, count++) {
+            console.log(decoded.charAt(count));
             if (decoded.charAt(count) === "_") {
                 strg += "_";
             } else if (decoded.charAt(count) === "x"){
