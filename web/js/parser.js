@@ -102,6 +102,7 @@ function decodeAnswers(data, str) {
             }
         }
 
+        console.log(strg);
         answers[[id_to, id_qu, id_sub_qu]] = strg;
         
         if(strg !== "") stack.push([id_to, id_qu, id_sub_qu]);
