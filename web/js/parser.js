@@ -72,13 +72,11 @@ function codeAnswers(ans) {
     return res;
 }
 
-function decodeAnswers(data, str){
-
+function decodeAnswers(data, str) {
     let decoded = decoder(str);
     let topics = Object.keys(data);
     let id_to = 1, id_qu = 0, id_sub_qu = 0;
     let answers = [];
-
 
     let count = 0, end = decoded.length;
     let nb_answers;
@@ -90,22 +88,16 @@ function decodeAnswers(data, str){
 
         let strg = "";
 
-        for (let i = 0, len = nb_answers; i < len;) {
+        for (let i = 0, len = nb_answers; i < len; i++, count++) {
             if (decoded.charAt(count) === "_") {
                 strg += "_";
-                count++;
-                i++;
             } else if (decoded.charAt(count) === "x"){
                 strg += "x";
-                count ++;
-                i++;
             }  else{
                 while (decoded.charAt(count) !== ".") {
                     strg += decoded.charAt(count);
                     count++;
                 }
-                count++;
-                i++;
             }
         }
 
@@ -115,10 +107,10 @@ function decodeAnswers(data, str){
 
         let res = data[topics[id_to]].q[id_qu].a[answers[[id_to, id_qu, id_sub_qu]].indexOf("x")];
 
-        if(typeof res === "object"){
+        if (typeof res === "object") {
             id_to = res.j[0];
             id_qu = res.j[1];
-        }else{
+        } else {
             [id_to, id_qu, id_sub_qu] = ids_next(data, id_to, id_qu, id_sub_qu);
         }
     }
@@ -126,9 +118,9 @@ function decodeAnswers(data, str){
 }
 
 
-function decoder(code){
+function decoder(code) {
     let str = "";
-    for (let i = 0, len = code.length; i < len; i++){
+    for (let i = 0, len = code.length; i < len; i++) {
         let tmp = charCode(code.charAt(i)).toString(2);
         for(let j = tmp.length; j < 6; j++){
             tmp = "0" + tmp;
@@ -137,35 +129,28 @@ function decoder(code){
     }
 
     let answers = "";
-    for(let i = 0, len = str.length; i < len; ){
-        if(str.charAt(i) === "0"){
+    for(let i = 0, len = str.length; i < len; ) {
+        if (str.charAt(i) === "0") {
             answers += "_";
             i++;
-        }else if(str.charAt(i) === "1"){
+        } else if (str.charAt(i) === "1") {
             i++;
-            if(str.charAt(i) === "0"){
+            if (str.charAt(i) === "0") {
                 answers += "x";
                 i++;
-            }else{
+            } else {
                 i++;
-                if(str.charAt(i) === "0"){
+                if (str.charAt(i) === "0") {
                     i++;
                     let octal = "";
                     let endNb = "";
                     do {
-                        let tmp = "";
-
-                        for (let j = 0; j < 3; ++j) {
-                            tmp += str.charAt(i);
-                            i++;
-                        }
+                        let tmp = str.substr(i, 3);
                         octal += parseInt(tmp, 2).toString();
-                        tmp = "";
-                        for (let j = 0; j < 3; ++j) {
-                            tmp += str.charAt(i);
-                            i++;
-                        }
+                        
+                        tmp = str.substr(i + 3, 3);
                         endNb = tmp;
+                        i += 6;
                     } while (endNb !== "111");
                     answers += parseInt(octal, 8);
                     answers += ".";
