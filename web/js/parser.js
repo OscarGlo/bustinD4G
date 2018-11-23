@@ -84,7 +84,7 @@ function decodeAnswers(data, str){
     let nb_answers;
 
 
-    while (count < end && topics[id_to].q !== undefined){
+    while (count < end && id_to < topics.length-1){
 
         nb_answers = data[topics[id_to]].q[id_qu].a.length;
 
