@@ -487,8 +487,8 @@
 				]
 			},
 			{
-				"t":"mt",
-				"n":"What is the number of pages printed / day / employee? (A4 equivalent)",
+				"t":"m",
+				"n":"84. Can you specify the number of cartridges / toners:",
 				"a": [
 					"_ Cartridges used a year",
 					"_ Cartridges stored in the average business",
@@ -515,7 +515,7 @@
 				]
 			},
 			{
-				"t":"mt",
+				"t":"m",
 				"n":"Do you choose certified paper?",
 				"a": [
 					"Yes, FSC",
