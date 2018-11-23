@@ -123,6 +123,7 @@ function next_qu() {
         loadQuestion();
 
         let tmp = curry_stack.pop();
+        console.log("curry_stack.pop() " + tmp);
         let same = false;
         console.log("[id_to, id_qu, id_sub_qu] " + [id_to, id_qu, id_sub_qu]);
             while(tmp !== undefined || same){
@@ -134,7 +135,7 @@ function next_qu() {
                 }
             }
 
-        console.log("curry_stack.pop() " + tmp);
+
     }
 }
 
