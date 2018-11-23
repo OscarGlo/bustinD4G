@@ -1,6 +1,6 @@
 let to_div, to, sub_to, qu, sub_qu, sub_sub_qu, answ, prev, next,
     id_to = 0, id_qu = 0, id_sub_qu = 0,
-    topics, data, qu_stack = [], ans_table = {};
+    topics, data, qu_stack = [], ans_table = {}, curry_stack = [];
 
 let nl2br = (str) => str.replace("\n", "<br>");
 
@@ -101,6 +101,10 @@ function next_qu() {
         save_ans(ans);
         
         qu_stack.push([id_to, id_qu, id_sub_qu]);
+
+
+
+
         
         let jump = null;
         if (data[topics[id_to]].q && data[topics[id_to]].q[id_qu].a) {
@@ -117,16 +121,26 @@ function next_qu() {
             if (id_to === topics.length - 1)
                 next.innerHTML = "Submit";
         }
+
+        let tmp = curry_stack.pop();
+        if(tmp){
+            if(tmp !== [id_to, id_qu, id_sub_qu]){
+                console.log("c'est grillé !");
+            }
+        }
     
         loadQuestion();
+
     }
 }
 
 function prev_qu() {
     if (!prev.classList.contains("dis")) {
         save_ans();
-        
-        [id_to, id_qu, id_sub_qu] = qu_stack.pop();
+
+        let tmp = qu_stack.pop();
+        [id_to, id_qu, id_sub_qu] = tmp;
+        curry_stack.push(tmp);
         
         if (next.innerHTML === "Submit")
             next.innerHTML = "&gt;&gt;";
