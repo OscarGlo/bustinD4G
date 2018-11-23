@@ -82,15 +82,13 @@ function decodeAnswers(data, str) {
     let nb_answers;
     let stack = [[0, 0, 0]];
 
-    while (count < end && id_to < topics.length-1){
-
-        console.log(count, end);
+    while (count < end && id_to < topics.length-1) {
         nb_answers = data[topics[id_to]].q[id_qu].a.length;
 
         let strg = "";
 
         
-        for (let i = 0, len = nb_answers; i < len; i++, count++) {
+        for (let i = 0, len = nb_answers, len2 = decoded.length; i < len && i < len2; i++, count++) {
             console.log(decoded.charAt(count));
             if (decoded.charAt(count) === "_") {
                 strg += "_";
