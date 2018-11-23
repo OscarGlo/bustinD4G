@@ -177,6 +177,15 @@ window.addEventListener("load", async () => {
     
     topics = Object.keys(data);
     
+    let url = window.location.href,
+        slash = url.indexOf("/");
+    if (slash > 0) {
+        let decode = decodeAnswers(data, url.substr(slash + 1)),
+            keys = Object.keys(decode);
+        ans_table = decode;
+        [id_to, id_qu, id_sub_qu] = keys[keys.length - 1];
+    }
+    
     prev.addEventListener("click", prev_qu);
     next.addEventListener("click", async () => {
         if (next.innerHTML === "Submit") {

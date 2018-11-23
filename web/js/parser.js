@@ -100,7 +100,7 @@ function decodeAnswers(data, str){
                 count ++;
                 i++;
             }  else{
-                while (decoded.charAt(count) != ".") {
+                while (decoded.charAt(count) !== ".") {
                     strg += decoded.charAt(count);
                     count++;
                 }
