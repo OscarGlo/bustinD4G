@@ -129,7 +129,7 @@ function next_qu() {
             }
         } else {
             [id_to, id_qu, id_sub_qu] = ids_next(data, id_to, id_qu, id_sub_qu);
-    
+            let tmp = curry_stack.pop();
             prev.classList.remove("dis");
             if (id_to === topics.length - 1)
                 next.innerHTML = "Submit";
