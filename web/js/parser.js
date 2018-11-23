@@ -104,7 +104,7 @@ function decodeAnswers(data, str) {
             }
         }
 
-        if(strg === "") break;
+        if(strg.match(/_*/)) break;
         
         answers[[id_to, id_qu, id_sub_qu]] = strg;
         
