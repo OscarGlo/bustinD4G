@@ -381,7 +381,7 @@ window.addEventListener("load", async () => {
             let ans = decodeAnswers(data, res[i])[1],
                 keys = Object.keys(ans);
             console.log(ans);
-            for (let j = 0, len2 = ans.length; j < len2; ++j) {
+            for (let j = 0, len2 = keys.length; j < len2; ++j) {
                 console.log(ans[keys[j]]);
                 if (!allAns[keys[j]])
                     allAns[keys[j]] = [];
