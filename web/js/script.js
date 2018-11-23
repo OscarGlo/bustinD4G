@@ -101,7 +101,6 @@ function next_qu() {
         save_ans(ans);
 
         qu_stack.push([id_to, id_qu, id_sub_qu]);
-        //console.log("qu_stack.push : " + [id_to, id_qu, id_sub_qu]);
 
 
         let jump = null;
@@ -110,29 +109,23 @@ function next_qu() {
             if (jump) jump = jump.j;
         }
 
-        if (jump) {
+        if (jump)
             [id_to, id_qu] = jump;
-        } else {
+        else
             [id_to, id_qu, id_sub_qu] = ids_next(data, id_to, id_qu, id_sub_qu);
-            prev.classList.remove("dis");
-            if (id_to === topics.length - 1)
-                next.innerHTML = "Submit";
-        }
-
+        
+        prev.classList.remove("dis");
+        if (id_to === topics.length - 1)
+            next.innerHTML = "Submit";
 
         loadQuestion();
 
         let tmp = curry_stack.pop();
-        //console.log("curry_stack.pop() " + tmp);
         let same = false;
-        //console.log("[id_to, id_qu, id_sub_qu] " + [id_to, id_qu, id_sub_qu]);
             while(tmp !== undefined && !same){
-                console.log(tmp[0] !== id_to || tmp[1] !== id_qu || tmp[2] !== id_sub_qu);
                 if(tmp[0] !== id_to || tmp[1] !== id_qu || tmp[2] !== id_sub_qu){
-                    console.log("different");
                     delete ans_table[tmp];
                     tmp = curry_stack.pop();
-                    console.log("curry_stack.pop() " + tmp);
                 } else {
                     same = true;
 
