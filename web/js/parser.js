@@ -82,7 +82,7 @@ function decodeAnswers(data, str){
 
     let count = 0, end = decoded.length;
     let nb_answers;
-    let stack = [];
+    let stack = [[0, 0, 0]];
 
     while (count < end && id_to < topics.length-1){
 
