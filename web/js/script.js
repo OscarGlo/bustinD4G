@@ -99,13 +99,10 @@ function next_qu() {
     let ans = getAnswer();
     if ((!ans.match(/^_*$/) || id_to === 0) && !next.classList.contains("dis")) {
         save_ans(ans);
-        
+
         qu_stack.push([id_to, id_qu, id_sub_qu]);
 
 
-
-
-        
         let jump = null;
         if (data[topics[id_to]].q && data[topics[id_to]].q[id_qu].a) {
             jump = data[topics[id_to]].q[id_qu].a[ans.indexOf("x")];
@@ -125,8 +122,8 @@ function next_qu() {
                         delete ans_table[tmp];
                         tmp = curry_stack.pop()
                     }
-                }*/
-            }
+                }
+            }*/
         } else {
             [id_to, id_qu, id_sub_qu] = ids_next(data, id_to, id_qu, id_sub_qu);
             //let tmp = curry_stack.pop();
@@ -136,7 +133,6 @@ function next_qu() {
         }
 
 
-    
         loadQuestion();
 
     }
