@@ -94,7 +94,7 @@ function decodeAnswers(data, str) {
             } else if (decoded.charAt(count) === "x"){
                 strg += "x";
             } else {
-                while (decoded.charAt(count) !== ".") {
+                while (decoded.charAt(count) !== '.') {
                     console.log(decoded.charAt(count));
                     strg += decoded.charAt(count);
                     count++;
