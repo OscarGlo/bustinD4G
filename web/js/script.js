@@ -183,7 +183,7 @@ window.addEventListener("load", async () => {
         let decode = decodeAnswers(data, sub),
             keys = Object.keys(decode);
         ans_table = decode;
-        [id_to, id_qu, id_sub_qu] = keys[keys.length - 1];
+        [id_to, id_qu, id_sub_qu] = keys[keys.length - 1].split(",");
     }
     
     prev.addEventListener("click", prev_qu);
