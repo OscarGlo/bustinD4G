@@ -111,7 +111,7 @@ function next_qu() {
             jump = data[topics[id_to]].q[id_qu].a[ans.indexOf("x")];
             if (jump) jump = jump.j;
         }
-        let tmp = curry_stack.pop();
+
         if (jump) {
             [id_to, id_qu] = jump;
             let tmp = curry_stack.pop();
@@ -147,7 +147,7 @@ function prev_qu() {
         save_ans();
 
         curry_stack.push([id_to, id_qu, id_sub_qu]);
-        console.log([id_to, id_qu, id_sub_qu]);
+        console.log("curry stack push : " + [id_to, id_qu, id_sub_qu]);
         [id_to, id_qu, id_sub_qu] = qu_stack.pop();
 
         
