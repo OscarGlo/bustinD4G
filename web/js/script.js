@@ -131,6 +131,7 @@ function next_qu() {
                     delete ans_table[tmp];
                     tmp = curry_stack.pop();
                 } else {
+                    console.log("true\n")
                     same = true;
                 }
             }
