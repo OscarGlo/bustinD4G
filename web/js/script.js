@@ -100,7 +100,10 @@ function next_qu() {
     if ((!ans.match(/^_*$/) || id_to === 0) && !next.classList.contains("dis")) {
         save_ans(ans);
 
+        let tmp = curry_stack.pop();
+        console.log("curry_stack.pop() " + tmp);
         qu_stack.push([id_to, id_qu, id_sub_qu]);
+        console.log("qu_stack.push : " + [id_to, id_qu, id_sub_qu]);
 
 
         let jump = null;
@@ -111,7 +114,7 @@ function next_qu() {
 
         if (jump) {
             [id_to, id_qu] = jump;
-            /*let tmp = curry_stack.pop();
+            /*
             console.log("tmp" + tmp);
             console.log("id" + [id_to, id_qu, id_sub_qu]);
             if(tmp){
@@ -126,7 +129,6 @@ function next_qu() {
             }*/
         } else {
             [id_to, id_qu, id_sub_qu] = ids_next(data, id_to, id_qu, id_sub_qu);
-            //let tmp = curry_stack.pop();
             prev.classList.remove("dis");
             if (id_to === topics.length - 1)
                 next.innerHTML = "Submit";
@@ -143,7 +145,6 @@ function prev_qu() {
         save_ans();
 
         curry_stack.push([id_to, id_qu, id_sub_qu]);
-        console.log("curry stack push : " + [id_to, id_qu, id_sub_qu]);
         [id_to, id_qu, id_sub_qu] = qu_stack.pop();
 
         
