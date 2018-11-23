@@ -65,8 +65,11 @@ function loadQuestion() {
                             num = num * 10 + parseInt(nex);
                             off--;
                             
-                            if (!nex || !nex.match(/[0-9]/))
+                            if (!nex || !nex.match(/[0-9]/)){
+                                console.log(answ);
                                 answ.childNodes[i + off].childNodes[1].value = num;
+                            }
+                            
                         }
                     }
                 }
