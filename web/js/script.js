@@ -123,8 +123,8 @@ function next_qu() {
         }
 
         let tmp = curry_stack.pop();
-        console.log("tmp" + tmp);
-        console.log("id" + [id_to, id_qu, id_sub_qu]);
+        //console.log("tmp" + tmp);
+        //console.log("id" + [id_to, id_qu, id_sub_qu]);
         if(tmp){
             if(tmp !== [id_to, id_qu, id_sub_qu]){
                 delete ans_table[tmp];
@@ -144,6 +144,7 @@ function prev_qu() {
         save_ans();
 
         let tmp = qu_stack.pop();
+        console.log(tmp);
         [id_to, id_qu, id_sub_qu] = tmp;
         curry_stack.push(tmp);
         
