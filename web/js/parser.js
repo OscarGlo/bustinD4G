@@ -93,7 +93,7 @@ function decodeAnswers(data, str) {
                 strg += "_";
             } else if (decoded.charAt(count) === "x"){
                 strg += "x";
-            } else if(decoded.charAt(count).match(/[0-9]\./)){
+            } else if(decoded.charAt(count).match(/([0-9]|\.)/)){
                 while (decoded.charAt(count) !== "." && decoded.charAt(count) !== "") {
                     strg += decoded.charAt(count);
                     count++;
