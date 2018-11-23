@@ -382,12 +382,13 @@ window.addEventListener("load", async () => {
                 keys = Object.keys(ans);
             console.log(ans);
             for (let j = 0, len2 = ans.length; j < len2; ++j) {
+                console.log(ans[keys[j]]);
                 if (!allAns[keys[j]])
                     allAns[keys[j]] = [];
                 if (!allAns[keys[j]][ans[keys[j]].indexOf("x")]) {
                     allAns[keys[j]][ans[keys[j]].indexOf("x")] = 1;
                 } else {
-                    allAns[keys[j]][ans[keys[j]].indexOf("x")] = +1;
+                    allAns[keys[j]][ans[keys[j]].indexOf("x")] += 1;
                 }
             }
             
