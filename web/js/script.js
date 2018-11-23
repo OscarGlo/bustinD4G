@@ -115,8 +115,8 @@ function next_qu() {
         if (jump) {
             [id_to, id_qu] = jump;
             let tmp = curry_stack.pop();
-            //console.log("tmp" + tmp);
-            //console.log("id" + [id_to, id_qu, id_sub_qu]);
+            console.log("tmp" + tmp);
+            console.log("id" + [id_to, id_qu, id_sub_qu]);
             if(tmp){
                 if(tmp !== [id_to, id_qu, id_sub_qu]){
                     delete ans_table[tmp];
