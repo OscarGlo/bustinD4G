@@ -123,14 +123,15 @@ function next_qu() {
         loadQuestion();
 
         let tmp = curry_stack.pop();
-        console.log("curry_stack.pop() " + tmp);
+        //console.log("curry_stack.pop() " + tmp);
         let same = false;
-        console.log("[id_to, id_qu, id_sub_qu] " + [id_to, id_qu, id_sub_qu]);
+        //console.log("[id_to, id_qu, id_sub_qu] " + [id_to, id_qu, id_sub_qu]);
             while(tmp !== undefined || same){
-                console.log("tmp[0] !== id_to || tmp[1] !== id_qu || tmp[2] !== id_sub_qu " + (tmp[0] !== id_to || tmp[1] !== id_qu || tmp[2] !== id_sub_qu).toString());
+                console.log("while " + (tmp[0] !== id_to || tmp[1] !== id_qu || tmp[2] !== id_sub_qu).toString());
                 if(tmp[0] !== id_to || tmp[1] !== id_qu || tmp[2] !== id_sub_qu){
                     delete ans_table[tmp];
                     tmp = curry_stack.pop();
+                    console.log("curry_stack.pop() " + tmp);
                 } else {
                     same = true;
                 }
