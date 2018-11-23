@@ -78,12 +78,21 @@ function decodeAnswers(data, str){
     let id_to = 1, id_qu = 0, id_sub_qu = 0;
     let answers = [];
 
+
     let count = 0, end = str.length;
     let nb_answers;
 
     while (count + data[topics[id_to]].q[id_qu].a.length < end){
 
         nb_answers = data[topics[id_to]].q[id_qu].a.length;
+
+        for (let i = 0, len = nb_answers; i< len; i++){
+            if (data[topics[id_to]].q[id_qu].a[i].contains("_")){
+
+            }
+        }
+
+
 
         answers[[id_to, id_qu, id_sub_qu]] = decoded.substring(count, count + nb_answers);
 
