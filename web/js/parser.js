@@ -112,7 +112,7 @@ function decodeAnswers(data, str) {
         if (typeof res === "object") {
             id_to = res.j[0];
             id_qu = res.j[1];
-        } else if(typeof  res === "string"){
+        } else {
             [id_to, id_qu, id_sub_qu] = ids_next(data, id_to, id_qu, id_sub_qu);
         }
     }
