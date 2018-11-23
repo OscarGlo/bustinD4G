@@ -104,8 +104,8 @@ function decodeAnswers(data, str) {
             }
         }
 
-        console.log(strg);
-        console.log([id_to, id_qu, id_sub_qu]);
+        if(strg === "") break;
+        
         answers[[id_to, id_qu, id_sub_qu]] = strg;
         
         if(strg !== "") stack.push([id_to, id_qu, id_sub_qu]);
