@@ -126,8 +126,8 @@ function next_qu() {
         //console.log("curry_stack.pop() " + tmp);
         let same = false;
         //console.log("[id_to, id_qu, id_sub_qu] " + [id_to, id_qu, id_sub_qu]);
-            while(tmp !== undefined && same){
-                console.log(tmp[0] !== id_to || tmp[1] !== id_qu || tmp[2] !== id_sub_qu);
+            while(tmp !== undefined && !same){
+
                 if(tmp[0] !== id_to || tmp[1] !== id_qu || tmp[2] !== id_sub_qu){
                     console.log("different");
                     delete ans_table[tmp];
