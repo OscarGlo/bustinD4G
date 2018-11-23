@@ -93,7 +93,7 @@ function decodeAnswers(data, str) {
                 strg += "_";
             } else if (decoded.charAt(count) === "x"){
                 strg += "x";
-            }  else{
+            } else {
                 while (decoded.charAt(count) !== ".") {
                     strg += decoded.charAt(count);
                     count++;
@@ -125,11 +125,13 @@ function decoder(code) {
         for(let j = tmp.length; j < 6; j++){
             tmp = "0" + tmp;
         }
-        str += tmp
+        str += tmp;
     }
 
     let answers = "";
     for(let i = 0, len = str.length; i < len; ) {
+        console.log("i:" + i);
+        console.log("len:" + len);
         if (str.charAt(i) === "0") {
             answers += "_";
             i++;
@@ -145,6 +147,7 @@ function decoder(code) {
                     let octal = "";
                     let endNb = "";
                     do {
+                        console.log(i);
                         let tmp = str.substr(i, 3);
                         octal += parseInt(tmp, 2).toString();
                         

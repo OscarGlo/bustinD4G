@@ -50,7 +50,7 @@ function loadQuestion() {
                     + `<span class="${spanT}"></span></label>`;
             }
         } else if (type(q_data, "t"))
-            answ.innerHTML = `<input type="text">`;
+            answ.innerHTML = `<input type="number">`;
         
         let saved = ans_table[[id_to, id_qu, id_sub_qu]];
         if (saved) {
