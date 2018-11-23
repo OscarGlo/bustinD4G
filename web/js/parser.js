@@ -95,6 +95,7 @@ function decodeAnswers(data, str) {
                 strg += "x";
             } else {
                 while (decoded.charAt(count) !== ".") {
+                    console(decoded.charAt(count));
                     strg += decoded.charAt(count);
                     count++;
                 }
