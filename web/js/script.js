@@ -131,9 +131,7 @@ function next_qu() {
                 if(tmp !== [id_to, id_qu, id_sub_qu]){
                     delete ans_table[tmp];
                     tmp = curry_stack.pop();
-                    console.log("false\n")
                 } else {
-                    console.log("true\n")
                     same = true;
                 }
             }
