@@ -119,7 +119,7 @@ function next_qu() {
             //console.log("id" + [id_to, id_qu, id_sub_qu]);
             if(tmp){
                 if(tmp !== [id_to, id_qu, id_sub_qu]){
-                    //delete ans_table[tmp];
+                    delete ans_table[tmp];
                     tmp = curry_stack.pop()
                     while( tmp !== undefined){
                         delete ans_table[tmp];
