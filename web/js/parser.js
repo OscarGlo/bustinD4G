@@ -132,8 +132,6 @@ function decoder(code) {
 
     let answers = "";
     for(let i = 0, len = str.length; i < len; ) {
-        console.log("i:" + i);
-        console.log("len:" + len);
         if (str.charAt(i) === "0") {
             answers += "_";
             i++;
