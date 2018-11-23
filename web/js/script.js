@@ -114,7 +114,7 @@ function next_qu() {
 
         if (jump) {
             [id_to, id_qu] = jump;
-            let tmp = curry_stack.pop();
+            /*let tmp = curry_stack.pop();
             console.log("tmp" + tmp);
             console.log("id" + [id_to, id_qu, id_sub_qu]);
             if(tmp){
@@ -125,11 +125,11 @@ function next_qu() {
                         delete ans_table[tmp];
                         tmp = curry_stack.pop()
                     }
-                }
+                }*/
             }
         } else {
             [id_to, id_qu, id_sub_qu] = ids_next(data, id_to, id_qu, id_sub_qu);
-            let tmp = curry_stack.pop();
+            //let tmp = curry_stack.pop();
             prev.classList.remove("dis");
             if (id_to === topics.length - 1)
                 next.innerHTML = "Submit";
