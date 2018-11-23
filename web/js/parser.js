@@ -80,7 +80,7 @@ function decodeAnswers(data, str){
     let answers = [];
 
 
-    let count = 0, end = str.length;
+    let count = 0, end = decoded.length;
     let nb_answers;
 
     console.log("end: " + end);
