@@ -129,11 +129,12 @@ function next_qu() {
             while(tmp !== undefined || same){
                 console.log("while " + (tmp[0] !== id_to || tmp[1] !== id_qu || tmp[2] !== id_sub_qu).toString());
                 if(tmp[0] !== id_to || tmp[1] !== id_qu || tmp[2] !== id_sub_qu){
+                    same = true;
+                } else {
                     delete ans_table[tmp];
                     tmp = curry_stack.pop();
                     console.log("curry_stack.pop() " + tmp);
-                } else {
-                    same = true;
+
                 }
             }
 
