@@ -7,7 +7,11 @@ server(function(req, res) {
         if (req.url === "/")
             req.url = "web/index.html";
         if (req.url === "/results")
-            fs.createReadStream("results.txt").pipe(res);
+            try {
+                fs.createReadStream("results.txt").pipe(res);
+            } catch (e) {
+                fs.createReadStream("web/index.html").pipe(res);
+            }
         else if (fs.existsSync(`web${req.url}`))
             fs.createReadStream(`web${req.url}`).pipe(res);
         else
