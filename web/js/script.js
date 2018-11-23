@@ -377,8 +377,24 @@ window.addEventListener("load", async () => {
     results.addEventListener("click", async () => {
         let res = await fetch("/results").then(res => res.text()).then(txt => txt.split("\n"));
         body.innerHTML = "";
-        for (let i = 0, len = res.length; i < len; ++i)
-            body.innerHTML += JSON.stringify(decodeAnswers(data, res[i])) + "<br>";
+        let allAns = {};
+        for (let i = 0, len = res.length; i < len; ++i) {
+            let ans = decodeAnswers(data, res[i])[1],
+                keys = Object.keys(ans);
+            for (let j = 0, len2 = ans.length; j < len2; ++j) {
+                if (!allAns[keys[j]])
+                    allAns[keys[j]] = [];
+                if (!allAns[keys[j]][ans[keys[j]].indexOf("x")]) {
+                    allAns[keys[j]][ans[keys[j]].indexOf("x")] = 1;
+                } else {
+                    allAns[keys[j]][ans[keys[j]].indexOf("x")] = +1;
+                }
+            }
+        }
+    
+        for (let i = 0, len = allAns.length; i < len; ++i) {
+            body.innerHTML += JSON.stringify(allAns[i]);
+        }
     });
     
     loadQuestion();
