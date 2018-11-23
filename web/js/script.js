@@ -397,7 +397,12 @@ window.addEventListener("load", async () => {
     
         let keys = Object.keys(allAns);
         for (let i = 0, len = keys.length; i < len; ++i) {
-            body.innerHTML += keys[i] + " -- " + JSON.stringify(allAns[keys[i]]) + "<br>";
+            let [id1, id2, id3] =  keys[i].split(",");
+            let q_data = data[topics[id1]].q[id2];
+            if (q_data.q) q_data = q_data.q[id3];
+            
+            let parseNull = allAns[keys[i]].map(it => (it == null ? 0 : it));
+            body.innerHTML += q_data.n + " -- " + JSON.stringify(parseNull) + "<br>";
         }
     });
     
