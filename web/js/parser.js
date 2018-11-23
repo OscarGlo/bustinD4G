@@ -82,7 +82,7 @@ function decodeAnswers(data, str){
 
     let count = 0, end = decoded.length;
     let nb_answers;
-
+    let stack = [];
 
     while (count < end && id_to < topics.length-1){
 
@@ -110,7 +110,8 @@ function decodeAnswers(data, str){
         }
 
         answers[[id_to, id_qu, id_sub_qu]] = strg;
-
+        
+        stack.push([id_to, id_qu, id_sub_qu]);
 
         let res = data[topics[id_to]].q[id_qu].a[answers[[id_to, id_qu, id_sub_qu]].indexOf("x")];
 
@@ -121,7 +122,7 @@ function decodeAnswers(data, str){
             [id_to, id_qu, id_sub_qu] = ids_next(data, id_to, id_qu, id_sub_qu);
         }
     }
-    return answers;
+    return [stack, answers];
 }
 
 

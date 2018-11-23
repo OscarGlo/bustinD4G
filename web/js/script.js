@@ -174,9 +174,11 @@ window.addEventListener("load", async () => {
         sub = url.substr(url.lastIndexOf("/") + 1);
     if (sub !== "") {
         let decode = decodeAnswers(data, sub),
-            keys = Object.keys(decode);
-        ans_table = decode;
+            keys = Object.keys(decode[1]);
+        ans_table = decode[1];
         [id_to, id_qu, id_sub_qu] = keys[keys.length - 1].split(",");
+        
+        qu_stack = decode[0];
     }
     
     prev.addEventListener("click", prev_qu);
