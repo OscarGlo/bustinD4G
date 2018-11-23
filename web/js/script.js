@@ -123,12 +123,13 @@ function next_qu() {
         }
 
         let tmp = curry_stack.pop();
+        console.log("tmp" + tmp);
+        console.log("id" + [id_to, id_qu, id_sub_qu]);
         if(tmp){
             if(tmp !== [id_to, id_qu, id_sub_qu]){
                 delete ans_table[tmp];
                 while(tmp = curry_stack.pop() && tmp !== null){
                     delete ans_table[tmp];
-                    console.log("boucle");
                 }
             }
         }
