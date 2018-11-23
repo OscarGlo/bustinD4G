@@ -101,9 +101,9 @@ function next_qu() {
         save_ans(ans);
 
         let tmp = curry_stack.pop();
-        console.log("curry_stack.pop() " + tmp);
+        //console.log("curry_stack.pop() " + tmp);
         qu_stack.push([id_to, id_qu, id_sub_qu]);
-        console.log("qu_stack.push : " + [id_to, id_qu, id_sub_qu]);
+        //console.log("qu_stack.push : " + [id_to, id_qu, id_sub_qu]);
 
 
         let jump = null;
@@ -114,10 +114,17 @@ function next_qu() {
 
         if (jump) {
             [id_to, id_qu] = jump;
-            /*
-            console.log("tmp" + tmp);
+        } else {
+            [id_to, id_qu, id_sub_qu] = ids_next(data, id_to, id_qu, id_sub_qu);
+            prev.classList.remove("dis");
+            if (id_to === topics.length - 1)
+                next.innerHTML = "Submit";
+        }
+
+        console.log("id" + [id_to, id_qu, id_sub_qu]);
+        loadQuestion();
             console.log("id" + [id_to, id_qu, id_sub_qu]);
-            if(tmp){
+            /*if(tmp){
                 if(tmp !== [id_to, id_qu, id_sub_qu]){
                     delete ans_table[tmp];
                     tmp = curry_stack.pop();
@@ -127,16 +134,6 @@ function next_qu() {
                     }
                 }
             }*/
-        } else {
-            [id_to, id_qu, id_sub_qu] = ids_next(data, id_to, id_qu, id_sub_qu);
-            prev.classList.remove("dis");
-            if (id_to === topics.length - 1)
-                next.innerHTML = "Submit";
-        }
-
-
-        loadQuestion();
-
     }
 }
 
