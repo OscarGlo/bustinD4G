@@ -395,8 +395,9 @@ window.addEventListener("load", async () => {
             console.log(allAns);
         }
     
-        for (let i = 0, len = allAns.length; i < len; ++i) {
-            body.innerHTML += JSON.stringify(allAns[i]);
+        let keys = Object.keys(allAns);
+        for (let i = 0, len = keys.length; i < len; ++i) {
+            body.innerHTML += keys[i] + " -- " + JSON.stringify(allAns[keys[i]]) + "<br>";
         }
     });
     
