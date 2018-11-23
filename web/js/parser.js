@@ -47,7 +47,7 @@ function codeAnswers(ans) {
             let char = a_str.charAt(j);
             if (speChars.includes(char))
                 bin += speCharsBin[char];
-            else {
+            else if (char.match(/[0-9]/)) {
                 num = num * 10 + parseInt(char);
                 if (!a_str.charAt(j + 1).match(/[0-9]/)) {
                     let oct = num.toString(8);
