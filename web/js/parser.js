@@ -87,17 +87,29 @@ function decodeAnswers(data, str){
 
         nb_answers = data[topics[id_to]].q[id_qu].a.length;
 
-        for (let i = 0, len = nb_answers; i< len; i++){
-            if (data[topics[id_to]].q[id_qu].a[i].contains("_")){
+        let strg = "";
 
+        for (let i = 0, len = nb_answers; i < len;) {
+            if (decoded.charAt(count) === "_") {
+                strg += "_";
+                count++;
+                i++;
+            } else if (decoded.charAt(count) === "x"{
+                strg += "x";
+                count ++;
+                i++;
+            }  else{
+                while (decoded.charAt(count) != ".") {
+                    strg += decoded.charAt(count);
+                    count++;
+                }
+                count++;
+                i++;
             }
         }
 
+        answers[[id_to, id_qu, id_sub_qu]] = strg;
 
-
-        answers[[id_to, id_qu, id_sub_qu]] = decoded.substring(count, count + nb_answers);
-
-        count += nb_answers;
 
         let res = data[topics[id_to]].q[id_qu].a[answers[[id_to, id_qu, id_sub_qu]].indexOf("x")];
 
