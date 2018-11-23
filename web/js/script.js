@@ -60,7 +60,7 @@ function loadQuestion() {
                     let val = saved.charAt(i);
                     if (val !== "_") {
                         answ.childNodes[i].childNodes[0].checked = true;
-                        if (val !== "x") {
+                        if (val !== "x" && val !== ".") {
                             let nex = saved.charAt(i+1);
                             if (nex && nex.match(/[0-9]/))
                                 num = num * 10 + parseInt(nex);
