@@ -128,6 +128,7 @@ function next_qu() {
                 delete ans_table[tmp];
                 while(tmp = curry_stack.pop() !== null){
                     delete ans_table[tmp];
+                    console.log("boucle");
                 }
             }
         }
