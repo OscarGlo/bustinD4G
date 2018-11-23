@@ -121,10 +121,10 @@ function next_qu() {
                 next.innerHTML = "Submit";
         }
 
-        console.log("id" + [id_to, id_qu, id_sub_qu]);
+
         loadQuestion();
-            console.log("id" + [id_to, id_qu, id_sub_qu]);
-            /*if(tmp){
+
+            if(tmp){
                 if(tmp !== [id_to, id_qu, id_sub_qu]){
                     delete ans_table[tmp];
                     tmp = curry_stack.pop();
@@ -133,7 +133,7 @@ function next_qu() {
                         tmp = curry_stack.pop()
                     }
                 }
-            }*/
+            }
     }
 }
 
