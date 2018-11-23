@@ -51,8 +51,10 @@ function codeAnswers(ans) {
                 num = num * 10 + parseInt(char);
                 if (!a_str.charAt(j + 1).match(/[0-9]/)) {
                     let oct = num.toString(8);
+                    bin += "110";
                     for (let k = 0, len3 = oct.length; k < len3; ++k)
-                        bin += "11" + oct3(oct.charAt(k));
+                        bin += oct3(oct.charAt(k));
+                    bin += "111";
                     num = 0;
                 }
             }
@@ -147,5 +149,6 @@ function decoder(code){
     }
     return answers;
 }
-
-module.exports = {decodeAnswers: decodeAnswers, codeAnswers: codeAnswers};
+try {
+    module.exports = {decodeAnswers: decodeAnswers, codeAnswers: codeAnswers};
+} catch (e) {}
