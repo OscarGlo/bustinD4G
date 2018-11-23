@@ -111,7 +111,7 @@ function next_qu() {
             jump = data[topics[id_to]].q[id_qu].a[ans.indexOf("x")];
             if (jump) jump = jump.j;
         }
-        
+        let tmp = curry_stack.pop();
         if (jump) {
             [id_to, id_qu] = jump;
             let tmp = curry_stack.pop();
@@ -120,7 +120,7 @@ function next_qu() {
             if(tmp){
                 if(tmp !== [id_to, id_qu, id_sub_qu]){
                     delete ans_table[tmp];
-                    tmp = curry_stack.pop()
+                    tmp = curry_stack.pop();
                     while( tmp !== undefined){
                         delete ans_table[tmp];
                         tmp = curry_stack.pop()
