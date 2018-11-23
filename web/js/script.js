@@ -101,7 +101,7 @@ function next_qu() {
         save_ans(ans);
 
         qu_stack.push([id_to, id_qu, id_sub_qu]);
-        console.log("qu_stack.push : " + [id_to, id_qu, id_sub_qu]);
+        //console.log("qu_stack.push : " + [id_to, id_qu, id_sub_qu]);
 
 
         let jump = null;
