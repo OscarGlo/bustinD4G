@@ -195,7 +195,7 @@ window.addEventListener("load", async () => {
     });
     copy_url.addEventListener("click", () => {
         const el = document.createElement('textarea');
-        el.value = codeAnswers(ans_table);
+        el.value = "http://vps613152.ovh.net/" + codeAnswers(ans_table);
         el.style.position = 'absolute';
         el.style.left = '-9999px';
         document.body.appendChild(el);
